@@ -145,6 +145,9 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
     map: textureLoader.load(`${textureBaseUrl}planets/earth_atmos_2048.jpg`)
   });
   const earth = new THREE.Mesh(earthGeometry, earthMaterial);
+  const earthOrbitLine = createOrbitLine(149597870);
+  earthOrbitLine.position.copy(sun.position);
+  scene.add(earthOrbitLine);
   scene.add(earth);
   labels.add('Earth', earth);
   navigationTargets.push({ name: 'Earth', object: earth, radiusKm: earthRadiusKm });
