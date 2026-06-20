@@ -11,6 +11,7 @@ export type CelestialBodies = {
   earthRadiusKm: number;
   moon: THREE.Mesh;
   alphaCentauri: THREE.Mesh;
+  distantStars: THREE.Object3D[];
   navigationTargets: NavigationTarget[];
   rotatingBodies: THREE.Object3D[];
 };
@@ -125,6 +126,7 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
   const earthRadiusKm = 6371;
   const navigationTargets: NavigationTarget[] = [];
   const rotatingBodies: THREE.Object3D[] = [];
+  const distantStars: THREE.Object3D[] = [];
 
   const ambientLight = new THREE.AmbientLight(0xffffff, 0.1);
   scene.add(ambientLight);
@@ -248,6 +250,7 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
   scene.add(alphaCentauri);
   labels.add('Alpha Centauri', alphaCentauri);
   navigationTargets.push({ name: 'Alpha Centauri', object: alphaCentauri, radiusKm: 850000 });
+  distantStars.push(alphaCentauri);
 
   const starData: StarData[] = [
     {
@@ -345,6 +348,7 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
   for (const data of starData) {
     const star = createStar(scene, labels, data);
     navigationTargets.push({ name: data.name, object: star, radiusKm: data.radiusKm });
+    distantStars.push(star);
   }
 
   return {
@@ -353,6 +357,7 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
     earthRadiusKm,
     moon,
     alphaCentauri,
+    distantStars,
     navigationTargets,
     rotatingBodies
   };
@@ -372,4 +377,6 @@ export function createSkybox(scene: THREE.Scene) {
   skyboxTexture.colorSpace = THREE.SRGBColorSpace;
   scene.background = skyboxTexture;
   scene.environment = skyboxTexture;
+
+  return skyboxTexture;
 }

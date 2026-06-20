@@ -47,6 +47,7 @@ export function createLabelManager(overlay: HTMLDivElement, camera: THREE.Camera
         labelPosition.copy(target.object.position).project(camera);
 
         const isVisible =
+          target.object.visible &&
           labelPosition.z < 1 &&
           labelPosition.x >= -1 &&
           labelPosition.x <= 1 &&

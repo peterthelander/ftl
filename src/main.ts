@@ -25,7 +25,7 @@ renderer.setPixelRatio(window.devicePixelRatio);
 
 const labels = createLabelManager(dom.labelsOverlay, camera);
 const bodies = createCelestialBodies(scene, labels);
-createSkybox(scene);
+const skybox = createSkybox(scene);
 
 const flightState = createFlightState();
 const controls = createControls(dom.canvas, dom.controlsHelp, flightState, camera);
@@ -58,7 +58,10 @@ function animate() {
     earth: bodies.earth,
     earthRadiusKm: bodies.earthRadiusKm,
     overlay: dom.atmosphereOverlay,
-    sun: bodies.sun
+    sun: bodies.sun,
+    scene,
+    skybox,
+    distantStars: bodies.distantStars
   });
   labels.update();
   renderer.render(scene, camera);

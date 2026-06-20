@@ -6,11 +6,15 @@ type AtmosphereInput = {
   earthRadiusKm: number;
   overlay: HTMLDivElement;
   sun: THREE.Object3D;
+  scene: THREE.Scene;
+  skybox: THREE.CubeTexture;
+  distantStars: THREE.Object3D[];
 };
 
 const atmosphereEntryAltitudeKm = 1000;
 const atmosphereFullEffectAltitudeKm = 100;
 const maxAtmosphereOpacity = 0.55;
+const opaqueSkyThreshold = 0.9;
 
 const surfaceNormal = new THREE.Vector3();
 const sunDirection = new THREE.Vector3();
@@ -23,7 +27,16 @@ function mixColor(a: THREE.Color, b: THREE.Color, amount: number) {
   return a.clone().lerp(b, clamp01(amount));
 }
 
-export function updateAtmosphere({ camera, earth, earthRadiusKm, overlay, sun }: AtmosphereInput) {
+export function updateAtmosphere({
+  camera,
+  earth,
+  earthRadiusKm,
+  overlay,
+  sun,
+  scene,
+  skybox,
+  distantStars
+}: AtmosphereInput) {
   const altitudeKm = Math.max(0, camera.position.distanceTo(earth.position) - earthRadiusKm);
 
   const atmosphereAmount = clamp01(
@@ -32,6 +45,10 @@ export function updateAtmosphere({ camera, earth, earthRadiusKm, overlay, sun }:
 
   if (atmosphereAmount <= 0) {
     overlay.style.opacity = '0';
+    scene.background = skybox;
+    distantStars.forEach((star) => {
+      star.visible = true;
+    });
     return;
   }
 
@@ -47,7 +64,12 @@ export function updateAtmosphere({ camera, earth, earthRadiusKm, overlay, sun }:
   const dayColor = new THREE.Color('#62b7ff');
   const baseSkyColor = mixColor(nightColor, dayColor, daylight);
   const skyColor = mixColor(baseSkyColor, sunsetColor, sunset * 0.65);
+  const isOpaqueSky = atmosphereAmount >= opaqueSkyThreshold;
 
   overlay.style.background = `#${skyColor.getHexString()}`;
-  overlay.style.opacity = (atmosphereAmount * maxAtmosphereOpacity).toFixed(3);
+  overlay.style.opacity = isOpaqueSky ? '0' : (atmosphereAmount * maxAtmosphereOpacity).toFixed(3);
+  scene.background = isOpaqueSky ? skyColor : skybox;
+  distantStars.forEach((star) => {
+    star.visible = !isOpaqueSky;
+  });
 }
