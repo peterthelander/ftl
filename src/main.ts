@@ -7,6 +7,7 @@ import { getDomElements } from './dom';
 import { getProximitySpeed } from './flight';
 import { updateHud } from './hud';
 import { createLabelManager } from './labels';
+import { recenterWorld } from './world';
 
 const dom = getDomElements();
 const scene = new THREE.Scene();
@@ -45,6 +46,7 @@ function animate() {
 
   const currentSpeed = getProximitySpeed(camera.position, bodies.navigationTargets);
   controls.moveCamera(camera, currentSpeed, dt);
+  recenterWorld(scene, camera);
 
   for (const body of bodies.rotatingBodies) {
     body.rotation.y += 0.0001;
