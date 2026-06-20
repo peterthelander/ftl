@@ -22,7 +22,7 @@ const renderer = new THREE.WebGLRenderer({
   logarithmicDepthBuffer: true
 });
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 const labels = createLabelManager(dom.labelsOverlay, camera);
 const bodies = createCelestialBodies(scene, labels);
@@ -41,7 +41,7 @@ window.addEventListener('resize', () => {
 function animate() {
   requestAnimationFrame(animate);
 
-  const dt = clock.getDelta();
+  const dt = Math.min(clock.getDelta(), 0.1);
 
   controls.updateCameraRotation(camera, dt);
 

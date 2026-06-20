@@ -36,7 +36,6 @@ type StarData = {
   distanceLy: number;
   raHours: number;
   decDegrees: number;
-  color: number;
   radiusKm: number;
 };
 
@@ -247,7 +246,6 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       distanceLy: 5.96,
       raHours: 17.96,
       decDegrees: 4.7,
-      color: 0xff7055,
       radiusKm: 136000
     },
     {
@@ -255,7 +253,6 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       distanceLy: 7.86,
       raHours: 10.94,
       decDegrees: 7.0,
-      color: 0xff5f4d,
       radiusKm: 77000
     },
     {
@@ -263,7 +260,6 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       distanceLy: 8.31,
       raHours: 11.05,
       decDegrees: 35.97,
-      color: 0xff8566,
       radiusKm: 271000
     },
     {
@@ -271,7 +267,6 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       distanceLy: 8.6,
       raHours: 6.75,
       decDegrees: -16.72,
-      color: 0xbfdcff,
       radiusKm: 1180000
     },
     {
@@ -279,7 +274,6 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       distanceLy: 10.5,
       raHours: 3.55,
       decDegrees: -9.46,
-      color: 0xffd38a,
       radiusKm: 514000
     },
     {
@@ -287,7 +281,6 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       distanceLy: 11.5,
       raHours: 7.66,
       decDegrees: 5.22,
-      color: 0xe8f2ff,
       radiusKm: 1420000
     },
     {
@@ -295,7 +288,6 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       distanceLy: 11.9,
       raHours: 1.73,
       decDegrees: -15.94,
-      color: 0xffd6a0,
       radiusKm: 552000
     },
     {
@@ -303,7 +295,6 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       distanceLy: 25.0,
       raHours: 18.62,
       decDegrees: 38.78,
-      color: 0xd7e8ff,
       radiusKm: 1680000
     },
     {
@@ -311,7 +302,6 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       distanceLy: 36.7,
       raHours: 14.26,
       decDegrees: 19.18,
-      color: 0xffb15f,
       radiusKm: 17700000
     },
     {
@@ -319,7 +309,6 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       distanceLy: 550,
       raHours: 5.92,
       decDegrees: 7.41,
-      color: 0xff5b2e,
       radiusKm: 500000000
     }
   ];

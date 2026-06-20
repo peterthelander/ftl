@@ -18,13 +18,18 @@ const opaqueSkyThreshold = 0.9;
 
 const surfaceNormal = new THREE.Vector3();
 const sunDirection = new THREE.Vector3();
+const nightColor = new THREE.Color('#07162f');
+const sunsetColor = new THREE.Color('#ff8a45');
+const dayColor = new THREE.Color('#62b7ff');
+const baseSkyColor = new THREE.Color();
+const skyColor = new THREE.Color();
 
 function clamp01(value: number) {
   return Math.max(0, Math.min(1, value));
 }
 
-function mixColor(a: THREE.Color, b: THREE.Color, amount: number) {
-  return a.clone().lerp(b, clamp01(amount));
+function mixColor(target: THREE.Color, a: THREE.Color, b: THREE.Color, amount: number) {
+  return target.copy(a).lerp(b, clamp01(amount));
 }
 
 export function updateAtmosphere({
@@ -59,11 +64,8 @@ export function updateAtmosphere({
   const daylight = clamp01((sunHeight + 0.08) / 0.22);
   const sunset = 1 - Math.abs(clamp01((sunHeight + 0.22) / 0.44) * 2 - 1);
 
-  const nightColor = new THREE.Color('#07162f');
-  const sunsetColor = new THREE.Color('#ff8a45');
-  const dayColor = new THREE.Color('#62b7ff');
-  const baseSkyColor = mixColor(nightColor, dayColor, daylight);
-  const skyColor = mixColor(baseSkyColor, sunsetColor, sunset * 0.65);
+  mixColor(baseSkyColor, nightColor, dayColor, daylight);
+  mixColor(skyColor, baseSkyColor, sunsetColor, sunset * 0.65);
   const isOpaqueSky = atmosphereAmount >= opaqueSkyThreshold;
 
   overlay.style.background = `#${skyColor.getHexString()}`;

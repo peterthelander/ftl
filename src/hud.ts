@@ -2,14 +2,7 @@ import type * as THREE from 'three';
 
 import type { DomElements } from './dom';
 import { getNearestSurfaceTarget, getSpeedRatio, getTravelMode, type ProximityTarget } from './flight';
-
-function formatAltitude(distanceKm: number) {
-  if (distanceKm < 1_000_000) {
-    return `${distanceKm.toLocaleString(undefined, { maximumFractionDigits: 0 })} km`;
-  }
-
-  return `${(distanceKm / 1_000_000).toLocaleString(undefined, { maximumFractionDigits: 2 })} M km`;
-}
+import { formatDistanceKm } from './format';
 
 export function updateHud(
   dom: DomElements,
@@ -25,7 +18,7 @@ export function updateHud(
 
   const nearestTarget = getNearestSurfaceTarget(cameraPosition, navigationTargets);
   if (nearestTarget) {
-    dom.altitudeDisplay.innerText = formatAltitude(nearestTarget.distanceKm);
+    dom.altitudeDisplay.innerText = formatDistanceKm(nearestTarget.distanceKm);
     dom.altitudeTargetDisplay.innerText = nearestTarget.target.name;
   }
 }
