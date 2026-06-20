@@ -26,6 +26,8 @@ function formatDistance(distanceKm: number) {
 export function createLabelManager(overlay: HTMLDivElement, camera: THREE.Camera): LabelManager {
   const targets: Array<{ distanceElement: HTMLDivElement; element: HTMLDivElement; object: THREE.Object3D }> = [];
   const labelPosition = new THREE.Vector3();
+  const occupiedLabelPositions: Array<{ x: number; y: number }> = [];
+  const minimumLabelSeparationPx = 90;
 
   return {
     add(name: string, object: THREE.Object3D) {
@@ -43,7 +45,13 @@ export function createLabelManager(overlay: HTMLDivElement, camera: THREE.Camera
       targets.push({ distanceElement: labelDistance, element: label, object });
     },
     update() {
-      for (const target of targets) {
+      occupiedLabelPositions.length = 0;
+
+      const sortedTargets = [...targets].sort(
+        (a, b) => camera.position.distanceTo(a.object.position) - camera.position.distanceTo(b.object.position)
+      );
+
+      for (const target of sortedTargets) {
         labelPosition.copy(target.object.position).project(camera);
 
         const isVisible =
@@ -54,14 +62,24 @@ export function createLabelManager(overlay: HTMLDivElement, camera: THREE.Camera
           labelPosition.y >= -1 &&
           labelPosition.y <= 1;
 
-        target.element.style.display = isVisible ? 'block' : 'none';
+        const screenX = (labelPosition.x * 0.5 + 0.5) * window.innerWidth;
+        const screenY = (-labelPosition.y * 0.5 + 0.5) * window.innerHeight;
+        const overlapsVisibleLabel = occupiedLabelPositions.some(
+          (position) =>
+            Math.abs(position.x - screenX) < minimumLabelSeparationPx &&
+            Math.abs(position.y - screenY) < minimumLabelSeparationPx
+        );
+        const shouldShow = isVisible && !overlapsVisibleLabel;
 
-        if (isVisible) {
+        target.element.style.display = shouldShow ? 'block' : 'none';
+
+        if (shouldShow) {
           const distanceKm = camera.position.distanceTo(target.object.position);
 
-          target.element.style.left = `${(labelPosition.x * 0.5 + 0.5) * window.innerWidth}px`;
-          target.element.style.top = `${(-labelPosition.y * 0.5 + 0.5) * window.innerHeight}px`;
+          target.element.style.left = `${screenX}px`;
+          target.element.style.top = `${screenY}px`;
           target.distanceElement.innerText = formatDistance(distanceKm);
+          occupiedLabelPositions.push({ x: screenX, y: screenY });
         }
       }
     }
