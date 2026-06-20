@@ -89,7 +89,7 @@ function createPlanet(
     Math.sin(data.orbitAngle) * data.distanceFromSunKm
   );
 
-  labels.add(data.name, planet);
+  labels.add(data.name, planet, sun);
   orbitLine.position.copy(sun.position);
   scene.add(orbitLine);
   scene.add(planet);
@@ -148,7 +148,7 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
   earthOrbitLine.position.copy(sun.position);
   scene.add(earthOrbitLine);
   scene.add(earth);
-  labels.add('Earth', earth);
+  labels.add('Earth', earth, sun);
   navigationTargets.push({ name: 'Earth', object: earth, radiusKm: earthRadiusKm });
   rotatingBodies.push(earth);
 
@@ -162,7 +162,7 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
   moonOrbitLine.position.copy(earth.position);
   scene.add(moonOrbitLine);
   scene.add(moon);
-  labels.add('Moon', moon);
+  labels.add('Moon', moon, earth);
   navigationTargets.push({ name: 'Moon', object: moon, radiusKm: 1737 });
   rotatingBodies.push(moon);
 

@@ -3,18 +3,24 @@ import * as THREE from 'three';
 import { formatDistanceKm } from './format';
 
 export type LabelManager = {
-  add: (name: string, object: THREE.Object3D) => void;
+  add: (name: string, object: THREE.Object3D, parent?: THREE.Object3D) => void;
   update: () => void;
 };
 
 export function createLabelManager(overlay: HTMLDivElement, camera: THREE.Camera): LabelManager {
-  const targets: Array<{ distanceElement: HTMLDivElement; element: HTMLDivElement; object: THREE.Object3D }> = [];
+  const targets: Array<{
+    depth: number;
+    distanceElement: HTMLDivElement;
+    element: HTMLDivElement;
+    object: THREE.Object3D;
+  }> = [];
+  const labelDepths = new Map<THREE.Object3D, number>();
   const labelPosition = new THREE.Vector3();
   const occupiedLabelPositions: Array<{ x: number; y: number }> = [];
   const minimumLabelSeparationPx = 90;
 
   return {
-    add(name: string, object: THREE.Object3D) {
+    add(name: string, object: THREE.Object3D, parent?: THREE.Object3D) {
       const label = document.createElement('div');
       const labelName = document.createElement('div');
       const labelDistance = document.createElement('div');
@@ -26,13 +32,17 @@ export function createLabelManager(overlay: HTMLDivElement, camera: THREE.Camera
 
       label.append(labelName, labelDistance);
       overlay.appendChild(label);
-      targets.push({ distanceElement: labelDistance, element: label, object });
+      const depth = parent ? (labelDepths.get(parent) ?? 0) + 1 : 0;
+
+      labelDepths.set(object, depth);
+      targets.push({ depth, distanceElement: labelDistance, element: label, object });
     },
     update() {
       occupiedLabelPositions.length = 0;
 
       const sortedTargets = [...targets].sort(
-        (a, b) => camera.position.distanceTo(a.object.position) - camera.position.distanceTo(b.object.position)
+        (a, b) =>
+          a.depth - b.depth || camera.position.distanceTo(a.object.position) - camera.position.distanceTo(b.object.position)
       );
 
       for (const target of sortedTargets) {
