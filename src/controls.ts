@@ -1,8 +1,6 @@
 import * as THREE from 'three';
 
 import { ROLL_SPEED } from './constants';
-import type { FlightState } from './flight';
-import { trimSpeed } from './flight';
 
 type KeyState = {
   w: boolean;
@@ -22,7 +20,6 @@ export type Controls = {
 export function createControls(
   canvas: HTMLCanvasElement,
   controlsHelp: HTMLDivElement,
-  flightState: FlightState,
   camera: THREE.Camera
 ): Controls {
   const keys: KeyState = { w: false, a: false, s: false, d: false, q: false, e: false };
@@ -58,10 +55,6 @@ export function createControls(
     if (key in keys) {
       keys[key as keyof KeyState] = false;
     }
-  });
-
-  window.addEventListener('wheel', (event) => {
-    trimSpeed(flightState, event.deltaY);
   });
 
   return {

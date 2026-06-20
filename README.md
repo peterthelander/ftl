@@ -22,7 +22,6 @@ FTL is a browser-based 3D space flight toy built with TypeScript, Vite, and Thre
 | W / S | Thrust forward / reverse |
 | A / D | Strafe left / right |
 | Q / E | Roll |
-| Mouse wheel | Trim speed multiplier |
 | Esc | Release mouse lock |
 
 ## Development

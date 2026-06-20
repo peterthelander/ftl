@@ -1,8 +1,6 @@
 import type * as THREE from 'three';
 
 import {
-  BASE_SPEED_KM_PER_SECOND,
-  MAX_ACCELERATION_TIMER,
   MIN_PROXIMITY_SPEED_KM_PER_SECOND,
   PROXIMITY_SPEED_RATIO,
   SPEED_OF_LIGHT_KM_PER_SECOND
@@ -14,52 +12,14 @@ export type ProximityTarget = {
   radiusKm: number;
 };
 
-export type FlightState = {
-  speedMultiplier: number;
-  accelerationTimer: number;
-};
-
-export function createFlightState(): FlightState {
-  return {
-    speedMultiplier: 1.0,
-    accelerationTimer: 0
-  };
-}
-
-export function trimSpeed(state: FlightState, deltaY: number) {
-  if (deltaY < 0) {
-    state.speedMultiplier *= 1.2;
-  } else {
-    state.speedMultiplier /= 1.2;
-  }
-
-  state.speedMultiplier = Math.max(0.01, Math.min(state.speedMultiplier, 100000));
-}
-
-export function updateAcceleration(state: FlightState, isThrusting: boolean, dt: number) {
-  if (isThrusting) {
-    state.accelerationTimer = Math.min(MAX_ACCELERATION_TIMER, state.accelerationTimer + dt);
-    return;
-  }
-
-  state.accelerationTimer = Math.max(0, state.accelerationTimer - dt * 5);
-}
-
-export function getCurrentSpeed(state: FlightState) {
-  const acceleratedScale = Math.pow(2, state.accelerationTimer * 2);
-  return BASE_SPEED_KM_PER_SECOND * state.speedMultiplier * acceleratedScale;
-}
-
-export function getProximityLimitedSpeed(rawSpeedKmPerSecond: number, position: THREE.Vector3, targets: ProximityTarget[]) {
+export function getProximitySpeed(position: THREE.Vector3, targets: ProximityTarget[]) {
   const nearestTarget = getNearestSurfaceTarget(position, targets);
-  if (!nearestTarget) return rawSpeedKmPerSecond;
+  if (!nearestTarget) return MIN_PROXIMITY_SPEED_KM_PER_SECOND;
 
-  const proximityLimit = Math.max(
+  return Math.max(
     MIN_PROXIMITY_SPEED_KM_PER_SECOND,
     nearestTarget.distanceKm * PROXIMITY_SPEED_RATIO
   );
-
-  return Math.min(rawSpeedKmPerSecond, proximityLimit);
 }
 
 export function getNearestSurfaceTarget(position: THREE.Vector3, targets: ProximityTarget[]) {
