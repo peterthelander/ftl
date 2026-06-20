@@ -37,18 +37,8 @@ type StarData = {
   raHours: number;
   decDegrees: number;
   color: number;
-  markerSize: number;
   radiusKm: number;
 };
-
-function addPointMarker(object: THREE.Object3D, color: number, size: number) {
-  const markerGeometry = new THREE.BufferGeometry().setAttribute(
-    'position',
-    new THREE.BufferAttribute(new Float32Array([0, 0, 0]), 3)
-  );
-  const markerMaterial = new THREE.PointsMaterial({ color, size, sizeAttenuation: false });
-  object.add(new THREE.Points(markerGeometry, markerMaterial));
-}
 
 function getDirectionFromEquatorial(raHours: number, decDegrees: number) {
   const ra = (raHours / 24) * Math.PI * 2;
@@ -100,7 +90,6 @@ function createPlanet(
     Math.sin(data.orbitAngle) * data.distanceFromSunKm
   );
 
-  addPointMarker(planet, data.color, 9);
   labels.add(data.name, planet);
   orbitLine.position.copy(sun.position);
   scene.add(orbitLine);
@@ -114,7 +103,6 @@ function createStar(scene: THREE.Scene, labels: LabelManager, data: StarData) {
   const direction = getDirectionFromEquatorial(data.raHours, data.decDegrees);
 
   star.position.copy(direction.multiplyScalar(data.distanceLy * LIGHT_YEAR_KM));
-  addPointMarker(star, data.color, data.markerSize);
   labels.add(data.name, star);
   scene.add(star);
 
@@ -144,7 +132,6 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
     blending: THREE.AdditiveBlending
   });
   sun.add(new THREE.Mesh(haloGeometry, haloMaterial));
-  addPointMarker(sun, 0xffffff, 40);
   scene.add(sun);
   labels.add('Sun', sun);
   navigationTargets.push({ name: 'Sun', object: sun, radiusKm: 696340 });
@@ -246,7 +233,6 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
   const acMaterial = new THREE.MeshBasicMaterial({ color: 0xffaa00 });
   const alphaCentauri = new THREE.Mesh(acGeometry, acMaterial);
   alphaCentauri.position.set(0, 0, -41340000000000);
-  addPointMarker(alphaCentauri, 0xffaa00, 15);
   scene.add(alphaCentauri);
   labels.add('Alpha Centauri', alphaCentauri);
   navigationTargets.push({ name: 'Alpha Centauri', object: alphaCentauri, radiusKm: 850000 });
@@ -259,7 +245,6 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       raHours: 17.96,
       decDegrees: 4.7,
       color: 0xff7055,
-      markerSize: 9,
       radiusKm: 136000
     },
     {
@@ -268,7 +253,6 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       raHours: 10.94,
       decDegrees: 7.0,
       color: 0xff5f4d,
-      markerSize: 8,
       radiusKm: 77000
     },
     {
@@ -277,7 +261,6 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       raHours: 11.05,
       decDegrees: 35.97,
       color: 0xff8566,
-      markerSize: 8,
       radiusKm: 271000
     },
     {
@@ -286,7 +269,6 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       raHours: 6.75,
       decDegrees: -16.72,
       color: 0xbfdcff,
-      markerSize: 16,
       radiusKm: 1180000
     },
     {
@@ -295,7 +277,6 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       raHours: 3.55,
       decDegrees: -9.46,
       color: 0xffd38a,
-      markerSize: 10,
       radiusKm: 514000
     },
     {
@@ -304,7 +285,6 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       raHours: 7.66,
       decDegrees: 5.22,
       color: 0xe8f2ff,
-      markerSize: 13,
       radiusKm: 1420000
     },
     {
@@ -313,7 +293,6 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       raHours: 1.73,
       decDegrees: -15.94,
       color: 0xffd6a0,
-      markerSize: 10,
       radiusKm: 552000
     },
     {
@@ -322,7 +301,6 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       raHours: 18.62,
       decDegrees: 38.78,
       color: 0xd7e8ff,
-      markerSize: 15,
       radiusKm: 1680000
     },
     {
@@ -331,7 +309,6 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       raHours: 14.26,
       decDegrees: 19.18,
       color: 0xffb15f,
-      markerSize: 15,
       radiusKm: 17700000
     },
     {
@@ -340,7 +317,6 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       raHours: 5.92,
       decDegrees: 7.41,
       color: 0xff5b2e,
-      markerSize: 18,
       radiusKm: 500000000
     }
   ];
