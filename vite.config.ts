@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: process.env.GITHUB_ACTIONS ? '/ftl/' : '/'
+  // Relative paths work from both the GitHub Pages project URL and local previews.
+  base: './'
 });
