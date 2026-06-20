@@ -8,8 +8,8 @@ type AtmosphereInput = {
   sun: THREE.Object3D;
 };
 
-const atmosphereEntryAltitudeKm = 120000;
-const atmosphereFullEffectAltitudeKm = 12000;
+const atmosphereEntryAltitudeKm = 1000;
+const atmosphereFullEffectAltitudeKm = 100;
 const maxAtmosphereOpacity = 0.55;
 
 const surfaceNormal = new THREE.Vector3();
