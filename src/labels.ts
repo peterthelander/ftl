@@ -8,16 +8,26 @@ export type LabelManager = {
 };
 
 export function createLabelManager(overlay: HTMLDivElement, camera: THREE.Camera): LabelManager {
-  const targets: Array<{
-    depth: number;
-    distanceElement: HTMLDivElement;
-    element: HTMLDivElement;
-    object: THREE.Object3D;
-  }> = [];
-  const labelDepths = new Map<THREE.Object3D, number>();
+  const targets: Array<{ distanceElement: HTMLDivElement; element: HTMLDivElement; object: THREE.Object3D }> = [];
+  const labelParents = new Map<THREE.Object3D, THREE.Object3D | undefined>();
   const labelPosition = new THREE.Vector3();
-  const occupiedLabelPositions: Array<{ x: number; y: number }> = [];
+  const occupiedLabelPositions: Array<{
+    target: (typeof targets)[number];
+    x: number;
+    y: number;
+  }> = [];
   const minimumLabelSeparationPx = 90;
+
+  function isAncestor(ancestor: THREE.Object3D, object: THREE.Object3D) {
+    let parent = labelParents.get(object);
+
+    while (parent) {
+      if (parent === ancestor) return true;
+      parent = labelParents.get(parent);
+    }
+
+    return false;
+  }
 
   return {
     add(name: string, object: THREE.Object3D, parent?: THREE.Object3D) {
@@ -32,17 +42,14 @@ export function createLabelManager(overlay: HTMLDivElement, camera: THREE.Camera
 
       label.append(labelName, labelDistance);
       overlay.appendChild(label);
-      const depth = parent ? (labelDepths.get(parent) ?? 0) + 1 : 0;
-
-      labelDepths.set(object, depth);
-      targets.push({ depth, distanceElement: labelDistance, element: label, object });
+      labelParents.set(object, parent);
+      targets.push({ distanceElement: labelDistance, element: label, object });
     },
     update() {
       occupiedLabelPositions.length = 0;
 
       const sortedTargets = [...targets].sort(
-        (a, b) =>
-          a.depth - b.depth || camera.position.distanceTo(a.object.position) - camera.position.distanceTo(b.object.position)
+        (a, b) => camera.position.distanceTo(a.object.position) - camera.position.distanceTo(b.object.position)
       );
 
       for (const target of sortedTargets) {
@@ -58,12 +65,30 @@ export function createLabelManager(overlay: HTMLDivElement, camera: THREE.Camera
 
         const screenX = (labelPosition.x * 0.5 + 0.5) * window.innerWidth;
         const screenY = (-labelPosition.y * 0.5 + 0.5) * window.innerHeight;
-        const overlapsVisibleLabel = occupiedLabelPositions.some(
-          (position) =>
+        const replacedLabels: number[] = [];
+        let shouldShow = isVisible;
+
+        for (let index = 0; index < occupiedLabelPositions.length && shouldShow; index += 1) {
+          const position = occupiedLabelPositions[index];
+          const overlaps =
             Math.abs(position.x - screenX) < minimumLabelSeparationPx &&
-            Math.abs(position.y - screenY) < minimumLabelSeparationPx
-        );
-        const shouldShow = isVisible && !overlapsVisibleLabel;
+            Math.abs(position.y - screenY) < minimumLabelSeparationPx;
+
+          if (!overlaps) continue;
+
+          if (isAncestor(target.object, position.target.object)) {
+            replacedLabels.push(index);
+          } else {
+            shouldShow = false;
+          }
+        }
+
+        if (shouldShow) {
+          for (const index of replacedLabels.reverse()) {
+            occupiedLabelPositions[index].target.element.style.display = 'none';
+            occupiedLabelPositions.splice(index, 1);
+          }
+        }
 
         target.element.style.display = shouldShow ? 'block' : 'none';
 
@@ -73,7 +98,7 @@ export function createLabelManager(overlay: HTMLDivElement, camera: THREE.Camera
           target.element.style.left = `${screenX}px`;
           target.element.style.top = `${screenY}px`;
           target.distanceElement.innerText = formatDistanceKm(distanceKm);
-          occupiedLabelPositions.push({ x: screenX, y: screenY });
+          occupiedLabelPositions.push({ target, x: screenX, y: screenY });
         }
       }
     }
