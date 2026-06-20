@@ -136,7 +136,7 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
   labels.add('Sun', sun);
   navigationTargets.push({ name: 'Sun', object: sun, radiusKm: 696340 });
 
-  const sunLight = new THREE.DirectionalLight(0xffffff, 2.5);
+  const sunLight = new THREE.PointLight(0xffffff, 2.5, 0, 0);
   sunLight.position.copy(sun.position);
   scene.add(sunLight);
 
