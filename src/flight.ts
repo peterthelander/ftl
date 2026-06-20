@@ -9,6 +9,7 @@ import {
 } from './constants';
 
 export type ProximityTarget = {
+  name: string;
   object: THREE.Object3D;
   radiusKm: number;
 };
@@ -50,21 +51,29 @@ export function getCurrentSpeed(state: FlightState) {
 }
 
 export function getProximityLimitedSpeed(rawSpeedKmPerSecond: number, position: THREE.Vector3, targets: ProximityTarget[]) {
-  if (targets.length === 0) return rawSpeedKmPerSecond;
-
-  const nearestSurfaceDistance = targets.reduce((nearestDistance, target) => {
-    const centerDistance = position.distanceTo(target.object.position);
-    const surfaceDistance = Math.max(0, centerDistance - target.radiusKm);
-
-    return Math.min(nearestDistance, surfaceDistance);
-  }, Number.POSITIVE_INFINITY);
+  const nearestTarget = getNearestSurfaceTarget(position, targets);
+  if (!nearestTarget) return rawSpeedKmPerSecond;
 
   const proximityLimit = Math.max(
     MIN_PROXIMITY_SPEED_KM_PER_SECOND,
-    nearestSurfaceDistance * PROXIMITY_SPEED_RATIO
+    nearestTarget.distanceKm * PROXIMITY_SPEED_RATIO
   );
 
   return Math.min(rawSpeedKmPerSecond, proximityLimit);
+}
+
+export function getNearestSurfaceTarget(position: THREE.Vector3, targets: ProximityTarget[]) {
+  if (targets.length === 0) return null;
+
+  return targets.reduce<{ target: ProximityTarget; distanceKm: number } | null>((nearest, target) => {
+    const distanceKm = Math.max(0, position.distanceTo(target.object.position) - target.radiusKm);
+
+    if (!nearest || distanceKm < nearest.distanceKm) {
+      return { target, distanceKm };
+    }
+
+    return nearest;
+  }, null);
 }
 
 export function getSpeedRatio(speedKmPerSecond: number) {

@@ -52,7 +52,7 @@ function animate() {
     body.rotation.y += 0.0001;
   }
 
-  updateHud(dom, currentSpeed);
+  updateHud(dom, currentSpeed, camera.position, bodies.navigationTargets);
   updateAtmosphere({
     camera,
     earth: bodies.earth,

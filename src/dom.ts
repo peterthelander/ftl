@@ -3,6 +3,8 @@ export type DomElements = {
   speedDisplay: HTMLSpanElement;
   speedCDisplay: HTMLSpanElement;
   travelModeDisplay: HTMLSpanElement;
+  altitudeDisplay: HTMLSpanElement;
+  altitudeTargetDisplay: HTMLSpanElement;
   controlsHelp: HTMLDivElement;
   atmosphereOverlay: HTMLDivElement;
   labelsOverlay: HTMLDivElement;
@@ -24,6 +26,8 @@ export function getDomElements(): DomElements {
     speedDisplay: getRequiredElement<HTMLSpanElement>('speedDisplay'),
     speedCDisplay: getRequiredElement<HTMLSpanElement>('speedCDisplay'),
     travelModeDisplay: getRequiredElement<HTMLSpanElement>('travelModeDisplay'),
+    altitudeDisplay: getRequiredElement<HTMLSpanElement>('altitudeDisplay'),
+    altitudeTargetDisplay: getRequiredElement<HTMLSpanElement>('altitudeTargetDisplay'),
     controlsHelp: getRequiredElement<HTMLDivElement>('controlsHelp'),
     atmosphereOverlay: getRequiredElement<HTMLDivElement>('atmosphereOverlay'),
     labelsOverlay: getRequiredElement<HTMLDivElement>('labelsOverlay')
