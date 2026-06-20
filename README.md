@@ -51,6 +51,10 @@ Preview the production build:
 npm run preview
 ```
 
+## Live Site
+
+GitHub Pages deploys every push to `main`. Once GitHub Pages is enabled for the repository, the app is available at [peterthelander.github.io/ftl](https://peterthelander.github.io/ftl/).
+
 If you are developing on Windows with WSL, it is best to run `npm install`, `npm run dev`, and `npm run build` from the same WSL environment where the repo lives. Mixing Windows Node with WSL `node_modules` can cause native dependency issues.
 
 ## Project Structure

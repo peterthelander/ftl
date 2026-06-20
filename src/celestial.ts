@@ -3,6 +3,8 @@ import * as THREE from 'three';
 import { LIGHT_YEAR_KM } from './constants';
 import type { LabelManager } from './labels';
 
+const textureBaseUrl = `${import.meta.env.BASE_URL}textures/`;
+
 export type CelestialBodies = {
   sun: THREE.Mesh;
   earth: THREE.Mesh;
@@ -151,7 +153,7 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
 
   const earthGeometry = new THREE.SphereGeometry(earthRadiusKm, 64, 64);
   const earthMaterial = new THREE.MeshStandardMaterial({
-    map: textureLoader.load('/textures/planets/earth_atmos_2048.jpg')
+    map: textureLoader.load(`${textureBaseUrl}planets/earth_atmos_2048.jpg`)
   });
   const earth = new THREE.Mesh(earthGeometry, earthMaterial);
   scene.add(earth);
@@ -161,7 +163,7 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
 
   const moonGeometry = new THREE.SphereGeometry(1737, 32, 32);
   const moonMaterial = new THREE.MeshStandardMaterial({
-    map: textureLoader.load('/textures/planets/moon_1024.jpg')
+    map: textureLoader.load(`${textureBaseUrl}planets/moon_1024.jpg`)
   });
   const moon = new THREE.Mesh(moonGeometry, moonMaterial);
   moon.position.set(0, 0, -384400);
@@ -180,7 +182,7 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       distanceFromSunKm: 57909227,
       orbitAngle: 2.35,
       color: 0xffffff,
-      texturePath: '/textures/planets/mercury_2k.jpg'
+      texturePath: `${textureBaseUrl}planets/mercury_2k.jpg`
     },
     {
       name: 'Venus',
@@ -188,7 +190,7 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       distanceFromSunKm: 108209475,
       orbitAngle: -2.65,
       color: 0xffffff,
-      texturePath: '/textures/planets/venus_surface_2k.jpg'
+      texturePath: `${textureBaseUrl}planets/venus_surface_2k.jpg`
     },
     {
       name: 'Mars',
@@ -196,7 +198,7 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       distanceFromSunKm: 227943824,
       orbitAngle: 3.6,
       color: 0xffffff,
-      texturePath: '/textures/planets/mars_2k.jpg'
+      texturePath: `${textureBaseUrl}planets/mars_2k.jpg`
     },
     {
       name: 'Jupiter',
@@ -204,7 +206,7 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       distanceFromSunKm: 778340821,
       orbitAngle: 0.7,
       color: 0xffffff,
-      texturePath: '/textures/planets/jupiter_2k.jpg'
+      texturePath: `${textureBaseUrl}planets/jupiter_2k.jpg`
     },
     {
       name: 'Saturn',
@@ -212,7 +214,7 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       distanceFromSunKm: 1426666422,
       orbitAngle: -0.45,
       color: 0xffffff,
-      texturePath: '/textures/planets/saturn_2k.jpg'
+      texturePath: `${textureBaseUrl}planets/saturn_2k.jpg`
     },
     {
       name: 'Uranus',
@@ -220,7 +222,7 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       distanceFromSunKm: 2870658186,
       orbitAngle: 2.05,
       color: 0xffffff,
-      texturePath: '/textures/planets/uranus_2k.jpg'
+      texturePath: `${textureBaseUrl}planets/uranus_2k.jpg`
     },
     {
       name: 'Neptune',
@@ -228,7 +230,7 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       distanceFromSunKm: 4498396441,
       orbitAngle: -2.2,
       color: 0xffffff,
-      texturePath: '/textures/planets/neptune_2k.jpg'
+      texturePath: `${textureBaseUrl}planets/neptune_2k.jpg`
     }
   ];
 
@@ -359,12 +361,12 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
 export function createSkybox(scene: THREE.Scene) {
   const cubeTextureLoader = new THREE.CubeTextureLoader();
   const skyboxTexture = cubeTextureLoader.load([
-    '/textures/skybox/milkyway/dark-s_px.jpg',
-    '/textures/skybox/milkyway/dark-s_nx.jpg',
-    '/textures/skybox/milkyway/dark-s_py.jpg',
-    '/textures/skybox/milkyway/dark-s_ny.jpg',
-    '/textures/skybox/milkyway/dark-s_pz.jpg',
-    '/textures/skybox/milkyway/dark-s_nz.jpg'
+    `${textureBaseUrl}skybox/milkyway/dark-s_px.jpg`,
+    `${textureBaseUrl}skybox/milkyway/dark-s_nx.jpg`,
+    `${textureBaseUrl}skybox/milkyway/dark-s_py.jpg`,
+    `${textureBaseUrl}skybox/milkyway/dark-s_ny.jpg`,
+    `${textureBaseUrl}skybox/milkyway/dark-s_pz.jpg`,
+    `${textureBaseUrl}skybox/milkyway/dark-s_nz.jpg`
   ]);
 
   skyboxTexture.colorSpace = THREE.SRGBColorSpace;
