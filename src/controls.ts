@@ -2,7 +2,7 @@ import * as THREE from 'three';
 
 import { ROLL_SPEED } from './constants';
 
-type KeyState = {
+export type KeyState = {
   w: boolean;
   a: boolean;
   s: boolean;
@@ -14,7 +14,6 @@ type KeyState = {
 export type Controls = {
   keys: KeyState;
   updateCameraRotation: (camera: THREE.Camera, dt: number) => void;
-  moveCamera: (camera: THREE.Camera, currentSpeed: number, dt: number) => void;
 };
 
 export function createControls(
@@ -62,24 +61,6 @@ export function createControls(
     updateCameraRotation(camera: THREE.Camera, dt: number) {
       if (keys.q) camera.rotateZ(ROLL_SPEED * dt);
       if (keys.e) camera.rotateZ(-ROLL_SPEED * dt);
-    },
-    moveCamera(camera: THREE.Camera, currentSpeed: number, dt: number) {
-      let moveX = 0;
-      let moveZ = 0;
-
-      if (keys.w) moveZ -= 1;
-      if (keys.s) moveZ += 1;
-      if (keys.a) moveX -= 1;
-      if (keys.d) moveX += 1;
-
-      if (moveX !== 0 || moveZ !== 0) {
-        const length = Math.sqrt(moveX * moveX + moveZ * moveZ);
-        moveX /= length;
-        moveZ /= length;
-      }
-
-      camera.translateX(moveX * currentSpeed * dt);
-      camera.translateZ(moveZ * currentSpeed * dt);
     }
   };
 }

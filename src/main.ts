@@ -4,7 +4,7 @@ import { updateAtmosphere } from './atmosphere';
 import { createCelestialBodies, createSkybox } from './celestial';
 import { createControls } from './controls';
 import { getDomElements } from './dom';
-import { getProximitySpeed } from './flight';
+import { createFlightState, getFlightSpeed, getProximitySpeed, updateFlight } from './flight';
 import { updateHud } from './hud';
 import { createLabelManager } from './labels';
 import { recenterWorld } from './world';
@@ -28,6 +28,7 @@ const labels = createLabelManager(dom.labelsOverlay, camera);
 const bodies = createCelestialBodies(scene, labels);
 const skybox = createSkybox(scene);
 
+const flightState = createFlightState();
 const controls = createControls(dom.canvas, dom.controlsHelp, camera);
 const clock = new THREE.Clock();
 
@@ -44,9 +45,10 @@ function animate() {
 
   controls.updateCameraRotation(camera, dt);
 
-  const currentSpeed = getProximitySpeed(camera.position, bodies.navigationTargets);
-  controls.moveCamera(camera, currentSpeed, dt);
+  const speedLimit = getProximitySpeed(camera.position, bodies.navigationTargets);
+  updateFlight(flightState, camera, controls.keys, speedLimit, dt);
   recenterWorld(scene, camera);
+  const currentSpeed = getFlightSpeed(flightState);
 
   for (const body of bodies.rotatingBodies) {
     body.rotation.y += 0.0001;

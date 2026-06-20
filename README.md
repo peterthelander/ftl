@@ -4,7 +4,7 @@ FTL is a browser-based 3D space flight toy built with TypeScript, Vite, and Thre
 
 ## Features
 
-- Free-flight first-person controls with local-axis mouse look.
+- Inertial first-person flight with local-axis mouse look and automatic damping.
 - Solar system landmarks: Sun, Moon, Mercury through Neptune.
 - Nearby and famous star landmarks including Alpha Centauri, Sirius, Barnard's Star, Vega, Arcturus, and Betelgeuse.
 - On-object labels that show live distance from the camera.
