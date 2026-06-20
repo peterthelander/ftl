@@ -1,0 +1,8 @@
+export const SPEED_OF_LIGHT_KM_PER_SECOND = 299792;
+export const LIGHT_YEAR_KM = 9460730472580.8;
+
+export const BASE_SPEED_KM_PER_SECOND = 50.0;
+export const MAX_ACCELERATION_TIMER = 18.0;
+export const ROLL_SPEED = 2.0;
+export const PROXIMITY_SPEED_RATIO = 0.35;
+export const MIN_PROXIMITY_SPEED_KM_PER_SECOND = 25;

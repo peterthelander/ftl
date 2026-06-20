@@ -1,0 +1,68 @@
+import * as THREE from 'three';
+
+import { LIGHT_YEAR_KM } from './constants';
+
+export type LabelManager = {
+  add: (name: string, object: THREE.Object3D) => void;
+  update: () => void;
+};
+
+function formatDistance(distanceKm: number) {
+  if (distanceKm >= LIGHT_YEAR_KM * 0.01) {
+    return `${(distanceKm / LIGHT_YEAR_KM).toFixed(3)} ly`;
+  }
+
+  if (distanceKm >= 1_000_000_000) {
+    return `${(distanceKm / 1_000_000_000).toFixed(2)}B km`;
+  }
+
+  if (distanceKm >= 1_000_000) {
+    return `${(distanceKm / 1_000_000).toFixed(2)}M km`;
+  }
+
+  return `${distanceKm.toLocaleString(undefined, { maximumFractionDigits: 0 })} km`;
+}
+
+export function createLabelManager(overlay: HTMLDivElement, camera: THREE.Camera): LabelManager {
+  const targets: Array<{ distanceElement: HTMLDivElement; element: HTMLDivElement; object: THREE.Object3D }> = [];
+  const labelPosition = new THREE.Vector3();
+
+  return {
+    add(name: string, object: THREE.Object3D) {
+      const label = document.createElement('div');
+      const labelName = document.createElement('div');
+      const labelDistance = document.createElement('div');
+
+      label.className = 'spaceLabel';
+      labelName.className = 'spaceLabelName';
+      labelDistance.className = 'spaceLabelDistance';
+      labelName.innerText = name;
+
+      label.append(labelName, labelDistance);
+      overlay.appendChild(label);
+      targets.push({ distanceElement: labelDistance, element: label, object });
+    },
+    update() {
+      for (const target of targets) {
+        labelPosition.copy(target.object.position).project(camera);
+
+        const isVisible =
+          labelPosition.z < 1 &&
+          labelPosition.x >= -1 &&
+          labelPosition.x <= 1 &&
+          labelPosition.y >= -1 &&
+          labelPosition.y <= 1;
+
+        target.element.style.display = isVisible ? 'block' : 'none';
+
+        if (isVisible) {
+          const distanceKm = camera.position.distanceTo(target.object.position);
+
+          target.element.style.left = `${(labelPosition.x * 0.5 + 0.5) * window.innerWidth}px`;
+          target.element.style.top = `${(-labelPosition.y * 0.5 + 0.5) * window.innerHeight}px`;
+          target.distanceElement.innerText = formatDistance(distanceKm);
+        }
+      }
+    }
+  };
+}
