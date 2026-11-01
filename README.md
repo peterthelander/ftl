@@ -2,6 +2,19 @@
 
 FTL is a browser-based 3D space flight toy built with TypeScript, Vite, and Three.js. It uses real-ish astronomical scale, local planet textures, object labels with distance readouts, orbit guides, proximity-aware flight speed, and a lightweight atmospheric sky fade near Earth.
 
+**Status:** interactive browser prototype, designed for desktop mouse and keyboard.
+
+[Try the space-flight demo](https://peterthelander.github.io/ftl/).
+Click the scene to capture the mouse, use W/S for thrust, and press Esc to release it.
+
+## Engineering focus
+
+The simulation explores a practical graphics problem: presenting astronomical
+scale while retaining useful controls near a planet. Proximity-aware speed limits,
+a floating-origin shift, and distance labels support navigation across very different
+scales. Rendering, controls, movement, and HUD updates live in separate modules.
+It is a flight toy, not a physically accurate orbital simulation.
+
 ## Features
 
 - Inertial first-person flight with local-axis mouse look and automatic damping.
@@ -29,7 +42,7 @@ FTL is a browser-based 3D space flight toy built with TypeScript, Vite, and Thre
 Install dependencies:
 
 ```bash
-npm install
+npm ci
 ```
 
 Run the dev server:
@@ -54,7 +67,7 @@ npm run preview
 
 GitHub Pages deploys every push to `main`. Once GitHub Pages is enabled for the repository, the app is available at [peterthelander.github.io/ftl](https://peterthelander.github.io/ftl/).
 
-If you are developing on Windows with WSL, it is best to run `npm install`, `npm run dev`, and `npm run build` from the same WSL environment where the repo lives. Mixing Windows Node with WSL `node_modules` can cause native dependency issues.
+If you are developing on Windows with WSL, it is best to run `npm ci`, `npm run dev`, and `npm run build` from the same WSL environment where the repo lives. Mixing Windows Node with WSL `node_modules` can cause native dependency issues.
 
 ## Project Structure
 
