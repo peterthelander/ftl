@@ -8,11 +8,12 @@ import { createFlightState, getFlightSpeed, getProximitySpeed, updateFlight } fr
 import { updateHud } from './hud';
 import { createLabelManager } from './labels';
 import { recenterWorld } from './world';
+import { updateStarGlows } from './stars';
 
 const dom = getDomElements();
 const scene = new THREE.Scene();
 
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1e14);
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1e17);
 camera.rotation.order = 'YXZ';
 camera.position.set(0, 0, 8000);
 
@@ -69,6 +70,7 @@ function animate() {
     skybox,
     distantStars: bodies.distantStars
   });
+  updateStarGlows(bodies.stars, camera, window.innerHeight);
   labels.update();
   renderer.render(scene, camera);
 }

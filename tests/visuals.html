@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:0;background:#000}canvas{display:block}</style></head><body>
+<script type="module">
+import * as THREE from 'three';
+import { createCelestialBodies } from '/src/celestial.ts';
+import { updateStarGlows } from '/src/stars.ts';
+import { createLabelManager } from '/src/labels.ts';
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(60, 1, 0.1, 1e17);
+const renderer = new THREE.WebGLRenderer({ antialias: true, logarithmicDepthBuffer: true });
+renderer.setSize(400, 400);
+document.body.append(renderer.domElement);
+const overlay = document.createElement('div');
+const labels = createLabelManager(overlay, camera);
+const bodies = createCelestialBodies(scene, labels);
+function viewStar(name, radii = 5) {
+  const target = bodies.navigationTargets.find(t => t.name === name);
+  // Remove astronomical translation for a stable close-up, as the flight app's floating origin does.
+  const offset = target.object.position.clone();
+  for (const child of scene.children) child.position.sub(offset);
+  camera.position.set(0, 0, target.radiusKm * radii);
+  camera.lookAt(target.object.position);
+  camera.updateMatrixWorld();
+  updateStarGlows(bodies.stars, camera, 400);
+  renderer.render(scene, camera);
+}
+function viewOrbits() {
+  const sun = bodies.sun.position;
+  camera.position.copy(sun).add(new THREE.Vector3(0, 1.1e9, 4e8));
+  camera.lookAt(sun);
+  camera.updateMatrixWorld();
+  updateStarGlows(bodies.stars, camera, 400);
+  renderer.render(scene, camera);
+}
+window.visuals = { scene, camera, renderer, bodies, labels, overlay, viewStar, viewOrbits, updateStarGlows };
+</script></body></html>

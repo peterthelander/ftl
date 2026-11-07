@@ -15,15 +15,19 @@ The simulation explores a practical graphics problem: presenting astronomical
 scale while retaining useful controls near a planet. Proximity-aware speed limits,
 a floating-origin shift, and distance labels support navigation across very different
 scales. Rendering, controls, movement, and HUD updates live in separate modules.
-It is a flight toy, not a physically accurate orbital simulation.
+It is a flight toy, not a physically accurate orbital simulation. Stellar surfaces
+keep their modeled radii; a minimum apparent corona makes unresolved stars visible
+from far away without enlarging their physical surfaces. Colors and surface mottling
+are illustrative. The view distance includes all of the listed star landmarks.
 
 ## Features
 
 - Inertial first-person flight with local-axis mouse look and automatic damping.
 - Solar system landmarks: Sun, Moon, Mercury through Neptune.
+- Glowing stellar spheres using the existing approximate stellar radii, with warm/cool surface colors.
 - Nearby and famous star landmarks including Alpha Centauri, Sirius, Barnard's Star, Vega, Arcturus, and Betelgeuse.
 - On-object labels that show live distance from the camera.
-- Orbit guide lines for planets and the Moon.
+- Bright mint planet orbit guides and pale-blue Moon guides, with thicker cores and a soft glow.
 - Proximity-based speed limiting to make approaches easier.
 - Earth atmosphere overlay that fades from space into daylight, sunset, or night sky tones.
 - Local texture assets for offline-friendly development.
@@ -83,7 +87,8 @@ npm test
 ```
 
 The checks cover two-thumb movement and look, touch cancellation, braking,
-landscape layout, focus loss, and desktop mouse/keyboard input.
+landscape layout, focus loss, and desktop mouse/keyboard input. Visual checks also
+verify stellar radii, distant-star visibility, and glowing orbit guides.
 
 ## Live Site
 
@@ -98,6 +103,8 @@ src/
   atmosphere.ts  Earth atmosphere overlay and sun-angle color shift
   celestial.ts   Celestial body creation, textures, stars, orbit lines
   constants.ts   Shared physical and flight constants
+  stars.ts       Stellar surfaces, coronas, and distance-aware glow sizing
+  orbits.ts      Wide orbit lines with bright cores and soft outer glows
   controls.ts    Pointer lock, mouse, keyboard, and multi-touch flight input
   dom.ts         Required DOM element lookup
   flight.ts      Speed model and proximity limiting

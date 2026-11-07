@@ -1,12 +1,15 @@
 import * as THREE from 'three';
 
 import { LIGHT_YEAR_KM } from './constants';
+import { createOrbitLine } from './orbits';
+import { createStellarSphere } from './stars';
 import type { LabelManager } from './labels';
 
 const textureBaseUrl = `${import.meta.env.BASE_URL}textures/`;
 
 export type CelestialBodies = {
   sun: THREE.Mesh;
+  stars: THREE.Mesh[];
   earth: THREE.Mesh;
   earthRadiusKm: number;
   moon: THREE.Mesh;
@@ -37,6 +40,7 @@ type StarData = {
   raHours: number;
   decDegrees: number;
   radiusKm: number;
+  color: number;
 };
 
 function getDirectionFromEquatorial(raHours: number, decDegrees: number) {
@@ -44,28 +48,6 @@ function getDirectionFromEquatorial(raHours: number, decDegrees: number) {
   const dec = THREE.MathUtils.degToRad(decDegrees);
 
   return new THREE.Vector3(Math.cos(dec) * Math.cos(ra), Math.sin(dec), -Math.cos(dec) * Math.sin(ra));
-}
-
-function createOrbitLine(radiusKm: number, color = 0x4cffb5) {
-  const segments = 256;
-  const positions: number[] = [];
-
-  for (let index = 0; index < segments; index += 1) {
-    const angle = (index / segments) * Math.PI * 2;
-    positions.push(Math.cos(angle) * radiusKm, 0, Math.sin(angle) * radiusKm);
-  }
-
-  const geometry = new THREE.BufferGeometry();
-  geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-
-  const material = new THREE.LineBasicMaterial({
-    color,
-    transparent: true,
-    opacity: 0.22,
-    depthWrite: false
-  });
-
-  return new THREE.LineLoop(geometry, material);
 }
 
 function createPlanet(
@@ -98,7 +80,7 @@ function createPlanet(
 }
 
 function createStar(scene: THREE.Scene, labels: LabelManager, data: StarData) {
-  const star = new THREE.Object3D();
+  const star = createStellarSphere(data.radiusKm, data.color);
   const direction = getDirectionFromEquatorial(data.raHours, data.decDegrees);
 
   star.position.copy(direction.multiplyScalar(data.distanceLy * LIGHT_YEAR_KM));
@@ -118,19 +100,9 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
   const ambientLight = new THREE.AmbientLight(0xffffff, 0.1);
   scene.add(ambientLight);
 
-  const sunGeometry = new THREE.SphereGeometry(696340, 64, 64);
-  const sunMaterial = new THREE.MeshBasicMaterial({ color: 0xfff5e6 });
-  const sun = new THREE.Mesh(sunGeometry, sunMaterial);
+  const sun = createStellarSphere(696340, 0xffe5a8);
+  const stars: THREE.Mesh[] = [sun];
   sun.position.set(149597870, 0, 0);
-
-  const haloGeometry = new THREE.SphereGeometry(720000, 32, 32);
-  const haloMaterial = new THREE.MeshBasicMaterial({
-    color: 0xffaa00,
-    transparent: true,
-    opacity: 0.3,
-    blending: THREE.AdditiveBlending
-  });
-  sun.add(new THREE.Mesh(haloGeometry, haloMaterial));
   scene.add(sun);
   labels.add('Sun', sun);
   navigationTargets.push({ name: 'Sun', object: sun, radiusKm: 696340 });
@@ -231,9 +203,8 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
     rotatingBodies.push(planet);
   }
 
-  const acGeometry = new THREE.SphereGeometry(850000, 32, 32);
-  const acMaterial = new THREE.MeshBasicMaterial({ color: 0xffaa00 });
-  const alphaCentauri = new THREE.Mesh(acGeometry, acMaterial);
+  const alphaCentauri = createStellarSphere(850000, 0xffe1a3);
+  stars.push(alphaCentauri);
   alphaCentauri.position.set(0, 0, -41340000000000);
   scene.add(alphaCentauri);
   labels.add('Alpha Centauri', alphaCentauri);
@@ -246,70 +217,80 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
       distanceLy: 5.96,
       raHours: 17.96,
       decDegrees: 4.7,
-      radiusKm: 136000
+      radiusKm: 136000,
+      color: 0xff9970
     },
     {
       name: 'Wolf 359',
       distanceLy: 7.86,
       raHours: 10.94,
       decDegrees: 7.0,
-      radiusKm: 77000
+      radiusKm: 77000,
+      color: 0xff7850
     },
     {
       name: 'Lalande 21185',
       distanceLy: 8.31,
       raHours: 11.05,
       decDegrees: 35.97,
-      radiusKm: 271000
+      radiusKm: 271000,
+      color: 0xffad7a
     },
     {
       name: 'Sirius',
       distanceLy: 8.6,
       raHours: 6.75,
       decDegrees: -16.72,
-      radiusKm: 1180000
+      radiusKm: 1180000,
+      color: 0xd4e7ff
     },
     {
       name: 'Epsilon Eridani',
       distanceLy: 10.5,
       raHours: 3.55,
       decDegrees: -9.46,
-      radiusKm: 514000
+      radiusKm: 514000,
+      color: 0xffd099
     },
     {
       name: 'Procyon',
       distanceLy: 11.5,
       raHours: 7.66,
       decDegrees: 5.22,
-      radiusKm: 1420000
+      radiusKm: 1420000,
+      color: 0xfff1ce
     },
     {
       name: 'Tau Ceti',
       distanceLy: 11.9,
       raHours: 1.73,
       decDegrees: -15.94,
-      radiusKm: 552000
+      radiusKm: 552000,
+      color: 0xffe4ac
     },
     {
       name: 'Vega',
       distanceLy: 25.0,
       raHours: 18.62,
       decDegrees: 38.78,
-      radiusKm: 1680000
+      radiusKm: 1680000,
+      color: 0xccddff
     },
     {
       name: 'Arcturus',
       distanceLy: 36.7,
       raHours: 14.26,
       decDegrees: 19.18,
-      radiusKm: 17700000
+      radiusKm: 17700000,
+      color: 0xffbb78
     },
     {
       name: 'Betelgeuse',
       distanceLy: 550,
       raHours: 5.92,
       decDegrees: 7.41,
-      radiusKm: 500000000
+      radiusKm: 500000000,
+      color: 0xff9860
     }
   ];
 
@@ -317,10 +298,12 @@ export function createCelestialBodies(scene: THREE.Scene, labels: LabelManager):
     const star = createStar(scene, labels, data);
     navigationTargets.push({ name: data.name, object: star, radiusKm: data.radiusKm });
     distantStars.push(star);
+    stars.push(star);
   }
 
   return {
     sun,
+    stars,
     earth,
     earthRadiusKm,
     moon,

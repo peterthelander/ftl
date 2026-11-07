@@ -7,7 +7,7 @@ export type LabelManager = {
   update: () => void;
 };
 
-export function createLabelManager(overlay: HTMLDivElement, camera: THREE.Camera): LabelManager {
+export function createLabelManager(overlay: HTMLDivElement, camera: THREE.PerspectiveCamera): LabelManager {
   const targets: Array<{ distanceElement: HTMLDivElement; element: HTMLDivElement; object: THREE.Object3D }> = [];
   const labelParents = new Map<THREE.Object3D, THREE.Object3D | undefined>();
   const labelPosition = new THREE.Vector3();
@@ -46,6 +46,7 @@ export function createLabelManager(overlay: HTMLDivElement, camera: THREE.Camera
       targets.push({ distanceElement: labelDistance, element: label, object });
     },
     update() {
+      camera.updateMatrixWorld();
       occupiedLabelPositions.length = 0;
 
       const sortedTargets = [...targets].sort(
@@ -53,11 +54,15 @@ export function createLabelManager(overlay: HTMLDivElement, camera: THREE.Camera
       );
 
       for (const target of sortedTargets) {
+        labelPosition.copy(target.object.position).applyMatrix4(camera.matrixWorldInverse);
+        const viewDepth = -labelPosition.z;
         labelPosition.copy(target.object.position).project(camera);
 
         const isVisible =
           target.object.visible &&
-          labelPosition.z < 1 &&
+          // Projected Z rounds to 1 at stellar distances. Test view depth
+          // directly instead so distant stars retain their navigation labels.
+          viewDepth > camera.near && viewDepth < camera.far &&
           labelPosition.x >= -1 &&
           labelPosition.x <= 1 &&
           labelPosition.y >= -1 &&

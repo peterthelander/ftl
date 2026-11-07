@@ -1,0 +1,13 @@
+<!doctype html><html><body style="margin:0">
+<canvas id="canvas" width="800" height="600"></canvas><div id="help"></div>
+<div id="joystick"><div id="thumb"></div></div><button id="brake">Brake</button>
+<script type="module">
+import * as THREE from 'three';
+import { createControls } from '/src/controls.ts';
+import { createFlightState, updateFlight, getFlightSpeed } from '/src/flight.ts';
+const camera = new THREE.PerspectiveCamera();
+const controls = createControls(document.getElementById('canvas'), document.getElementById('help'), camera,
+  document.getElementById('joystick'), document.getElementById('thumb'), document.getElementById('brake'));
+const flight = createFlightState();
+window.desktop = { camera, controls, flight, updateFlight, getFlightSpeed };
+</script></body></html>
