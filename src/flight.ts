@@ -17,6 +17,8 @@ export type FlightInput = {
   a: boolean;
   s: boolean;
   d: boolean;
+  touchX?: number;
+  touchY?: number;
 };
 
 export type FlightState = {
@@ -38,10 +40,16 @@ export function updateFlight(
   speedLimitKmPerSecond: number,
   dt: number
 ) {
-  movementDirection.set(Number(input.d) - Number(input.a), 0, Number(input.s) - Number(input.w));
+  movementDirection.set(
+    Number(input.d) - Number(input.a) + (input.touchX ?? 0),
+    0,
+    Number(input.s) - Number(input.w) + (input.touchY ?? 0)
+  );
 
   if (movementDirection.lengthSq() > 0) {
-    movementDirection.normalize().applyQuaternion(camera.quaternion);
+    // Preserve gradual thumbstick input; cap diagonal and combined inputs.
+    if (movementDirection.lengthSq() > 1) movementDirection.normalize();
+    movementDirection.applyQuaternion(camera.quaternion);
     state.velocityKmPerSecond.addScaledVector(
       movementDirection,
       speedLimitKmPerSecond * accelerationToSpeedLimitRatio * dt

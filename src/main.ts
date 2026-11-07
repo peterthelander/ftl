@@ -29,7 +29,7 @@ const bodies = createCelestialBodies(scene, labels);
 const skybox = createSkybox(scene);
 
 const flightState = createFlightState();
-const controls = createControls(dom.canvas, dom.controlsHelp, camera);
+const controls = createControls(dom.canvas, dom.controlsHelp, camera, dom.joystick, dom.joystickThumb, dom.brakeButton);
 const clock = new THREE.Clock();
 
 window.addEventListener('resize', () => {
@@ -46,7 +46,11 @@ function animate() {
   controls.updateCameraRotation(camera, dt);
 
   const speedLimit = getProximitySpeed(camera.position, bodies.navigationTargets);
-  updateFlight(flightState, camera, controls.keys, speedLimit, dt);
+  if (controls.braking) {
+    flightState.velocityKmPerSecond.set(0, 0, 0);
+  } else {
+    updateFlight(flightState, camera, controls.keys, speedLimit, dt);
+  }
   recenterWorld(scene, camera);
   const currentSpeed = getFlightSpeed(flightState);
 

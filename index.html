@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>FTL - 3D Space Simulator</title>
     <style>
       html, body {
@@ -16,6 +16,7 @@
       }
       canvas {
         display: block;
+        touch-action: none;
       }
       #hud {
         position: absolute;
@@ -108,6 +109,116 @@
       #crosshair::after {
         top: 0; left: 9px; width: 2px; height: 20px;
       }
+      body { overscroll-behavior: none; }
+      #touchControls { display: none; }
+      .mobile-help { display: none; }
+      #touchControls {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+      #joystick {
+        position: absolute;
+        left: max(24px, env(safe-area-inset-left));
+        bottom: max(24px, env(safe-area-inset-bottom));
+        width: 124px;
+        height: 124px;
+        border: 1px solid rgba(125, 255, 180, 0.6);
+        border-radius: 50%;
+        background: rgba(0, 20, 12, 0.5);
+        pointer-events: auto;
+        touch-action: none;
+        display: grid;
+        place-items: center;
+      }
+      #joystick::before {
+        content: 'FORWARD';
+        position: absolute;
+        top: 12px;
+        color: #b8ffb8;
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+      #joystick::after {
+        content: 'REVERSE';
+        position: absolute;
+        bottom: 12px;
+        color: #b8ffb8;
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+      #joystickThumb {
+        width: 46px;
+        height: 46px;
+        border: 1px solid #b8ffb8;
+        border-radius: 50%;
+        background: rgba(90, 240, 145, 0.4);
+        pointer-events: none;
+      }
+      #joystick.active, #brakeButton.active {
+        background-color: rgba(40, 120, 75, 0.7);
+        border-color: #d8ffd8;
+      }
+      #brakeButton {
+        position: absolute;
+        right: max(24px, env(safe-area-inset-right));
+        bottom: max(30px, env(safe-area-inset-bottom));
+        width: 84px;
+        min-height: 56px;
+        border: 1px solid rgba(125, 255, 180, 0.7);
+        border-radius: 28px;
+        background: rgba(0, 20, 12, 0.65);
+        color: #b8ffb8;
+        font: bold 13px monospace;
+        pointer-events: auto;
+        touch-action: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .touch-look-hint {
+        position: absolute;
+        right: max(24px, env(safe-area-inset-right));
+        bottom: max(108px, calc(env(safe-area-inset-bottom) + 78px));
+        color: #b8ffb8;
+        font-size: 11px;
+        text-shadow: 0 1px 3px #000;
+      }
+      body.touch-controls #touchControls { display: block; }
+      body.touch-controls .desktop-help { display: none; }
+      body.touch-controls .mobile-help { display: block; }
+      body.touch-controls #controlsHelp {
+        right: max(12px, env(safe-area-inset-right));
+        bottom: 176px;
+        font-size: 11px;
+        padding: 8px;
+      }
+      @media (any-pointer: coarse) {
+        #touchControls { display: block; }
+        .desktop-help { display: none; }
+        .mobile-help { display: block; }
+        #controlsHelp {
+          right: max(12px, env(safe-area-inset-right));
+          bottom: 176px;
+          font-size: 11px;
+          padding: 8px;
+        }
+      }
+      @media (max-width: 600px), (max-height: 500px) {
+        #hud {
+          top: max(12px, env(safe-area-inset-top));
+          left: max(12px, env(safe-area-inset-left));
+          right: max(12px, env(safe-area-inset-right));
+          width: fit-content;
+          max-width: calc(100% - 48px);
+          padding: 8px;
+          font-size: 11px;
+        }
+        .spaceLabel { font-size: 11px; }
+        .spaceLabelDistance { font-size: 10px; }
+        #controlsHelp { display: none; }
+      }
     </style>
   </head>
   <body>
@@ -115,17 +226,25 @@
     <div id="atmosphereOverlay"></div>
     <div id="labelsOverlay"></div>
     <div id="controlsHelp">
-      <div>Click: mouse look</div>
-      <div>W/S: thrust/brake</div>
-      <div>A/D: strafe</div>
-      <div>Q/E: roll</div>
+      <div class="desktop-help">Click: mouse look</div>
+      <div class="desktop-help">W/S: forward/reverse</div>
+      <div class="desktop-help">A/D: strafe · Q/E: roll</div>
+      <div class="mobile-help">Left stick: move · swipe scene: look</div>
+      <div class="mobile-help">Release: coast down · hold brake: stop</div>
     </div>
       <div id="hud">
         <div>Speed: <span id="speedDisplay">0</span> km/s (<span id="speedCDisplay">0</span>x c)</div>
         <div>Mode: <span id="travelModeDisplay">Sublight</span></div>
         <div>Altitude: <span id="altitudeDisplay">0 km</span> (<span id="altitudeTargetDisplay">Earth</span>)</div>
       </div>
-    <canvas id="simCanvas"></canvas>
+    <div id="touchControls" aria-label="Touch flight controls">
+      <div id="joystick" aria-label="Movement thumbstick: up forward, down reverse, left and right strafe">
+        <div id="joystickThumb"></div>
+      </div>
+      <div class="touch-look-hint">SWIPE TO LOOK</div>
+      <button id="brakeButton" type="button" aria-label="Hold to brake">BRAKE</button>
+    </div>
+    <canvas id="simCanvas" aria-label="Space view. Swipe to look around."></canvas>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

@@ -1,5 +1,8 @@
 export type DomElements = {
   canvas: HTMLCanvasElement;
+  joystick: HTMLDivElement;
+  joystickThumb: HTMLDivElement;
+  brakeButton: HTMLButtonElement;
   speedDisplay: HTMLSpanElement;
   speedCDisplay: HTMLSpanElement;
   travelModeDisplay: HTMLSpanElement;
@@ -23,6 +26,9 @@ function getRequiredElement<T extends HTMLElement>(id: string) {
 export function getDomElements(): DomElements {
   return {
     canvas: getRequiredElement<HTMLCanvasElement>('simCanvas'),
+    joystick: getRequiredElement<HTMLDivElement>('joystick'),
+    joystickThumb: getRequiredElement<HTMLDivElement>('joystickThumb'),
+    brakeButton: getRequiredElement<HTMLButtonElement>('brakeButton'),
     speedDisplay: getRequiredElement<HTMLSpanElement>('speedDisplay'),
     speedCDisplay: getRequiredElement<HTMLSpanElement>('speedCDisplay'),
     travelModeDisplay: getRequiredElement<HTMLSpanElement>('travelModeDisplay'),

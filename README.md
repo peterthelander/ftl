@@ -2,10 +2,12 @@
 
 FTL is a browser-based 3D space flight toy built with TypeScript, Vite, and Three.js. It uses real-ish astronomical scale, local planet textures, object labels with distance readouts, orbit guides, proximity-aware flight speed, and a lightweight atmospheric sky fade near Earth.
 
-**Status:** interactive browser prototype, designed for desktop mouse and keyboard.
+**Status:** interactive browser prototype, supports desktop mouse/keyboard and phone touch controls.
 
 [Try the space-flight demo](https://peterthelander.github.io/ftl/).
-Click the scene to capture the mouse, use W/S for thrust, and press Esc to release it.
+On a phone, use the **bottom-left thumbstick** to move and **swipe the scene** to
+look around. You can do both at once with two thumbs. Hold **BRAKE** to stop.
+On desktop, click the scene to capture the mouse, use W/S for thrust, and press Esc to release it.
 
 ## Engineering focus
 
@@ -27,6 +29,16 @@ It is a flight toy, not a physically accurate orbital simulation.
 - Local texture assets for offline-friendly development.
 
 ## Controls
+
+### Phone / tablet
+
+- Drag the left thumbstick **up/down** for forward/reverse, **left/right** to strafe.
+- Move the stick a little for gentle thrust, or to its edge for full thrust.
+- Swipe anywhere on the space view to look around while moving with your other thumb.
+- Release the stick to coast down; hold **BRAKE** for an immediate stop.
+- Touch controls appear automatically on touch devices and work in portrait or landscape.
+
+### Desktop
 
 | Input | Action |
 | --- | --- |
@@ -63,6 +75,16 @@ Preview the production build:
 npm run preview
 ```
 
+Run the browser control checks (Chromium):
+
+```bash
+npx playwright install chromium
+npm test
+```
+
+The checks cover two-thumb movement and look, touch cancellation, braking,
+landscape layout, focus loss, and desktop mouse/keyboard input.
+
 ## Live Site
 
 GitHub Pages deploys every push to `main`. Once GitHub Pages is enabled for the repository, the app is available at [peterthelander.github.io/ftl](https://peterthelander.github.io/ftl/).
@@ -76,7 +98,7 @@ src/
   atmosphere.ts  Earth atmosphere overlay and sun-angle color shift
   celestial.ts   Celestial body creation, textures, stars, orbit lines
   constants.ts   Shared physical and flight constants
-  controls.ts    Pointer lock, mouse, keyboard, and wheel input
+  controls.ts    Pointer lock, mouse, keyboard, and multi-touch flight input
   dom.ts         Required DOM element lookup
   flight.ts      Speed model and proximity limiting
   hud.ts         Speed/mode display
