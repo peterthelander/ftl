@@ -23,7 +23,7 @@ test('every stellar navigation target has a sphere at its modeled radius', async
       corona: !!star.getObjectByName('stellar-corona')
     }));
   });
-  expect(result).toHaveLength(12);
+  expect(result.length).toBeGreaterThan(100);
   for (const star of result) {
     expect(star.mesh).toBe(true);
     expect(star.radius).toBe(star.navigationRadius);
@@ -87,8 +87,9 @@ test('labels remain visible beyond the old interstellar clipping distance', asyn
     const overlay = document.createElement('div');
     const labels = createLabelManager(overlay, camera);
     camera.position.set(0, 0, 8000);
-    camera.lookAt(bodies.stars.at(-1).position);
-    labels.add('Betelgeuse', bodies.stars.at(-1));
+    const star = bodies.navigationTargets.find(t => t.name === 'Betelgeuse').object;
+    camera.lookAt(star.position);
+    labels.add('Betelgeuse', star);
     labels.update();
     return overlay.firstElementChild.style.display === 'block';
   });

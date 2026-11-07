@@ -6,11 +6,8 @@ import {
   SPEED_OF_LIGHT_KM_PER_SECOND
 } from './constants';
 
-export type ProximityTarget = {
-  name: string;
-  object: THREE.Object3D;
-  radiusKm: number;
-};
+export type { NavigationTarget as ProximityTarget } from './types';
+import type { NavigationTarget as ProximityTarget } from './types';
 
 export type FlightInput = {
   w: boolean;
@@ -28,6 +25,7 @@ export type FlightState = {
 const accelerationToSpeedLimitRatio = 1.5;
 const automaticDampingPerSecond = 1.4;
 const movementDirection = new THREE.Vector3();
+const targetWorldPosition = new THREE.Vector3();
 
 export function createFlightState(): FlightState {
   return { velocityKmPerSecond: new THREE.Vector3() };
@@ -83,7 +81,7 @@ export function getNearestSurfaceTarget(position: THREE.Vector3, targets: Proxim
   if (targets.length === 0) return null;
 
   return targets.reduce<{ target: ProximityTarget; distanceKm: number } | null>((nearest, target) => {
-    const distanceKm = Math.max(0, position.distanceTo(target.object.position) - target.radiusKm);
+    const distanceKm = Math.max(0, position.distanceTo(target.object.getWorldPosition(targetWorldPosition)) - target.radiusKm);
 
     if (!nearest || distanceKm < nearest.distanceKm) {
       return { target, distanceKm };

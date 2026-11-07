@@ -1,0 +1,19 @@
+<!doctype html><html><body><script type="module">
+import * as THREE from 'three';
+import { createCelestialBodies } from '/src/celestial.ts';
+import { createLabelManager, MAX_STAR_LABELS } from '/src/labels.ts';
+import { catalogHosts, catalogMetadata, makeSystemDefinition } from '/src/systems-data.ts';
+import { getNearestSurfaceTarget } from '/src/flight.ts';
+import { recenterWorld } from '/src/world.ts';
+function makeScene() {
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, innerWidth / innerHeight, 0.1, 1e17);
+  const overlay = document.createElement('div');
+  document.body.append(overlay);
+  const labels = createLabelManager(overlay, camera);
+  const bodies = createCelestialBodies(scene, labels);
+  return { scene, camera, overlay, labels, bodies };
+}
+window.models = { THREE, makeScene, catalogHosts, catalogMetadata, makeSystemDefinition,
+  getNearestSurfaceTarget, recenterWorld, createLabelManager, MAX_STAR_LABELS };
+</script></body></html>

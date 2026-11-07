@@ -11,6 +11,7 @@ export type KeyState = FlightInput & {
 export type Controls = {
   keys: KeyState;
   braking: boolean;
+  reset: () => void;
   updateCameraRotation: (camera: THREE.Camera, dt: number) => void;
 };
 
@@ -29,6 +30,7 @@ export function createControls(
   const controls: Controls = {
     keys,
     braking: false,
+    reset: resetInputs,
     updateCameraRotation(camera, dt) {
       if (keys.q) camera.rotateZ(ROLL_SPEED * dt);
       if (keys.e) camera.rotateZ(-ROLL_SPEED * dt);
@@ -52,7 +54,8 @@ export function createControls(
   canvas.addEventListener('pointerdown', (event) => {
     if (event.pointerType === 'mouse') {
       if (event.button === 0 && canvas.requestPointerLock) {
-        void canvas.requestPointerLock()?.catch(() => {});
+        try { void canvas.requestPointerLock()?.catch(() => {}); }
+        catch { /* Some browsers reject pointer lock synchronously. Touch still works. */ }
       }
       return;
     }
@@ -91,7 +94,7 @@ export function createControls(
 
   function updateJoystick(event: PointerEvent) {
     const bounds = joystick.getBoundingClientRect();
-    const radius = (bounds.width - joystickThumb.offsetWidth) / 2;
+    const radius = Math.max(1, (bounds.width - joystickThumb.offsetWidth) / 2);
     const dx = event.clientX - (bounds.left + bounds.width / 2);
     const dy = event.clientY - (bounds.top + bounds.height / 2);
     const distance = Math.hypot(dx, dy);
@@ -157,6 +160,8 @@ export function createControls(
 
   const keyboardKeys = ['w', 'a', 's', 'd', 'q', 'e'] as const;
   window.addEventListener('keydown', (event) => {
+    const target = event.target;
+    if (target instanceof HTMLElement && (target.isContentEditable || target.closest('input, textarea, select, dialog'))) return;
     const key = event.key.toLowerCase();
     for (const knownKey of keyboardKeys) {
       if (key === knownKey) keys[knownKey] = true;

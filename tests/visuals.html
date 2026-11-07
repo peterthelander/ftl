@@ -21,6 +21,7 @@ function viewStar(name, radii = 5) {
   camera.position.set(0, 0, target.radiusKm * radii);
   camera.lookAt(target.object.position);
   camera.updateMatrixWorld();
+  bodies.systems.update(camera.position);
   updateStarGlows(bodies.stars, camera, 400);
   renderer.render(scene, camera);
 }
@@ -29,6 +30,7 @@ function viewOrbits() {
   camera.position.copy(sun).add(new THREE.Vector3(0, 1.1e9, 4e8));
   camera.lookAt(sun);
   camera.updateMatrixWorld();
+  bodies.systems.update(camera.position);
   updateStarGlows(bodies.stars, camera, 400);
   renderer.render(scene, camera);
 }

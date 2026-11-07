@@ -1,0 +1,3514 @@
+{
+  "metadata": {
+    "source": "NASA Exoplanet Archive — Planetary Systems Composite Parameters",
+    "sourceUrl": "https://exoplanetarchive.ipac.caltech.edu/",
+    "documentationUrl": "https://exoplanetarchive.ipac.caltech.edu/docs/API_PS_columns.html",
+    "retrievedAt": "2026-11-07T14:50:24.141851+00:00",
+    "queryUrl": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+hostname%2Cpl_name%2Csy_dist%2Cra%2Cdec%2Cst_rad%2Cst_mass%2Cst_teff%2Cpl_orbsmax%2Cpl_orbper%2Cpl_rade%2Cpl_bmasse%2Cpl_orbsmax_reflink%2Cpl_rade_reflink%2Cpl_orbsmaxlim%2Cpl_radelim%2Cpl_controv_flag+from+pscomppars+where+sy_dist+%3C%3D+15+and+pl_controv_flag+%3D+0+order+by+sy_dist%2Chostname%2Cpl_name&format=json",
+    "query": "select hostname,pl_name,sy_dist,ra,dec,st_rad,st_mass,st_teff,pl_orbsmax,pl_orbper,pl_rade,pl_bmasse,pl_orbsmax_reflink,pl_rade_reflink,pl_orbsmaxlim,pl_radelim,pl_controv_flag from pscomppars where sy_dist <= 15 and pl_controv_flag = 0 order by sy_dist,hostname,pl_name",
+    "distanceLimitPc": 15,
+    "hostCount": 116,
+    "planetCount": 202,
+    "selection": "Confirmed composite-table rows within 15 pc, controversial flag = 0."
+  },
+  "hosts": [
+    {
+      "name": "Proxima Cen",
+      "distancePc": 1.30119,
+      "raDegrees": 217.3934657,
+      "decDegrees": -62.6761821,
+      "radiusSolar": 0.141,
+      "massSolar": 0.1221,
+      "temperatureK": 2900.0,
+      "planets": [
+        {
+          "name": "Proxima Cen b",
+          "semiMajorAxisAu": 0.04848,
+          "periodDays": 11.18465,
+          "radiusEarth": 1.02,
+          "massEarth": 1.055,
+          "orbitReference": "<a refstr=SU_AMP_AACUTE_REZ_MASCARE_AMP_NTILDE_O_ET_AL__2025 href=https://ui.adsabs.harvard.edu/abs/2025A&A...700A..11M/abstract target=ref>Su&aacute;rez Mascare&ntilde;o et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "Proxima Cen d",
+          "semiMajorAxisAu": 0.02881,
+          "periodDays": 5.12338,
+          "radiusEarth": 0.692,
+          "massEarth": 0.26,
+          "orbitReference": "<a refstr=SU_AMP_AACUTE_REZ_MASCARE_AMP_NTILDE_O_ET_AL__2025 href=https://ui.adsabs.harvard.edu/abs/2025A&A...700A..11M/abstract target=ref>Su&aacute;rez Mascare&ntilde;o et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "Barnard's star",
+      "distancePc": 1.82655,
+      "raDegrees": 269.4486144,
+      "decDegrees": 4.7379808,
+      "radiusSolar": 0.185,
+      "massSolar": 0.162,
+      "temperatureK": 3195.0,
+      "planets": [
+        {
+          "name": "Barnard b",
+          "semiMajorAxisAu": 0.0229,
+          "periodDays": 3.1542,
+          "radiusEarth": 0.72,
+          "massEarth": 0.299,
+          "orbitReference": "<a refstr=BASANT_ET_AL__2025 href=https://ui.adsabs.harvard.edu/abs/2025ApJ...982L...1B/abstract target=ref>Basant et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "Barnard c",
+          "semiMajorAxisAu": 0.0274,
+          "periodDays": 4.1244,
+          "radiusEarth": 0.743,
+          "massEarth": 0.335,
+          "orbitReference": "<a refstr=BASANT_ET_AL__2025 href=https://ui.adsabs.harvard.edu/abs/2025ApJ...982L...1B/abstract target=ref>Basant et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "Barnard d",
+          "semiMajorAxisAu": 0.0188,
+          "periodDays": 2.3402,
+          "radiusEarth": 0.694,
+          "massEarth": 0.263,
+          "orbitReference": "<a refstr=BASANT_ET_AL__2025 href=https://ui.adsabs.harvard.edu/abs/2025ApJ...982L...1B/abstract target=ref>Basant et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "Barnard e",
+          "semiMajorAxisAu": 0.0381,
+          "periodDays": 6.7392,
+          "radiusEarth": 0.637,
+          "massEarth": 0.193,
+          "orbitReference": "<a refstr=BASANT_ET_AL__2025 href=https://ui.adsabs.harvard.edu/abs/2025ApJ...982L...1B/abstract target=ref>Basant et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "eps Eri",
+      "distancePc": 3.2026,
+      "raDegrees": 53.2284306,
+      "decDegrees": -9.4581715,
+      "radiusSolar": 0.759106,
+      "massSolar": 0.82,
+      "temperatureK": 5020.38,
+      "planets": [
+        {
+          "name": "eps Eri b",
+          "semiMajorAxisAu": 3.53,
+          "periodDays": 2680.0,
+          "radiusEarth": 13.8,
+          "massEarth": 317.828407,
+          "orbitReference": "<a refstr=THOMPSON_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025AJ....170..301T/abstract target=ref>Thompson et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 887",
+      "distancePc": 3.28679,
+      "raDegrees": 346.5027573,
+      "decDegrees": -35.8473489,
+      "radiusSolar": 0.468,
+      "massSolar": 0.495,
+      "temperatureK": 3688.0,
+      "planets": [
+        {
+          "name": "GJ 887 b",
+          "semiMajorAxisAu": 0.0683,
+          "periodDays": 9.2619,
+          "radiusEarth": 1.8,
+          "massEarth": 3.9,
+          "orbitReference": "<a refstr=HARTOGH_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026A&A...707A..93H/abstract target=ref>Hartogh et al. 2026</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 887 c",
+          "semiMajorAxisAu": 0.121,
+          "periodDays": 21.784,
+          "radiusEarth": 2.43,
+          "massEarth": 6.5,
+          "orbitReference": "<a refstr=HARTOGH_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026A&A...707A..93H/abstract target=ref>Hartogh et al. 2026</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 887 d",
+          "semiMajorAxisAu": 0.212,
+          "periodDays": 50.77,
+          "radiusEarth": 2.34,
+          "massEarth": 6.1,
+          "orbitReference": "<a refstr=HARTOGH_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026A&A...707A..93H/abstract target=ref>Hartogh et al. 2026</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 887 e",
+          "semiMajorAxisAu": 0.0417,
+          "periodDays": 4.4249,
+          "radiusEarth": 1.12,
+          "massEarth": 1.46,
+          "orbitReference": "<a refstr=HARTOGH_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026A&A...707A..93H/abstract target=ref>Hartogh et al. 2026</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "Ross 128",
+      "distancePc": 3.37454,
+      "raDegrees": 176.9376036,
+      "decDegrees": 0.7992898,
+      "radiusSolar": 0.1967,
+      "massSolar": 0.168,
+      "temperatureK": 3192.0,
+      "planets": [
+        {
+          "name": "Ross 128 b",
+          "semiMajorAxisAu": 0.0496,
+          "periodDays": 9.8658,
+          "radiusEarth": 1.11,
+          "massEarth": 1.4,
+          "orbitReference": "<a refstr=BONFILS_ET_AL__2018 href=https://ui.adsabs.harvard.edu/abs/2018A&A...613A..25B/abstract target=ref>Bonfils et al. 2018</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "Gl 725 A",
+      "distancePc": 3.5214,
+      "raDegrees": 280.6834312,
+      "decDegrees": 59.638109,
+      "radiusSolar": 0.351,
+      "massSolar": 0.33,
+      "temperatureK": 3433.0,
+      "planets": [
+        {
+          "name": "Gl 725 A b",
+          "semiMajorAxisAu": 0.068,
+          "periodDays": 11.2201,
+          "radiusEarth": 1.48,
+          "massEarth": 2.78,
+          "orbitReference": "<a refstr=CORTES_ZULETA_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025A&A...693A.164C/abstract target=ref>Cort&eacute;s-Zuleta et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 15 A",
+      "distancePc": 3.56228,
+      "raDegrees": 4.6126677,
+      "decDegrees": 44.0247296,
+      "radiusSolar": 0.38,
+      "massSolar": 0.38,
+      "temperatureK": 3607.0,
+      "planets": [
+        {
+          "name": "GJ 15 A c",
+          "semiMajorAxisAu": 5.4,
+          "periodDays": 7600.0,
+          "radiusEarth": 6.67,
+          "massEarth": 36.0,
+          "orbitReference": "<a refstr=PINAMONTI_ET_AL__2018 href=https://ui.adsabs.harvard.edu/abs/2018A&A...617A.104P/abstract target=ref>Pinamonti et al. 2018</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "eps Ind A",
+      "distancePc": 3.63857,
+      "raDegrees": 330.8714021,
+      "decDegrees": -56.7969023,
+      "radiusSolar": 0.713,
+      "massSolar": 0.8,
+      "temperatureK": 4700.0,
+      "planets": [
+        {
+          "name": "eps Ind A b",
+          "semiMajorAxisAu": 15.76,
+          "periodDays": 25450.0,
+          "radiusEarth": 12.7,
+          "massEarth": 2065.8846455,
+          "orbitReference": "<a refstr=SANGHI_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026AJ....172..115S/abstract target=ref>Sanghi et al. 2026</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 1061",
+      "distancePc": 3.67278,
+      "raDegrees": 54.0032486,
+      "decDegrees": -44.5143104,
+      "radiusSolar": 0.156,
+      "massSolar": 0.12,
+      "temperatureK": 2953.0,
+      "planets": [
+        {
+          "name": "GJ 1061 b",
+          "semiMajorAxisAu": 0.021,
+          "periodDays": 3.2073,
+          "radiusEarth": 1.04,
+          "massEarth": 1.11,
+          "orbitReference": "<a refstr=DREIZLER_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025A&A...698A.114D/abstract target=ref>Dreizler et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 1061 c",
+          "semiMajorAxisAu": 0.0342,
+          "periodDays": 6.6821,
+          "radiusEarth": 1.19,
+          "massEarth": 1.81,
+          "orbitReference": "<a refstr=DREIZLER_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025A&A...698A.114D/abstract target=ref>Dreizler et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 1061 d",
+          "semiMajorAxisAu": 0.054,
+          "periodDays": 13.066,
+          "radiusEarth": 1.16,
+          "massEarth": 1.67,
+          "orbitReference": "<a refstr=DREIZLER_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025A&A...698A.114D/abstract target=ref>Dreizler et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "YZ Cet",
+      "distancePc": 3.71207,
+      "raDegrees": 18.1330792,
+      "decDegrees": -16.9962434,
+      "radiusSolar": 0.157,
+      "massSolar": 0.142,
+      "temperatureK": 3151.0,
+      "planets": [
+        {
+          "name": "YZ Cet b",
+          "semiMajorAxisAu": 0.01634,
+          "periodDays": 2.02087,
+          "radiusEarth": 0.913,
+          "massEarth": 0.7,
+          "orbitReference": "<a refstr=STOCK_ET_AL__2020 href=https://ui.adsabs.harvard.edu/abs/2020A&A...636A.119S/abstract target=ref>Stock et al. 2020</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "YZ Cet c",
+          "semiMajorAxisAu": 0.02156,
+          "periodDays": 3.05989,
+          "radiusEarth": 1.05,
+          "massEarth": 1.14,
+          "orbitReference": "<a refstr=STOCK_ET_AL__2020 href=https://ui.adsabs.harvard.edu/abs/2020A&A...636A.119S/abstract target=ref>Stock et al. 2020</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "YZ Cet d",
+          "semiMajorAxisAu": 0.02851,
+          "periodDays": 4.65626,
+          "radiusEarth": 1.03,
+          "massEarth": 1.09,
+          "orbitReference": "<a refstr=STOCK_ET_AL__2020 href=https://ui.adsabs.harvard.edu/abs/2020A&A...636A.119S/abstract target=ref>Stock et al. 2020</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "Teegarden's Star",
+      "distancePc": 3.83078,
+      "raDegrees": 43.2691449,
+      "decDegrees": 16.8649024,
+      "radiusSolar": 0.12,
+      "massSolar": 0.097,
+      "temperatureK": 3034.0,
+      "planets": [
+        {
+          "name": "Teegarden's Star b",
+          "semiMajorAxisAu": 0.0259,
+          "periodDays": 4.90634,
+          "radiusEarth": 1.05,
+          "massEarth": 1.16,
+          "orbitReference": "<a refstr=DREIZLER_ET_AL_2024 href=https://ui.adsabs.harvard.edu/abs/2024A&A...684A.117D/abstract target=ref>Dreizler et al. 2024</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "Teegarden's Star c",
+          "semiMajorAxisAu": 0.0455,
+          "periodDays": 11.416,
+          "radiusEarth": 1.02,
+          "massEarth": 1.05,
+          "orbitReference": "<a refstr=DREIZLER_ET_AL_2024 href=https://ui.adsabs.harvard.edu/abs/2024A&A...684A.117D/abstract target=ref>Dreizler et al. 2024</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "Teegarden's Star d",
+          "semiMajorAxisAu": 0.0791,
+          "periodDays": 26.13,
+          "radiusEarth": 0.954,
+          "massEarth": 0.82,
+          "orbitReference": "<a refstr=DREIZLER_ET_AL_2024 href=https://ui.adsabs.harvard.edu/abs/2024A&A...684A.117D/abstract target=ref>Dreizler et al. 2024</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "Wolf 1061",
+      "distancePc": 4.30592,
+      "raDegrees": 247.5748276,
+      "decDegrees": -12.6676866,
+      "radiusSolar": 0.307,
+      "massSolar": 0.294,
+      "temperatureK": 3342.0,
+      "planets": [
+        {
+          "name": "Wolf 1061 b",
+          "semiMajorAxisAu": 0.0375,
+          "periodDays": 4.8869,
+          "radiusEarth": 1.21,
+          "massEarth": 1.91,
+          "orbitReference": "<a refstr=ASTUDILLO_DEFRU_ET_AL__2017 href=https://ui.adsabs.harvard.edu/abs/2017A&A...602A..88A/abstract target=ref>Astudillo-Defru et al. 2017</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "Wolf 1061 c",
+          "semiMajorAxisAu": 0.089,
+          "periodDays": 17.8719,
+          "radiusEarth": 1.66,
+          "massEarth": 3.41,
+          "orbitReference": "<a refstr=ASTUDILLO_DEFRU_ET_AL__2017 href=https://ui.adsabs.harvard.edu/abs/2017A&A...602A..88A/abstract target=ref>Astudillo-Defru et al. 2017</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "Wolf 1061 d",
+          "semiMajorAxisAu": 0.47,
+          "periodDays": 217.21,
+          "radiusEarth": 2.69,
+          "massEarth": 7.7,
+          "orbitReference": "<a refstr=ASTUDILLO_DEFRU_ET_AL__2017 href=https://ui.adsabs.harvard.edu/abs/2017A&A...602A..88A/abstract target=ref>Astudillo-Defru et al. 2017</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 9066",
+      "distancePc": 4.471,
+      "raDegrees": 30.0588307,
+      "decDegrees": 13.0443172,
+      "radiusSolar": 0.164,
+      "massSolar": 0.15,
+      "temperatureK": 3154.0,
+      "planets": [
+        {
+          "name": "GJ 9066 c",
+          "semiMajorAxisAu": 0.88,
+          "periodDays": 771.36,
+          "radiusEarth": 9.6,
+          "massEarth": 66.74396547,
+          "orbitReference": "<a refstr=QUIRRENBACH_ET_AL_2022 href=https://ui.adsabs.harvard.edu/abs/2022A&A...663A..48Q/abstract target=ref>Quirrenbach et al. 2022</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 674",
+      "distancePc": 4.54896,
+      "raDegrees": 262.1700476,
+      "decDegrees": -46.8989826,
+      "radiusSolar": 0.36463,
+      "massSolar": 0.35,
+      "temperatureK": 3600.0,
+      "planets": [
+        {
+          "name": "GJ 674 b",
+          "semiMajorAxisAu": 0.039,
+          "periodDays": 4.6938,
+          "radiusEarth": 3.33,
+          "massEarth": 11.09,
+          "orbitReference": "<a refstr=BONFILS_ET_AL__2007 href=https://ui.adsabs.harvard.edu/abs/2007A&A...474..293B/abstract target=ref> Bonfils et al. 2007 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 687",
+      "distancePc": 4.54939,
+      "raDegrees": 264.1041731,
+      "decDegrees": 68.3336741,
+      "radiusSolar": 0.4183,
+      "massSolar": 0.4,
+      "temperatureK": 3413.0,
+      "planets": [
+        {
+          "name": "GJ 687 b",
+          "semiMajorAxisAu": 0.163,
+          "periodDays": 38.142,
+          "radiusEarth": 4.32,
+          "massEarth": 17.2,
+          "orbitReference": "<a refstr=FENG_ET_AL__2020 href=https://ui.adsabs.harvard.edu/abs/2020ApJS..250...29F/abstract target=ref>Feng et al. 2020</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 687 c",
+          "semiMajorAxisAu": 1.165,
+          "periodDays": 727.562,
+          "radiusEarth": 4.14,
+          "massEarth": 16.0,
+          "orbitReference": "<a refstr=FENG_ET_AL__2020 href=https://ui.adsabs.harvard.edu/abs/2020ApJS..250...29F/abstract target=ref>Feng et al. 2020</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 876",
+      "distancePc": 4.67517,
+      "raDegrees": 343.3239737,
+      "decDegrees": -14.2665958,
+      "radiusSolar": 0.3,
+      "massSolar": 0.32,
+      "temperatureK": 3293.74,
+      "planets": [
+        {
+          "name": "GJ 876 b",
+          "semiMajorAxisAu": 0.208317,
+          "periodDays": 61.1166,
+          "radiusEarth": 13.3,
+          "massEarth": 723.2235,
+          "orbitReference": "<a refstr=RIVERA_ET_AL__2010 href=https://ui.adsabs.harvard.edu/abs/2010ApJ...719..890R/abstract target=ref> Rivera et al. 2010 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 876 c",
+          "semiMajorAxisAu": 0.12959,
+          "periodDays": 30.0881,
+          "radiusEarth": 14.0,
+          "massEarth": 226.9846,
+          "orbitReference": "<a refstr=RIVERA_ET_AL__2010 href=https://ui.adsabs.harvard.edu/abs/2010ApJ...719..890R/abstract target=ref> Rivera et al. 2010 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 876 d",
+          "semiMajorAxisAu": 0.02080665,
+          "periodDays": 1.93778,
+          "radiusEarth": 2.51,
+          "massEarth": 6.83,
+          "orbitReference": "<a refstr=RIVERA_ET_AL__2010 href=https://ui.adsabs.harvard.edu/abs/2010ApJ...719..890R/abstract target=ref> Rivera et al. 2010 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 876 e",
+          "semiMajorAxisAu": 0.3343,
+          "periodDays": 124.26,
+          "radiusEarth": 3.92,
+          "massEarth": 14.6,
+          "orbitReference": "<a refstr=RIVERA_ET_AL__2010 href=https://ui.adsabs.harvard.edu/abs/2010ApJ...719..890R/abstract target=ref> Rivera et al. 2010 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 1002",
+      "distancePc": 4.84867,
+      "raDegrees": 1.6764641,
+      "decDegrees": -7.5462123,
+      "radiusSolar": 0.137,
+      "massSolar": 0.12,
+      "temperatureK": 3024.0,
+      "planets": [
+        {
+          "name": "GJ 1002 b",
+          "semiMajorAxisAu": 0.0457,
+          "periodDays": 10.3465,
+          "radiusEarth": 1.03,
+          "massEarth": 1.08,
+          "orbitReference": "<a refstr=SUAREZ_MASCARENO_ET_AL_2023 href=https://ui.adsabs.harvard.edu/abs/2023A&A...670A...5S/abstract target=ref>Su&aacute;rez Mascare&ntilde;o et al. 2023</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 1002 c",
+          "semiMajorAxisAu": 0.0738,
+          "periodDays": 21.202,
+          "radiusEarth": 1.1,
+          "massEarth": 1.36,
+          "orbitReference": "<a refstr=SUAREZ_MASCARENO_ET_AL_2023 href=https://ui.adsabs.harvard.edu/abs/2023A&A...670A...5S/abstract target=ref>Su&aacute;rez Mascare&ntilde;o et al. 2023</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 832",
+      "distancePc": 4.96435,
+      "raDegrees": 323.3912616,
+      "decDegrees": -49.0125169,
+      "radiusSolar": 0.441557,
+      "massSolar": 0.45,
+      "temperatureK": 3472.0,
+      "planets": [
+        {
+          "name": "GJ 832 b",
+          "semiMajorAxisAu": 3.7,
+          "periodDays": 3853.0,
+          "radiusEarth": 13.8,
+          "massEarth": 314.65012293,
+          "orbitReference": "<a refstr=PHILIPOT_ET_AL_2023 href=https://ui.adsabs.harvard.edu/abs/2023A&A...678A.107P/abstract target=ref>Philipot et al. 2023</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 682",
+      "distancePc": 5.00671,
+      "raDegrees": 264.2610245,
+      "decDegrees": -44.3232519,
+      "radiusSolar": 0.298255,
+      "massSolar": 0.27,
+      "temperatureK": 3028.0,
+      "planets": [
+        {
+          "name": "GJ 682 b",
+          "semiMajorAxisAu": 0.08,
+          "periodDays": 17.478,
+          "radiusEarth": 1.93,
+          "massEarth": 4.4,
+          "orbitReference": "<a refstr=TUOMI_ET_AL__2014 href=https://ui.adsabs.harvard.edu/abs/2014MNRAS.441.1545T/abstract target=ref>Tuomi et al. 2014</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 682 c",
+          "semiMajorAxisAu": 0.176,
+          "periodDays": 57.32,
+          "radiusEarth": 2.89,
+          "massEarth": 8.7,
+          "orbitReference": "<a refstr=TUOMI_ET_AL__2014 href=https://ui.adsabs.harvard.edu/abs/2014MNRAS.441.1545T/abstract target=ref>Tuomi et al. 2014</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 3323",
+      "distancePc": 5.37484,
+      "raDegrees": 75.4868824,
+      "decDegrees": -6.9485133,
+      "radiusSolar": 0.119,
+      "massSolar": 0.164,
+      "temperatureK": 3159.0,
+      "planets": [
+        {
+          "name": "GJ 3323 b",
+          "semiMajorAxisAu": 0.03282,
+          "periodDays": 5.3636,
+          "radiusEarth": 1.23,
+          "massEarth": 2.02,
+          "orbitReference": "<a refstr=ASTUDILLO_DEFRU_ET_AL__2017 href=https://ui.adsabs.harvard.edu/abs/2017A&A...602A..88A/abstract target=ref>Astudillo-Defru et al. 2017</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 3323 c",
+          "semiMajorAxisAu": 0.1264,
+          "periodDays": 40.54,
+          "radiusEarth": 1.32,
+          "massEarth": 2.31,
+          "orbitReference": "<a refstr=ASTUDILLO_DEFRU_ET_AL__2017 href=https://ui.adsabs.harvard.edu/abs/2017A&A...602A..88A/abstract target=ref>Astudillo-Defru et al. 2017</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 251",
+      "distancePc": 5.58057,
+      "raDegrees": 103.7002499,
+      "decDegrees": 33.2664632,
+      "radiusSolar": 0.36,
+      "massSolar": 0.35,
+      "temperatureK": 3342.0,
+      "planets": [
+        {
+          "name": "GJ 251 b",
+          "semiMajorAxisAu": 0.0808,
+          "periodDays": 14.237,
+          "radiusEarth": 1.79,
+          "massEarth": 3.85,
+          "orbitReference": "<a refstr=BEARD_ET_AL__2025 href=https://ui.adsabs.harvard.edu/abs/2025AJ....170..279B/abstract target=ref>Beard et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 251 c",
+          "semiMajorAxisAu": 0.196,
+          "periodDays": 53.647,
+          "radiusEarth": 1.8,
+          "massEarth": 3.88,
+          "orbitReference": "<a refstr=BEARD_ET_AL__2025 href=https://ui.adsabs.harvard.edu/abs/2025AJ....170..279B/abstract target=ref>Beard et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 411",
+      "distancePc": 5.675773,
+      "raDegrees": 165.834471,
+      "decDegrees": 35.972317,
+      "radiusSolar": 0.3685,
+      "massSolar": 0.3899,
+      "temperatureK": 3719.0,
+      "planets": [
+        {
+          "name": "GJ 411 b",
+          "semiMajorAxisAu": 0.07879,
+          "periodDays": 12.9394,
+          "radiusEarth": 1.45,
+          "massEarth": 2.69,
+          "orbitReference": "<a refstr=HURT_ET_AL__2022 href=https://ui.adsabs.harvard.edu/abs/2022AJ....163..218H/abstract target=ref>Hurt et al. 2022</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "HD 95735 c",
+          "semiMajorAxisAu": 2.94,
+          "periodDays": 2946.0,
+          "radiusEarth": 3.76,
+          "massEarth": 13.6,
+          "orbitReference": "<a refstr=HURT_ET_AL__2022 href=https://ui.adsabs.harvard.edu/abs/2022AJ....163..218H/abstract target=ref>Hurt et al. 2022</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HD 180617",
+      "distancePc": 5.91059,
+      "raDegrees": 289.2277322,
+      "decDegrees": 5.1631615,
+      "radiusSolar": 0.481,
+      "massSolar": 0.484,
+      "temperatureK": 3534.0,
+      "planets": [
+        {
+          "name": "HD 180617 b",
+          "semiMajorAxisAu": 0.343,
+          "periodDays": 105.911,
+          "radiusEarth": 3.53,
+          "massEarth": 12.214,
+          "orbitReference": "<a refstr=BURT_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021AJ....161...10B/abstract target=ref>Burt et al. 2021</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 273",
+      "distancePc": 5.921535,
+      "raDegrees": 111.852091,
+      "decDegrees": 5.225807,
+      "radiusSolar": 0.293,
+      "massSolar": 0.29,
+      "temperatureK": 3382.0,
+      "planets": [
+        {
+          "name": "GJ 273 b",
+          "semiMajorAxisAu": 0.091101,
+          "periodDays": 18.6498,
+          "radiusEarth": 1.51,
+          "massEarth": 2.89,
+          "orbitReference": "<a refstr=ASTUDILLO_DEFRU_ET_AL__2017 href=https://ui.adsabs.harvard.edu/abs/2017A&A...602A..88A/abstract target=ref>Astudillo-Defru et al. 2017</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 273 c",
+          "semiMajorAxisAu": 0.036467,
+          "periodDays": 4.7234,
+          "radiusEarth": 1.06,
+          "massEarth": 1.18,
+          "orbitReference": "<a refstr=ASTUDILLO_DEFRU_ET_AL__2017 href=https://ui.adsabs.harvard.edu/abs/2017A&A...602A..88A/abstract target=ref>Astudillo-Defru et al. 2017</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HD 20794",
+      "distancePc": 6.00278,
+      "raDegrees": 49.9997666,
+      "decDegrees": -43.0666533,
+      "radiusSolar": 0.93,
+      "massSolar": 0.79,
+      "temperatureK": 5368.0,
+      "planets": [
+        {
+          "name": "HD 20794 b",
+          "semiMajorAxisAu": 0.1257,
+          "periodDays": 18.314,
+          "radiusEarth": 1.45,
+          "massEarth": 2.7,
+          "orbitReference": "<a refstr=NARI_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025A&A...693A.297N/abstract target=ref>Nari et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "HD 20794 d",
+          "semiMajorAxisAu": 0.3625,
+          "periodDays": 89.68,
+          "radiusEarth": 2.04,
+          "massEarth": 4.8,
+          "orbitReference": "<a refstr=NARI_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025A&A...693A.297N/abstract target=ref>Nari et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "HD 20794 f",
+          "semiMajorAxisAu": 1.3541,
+          "periodDays": 647.6,
+          "radiusEarth": 2.28,
+          "massEarth": 5.82,
+          "orbitReference": "<a refstr=NARI_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025A&A...693A.297N/abstract target=ref>Nari et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HN Lib",
+      "distancePc": 6.24442,
+      "raDegrees": 218.5684823,
+      "decDegrees": -12.5170062,
+      "radiusSolar": 0.299,
+      "massSolar": 0.291,
+      "temperatureK": 3347.0,
+      "planets": [
+        {
+          "name": "HN Lib b",
+          "semiMajorAxisAu": 0.1417,
+          "periodDays": 36.116,
+          "radiusEarth": 2.2,
+          "massEarth": 5.46,
+          "orbitReference": "<a refstr=GONZ_AACUTE_LEZ__AACUTE_LVAREZ_ET_AL__2023 href=https://ui.adsabs.harvard.edu/abs/2023A&A...675A.141G/abstract target=ref>Gonz&aacute;lez-&Aacute;lvarez et al. 2023</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 896 A",
+      "distancePc": 6.26022,
+      "raDegrees": 352.9700384,
+      "decDegrees": 19.9370011,
+      "radiusSolar": 0.394682,
+      "massSolar": 0.43599,
+      "temperatureK": 3345.0,
+      "planets": [
+        {
+          "name": "GJ 896 A b",
+          "semiMajorAxisAu": 0.63965,
+          "periodDays": 284.39,
+          "radiusEarth": 13.3,
+          "massEarth": 718.29219982,
+          "orbitReference": "<a refstr=CURIEL_ET_AL__2022 href=https://ui.adsabs.harvard.edu/abs/2022AJ....164...93C/abstract target=ref>Curiel et al. 2022</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 581",
+      "distancePc": 6.2981,
+      "raDegrees": 229.8564725,
+      "decDegrees": -7.7226935,
+      "radiusSolar": 0.302,
+      "massSolar": 0.295,
+      "temperatureK": 3500.0,
+      "planets": [
+        {
+          "name": "GJ 581 b",
+          "semiMajorAxisAu": 0.0399,
+          "periodDays": 5.3686,
+          "radiusEarth": 4.79,
+          "massEarth": 20.5,
+          "orbitReference": "<a refstr=VON_STAUFFENBERG_ET_AL__2024 href=https://ui.adsabs.harvard.edu/abs/2024A&A...688A.112V/abstract target=ref>von Stauffenberg et al. 2024</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 581 c",
+          "semiMajorAxisAu": 0.0718,
+          "periodDays": 12.9211,
+          "radiusEarth": 2.5,
+          "massEarth": 6.81,
+          "orbitReference": "<a refstr=VON_STAUFFENBERG_ET_AL__2024 href=https://ui.adsabs.harvard.edu/abs/2024A&A...688A.112V/abstract target=ref>von Stauffenberg et al. 2024</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 581 e",
+          "semiMajorAxisAu": 0.02799,
+          "periodDays": 3.1481,
+          "radiusEarth": 1.38,
+          "massEarth": 2.48,
+          "orbitReference": "<a refstr=VON_STAUFFENBERG_ET_AL__2024 href=https://ui.adsabs.harvard.edu/abs/2024A&A...688A.112V/abstract target=ref>von Stauffenberg et al. 2024</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 338 B",
+      "distancePc": 6.33256,
+      "raDegrees": 138.5916722,
+      "decDegrees": 52.6835211,
+      "radiusSolar": 0.58,
+      "massSolar": 0.64,
+      "temperatureK": 4014.0,
+      "planets": [
+        {
+          "name": "GJ 338 B b",
+          "semiMajorAxisAu": 0.142,
+          "periodDays": 24.422,
+          "radiusEarth": 3.25,
+          "massEarth": 10.6,
+          "orbitReference": "<a refstr=DITOMASSO_ET_AL_2023 href=https://ui.adsabs.harvard.edu/abs/2023AJ....165...38D/abstract target=ref>DiTomasso et al. 2023</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 625",
+      "distancePc": 6.47249,
+      "raDegrees": 246.3557854,
+      "decDegrees": 54.3033625,
+      "radiusSolar": 0.31,
+      "massSolar": 0.3,
+      "temperatureK": 3499.0,
+      "planets": [
+        {
+          "name": "GJ 625 b",
+          "semiMajorAxisAu": 0.078361,
+          "periodDays": 14.628,
+          "radiusEarth": 1.49,
+          "massEarth": 2.82,
+          "orbitReference": "<a refstr=SU_AACUTE_REZ_MASCARE_NTILDE_O_ET_AL__2017 href=https://ui.adsabs.harvard.edu/abs/2017A&A...605A..92S/abstract target=ref>Su&aacute;rez Mascare&ntilde;o et al. 2017</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HD 219134",
+      "distancePc": 6.53127,
+      "raDegrees": 348.3372026,
+      "decDegrees": 57.1696255,
+      "radiusSolar": 0.778,
+      "massSolar": 0.81,
+      "temperatureK": 4699.0,
+      "planets": [
+        {
+          "name": "HD 219134 b",
+          "semiMajorAxisAu": 0.03876,
+          "periodDays": 3.092926,
+          "radiusEarth": 1.602,
+          "massEarth": 4.74,
+          "orbitReference": "<a refstr=GILLON_ET_AL__2017 href=https://ui.adsabs.harvard.edu/abs/2017NatAs...1E..56G/abstract target=ref>Gillon et al. 2017</a>",
+          "radiusReference": "<a refstr=GILLON_ET_AL__2017 href=https://ui.adsabs.harvard.edu/abs/2017NatAs...1E..56G/abstract target=ref>Gillon et al. 2017</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "HD 219134 c",
+          "semiMajorAxisAu": 0.0653,
+          "periodDays": 6.76458,
+          "radiusEarth": 1.511,
+          "massEarth": 4.36,
+          "orbitReference": "<a refstr=GILLON_ET_AL__2017 href=https://ui.adsabs.harvard.edu/abs/2017NatAs...1E..56G/abstract target=ref>Gillon et al. 2017</a>",
+          "radiusReference": "<a refstr=GILLON_ET_AL__2017 href=https://ui.adsabs.harvard.edu/abs/2017NatAs...1E..56G/abstract target=ref>Gillon et al. 2017</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "HD 219134 d",
+          "semiMajorAxisAu": 0.237,
+          "periodDays": 46.859,
+          "radiusEarth": 1.61,
+          "massEarth": 16.17,
+          "orbitReference": "<a refstr=GILLON_ET_AL__2017 href=https://ui.adsabs.harvard.edu/abs/2017NatAs...1E..56G/abstract target=ref>Gillon et al. 2017</a>",
+          "radiusReference": "<a refstr=GILLON_ET_AL__2017 href=https://ui.adsabs.harvard.edu/abs/2017NatAs...1E..56G/abstract target=ref>Gillon et al. 2017</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": true
+        },
+        {
+          "name": "HD 219134 h",
+          "semiMajorAxisAu": 3.11,
+          "periodDays": 2247.0,
+          "radiusEarth": 12.7,
+          "massEarth": 108.0622,
+          "orbitReference": "<a refstr=VOGT_ET_AL__2015 href=https://ui.adsabs.harvard.edu/abs/2015ApJ...814...12V/abstract target=ref>Vogt et al. 2015</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "Gl 725 B",
+      "distancePc": 6.842357,
+      "raDegrees": 280.695353,
+      "decDegrees": 59.62706,
+      "radiusSolar": 0.28,
+      "massSolar": 0.25,
+      "temperatureK": 3379.0,
+      "planets": [
+        {
+          "name": "Gl 725 B c",
+          "semiMajorAxisAu": 0.139,
+          "periodDays": 37.9,
+          "radiusEarth": 1.66,
+          "massEarth": 3.4,
+          "orbitReference": "<a refstr=OULD_ELHKIM_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026A&A...705A.234O/abstract target=ref>Ould-Elhkim et al. 2026</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "LTT 1445 A",
+      "distancePc": 6.86929,
+      "raDegrees": 45.4624781,
+      "decDegrees": -16.5944956,
+      "radiusSolar": 0.271,
+      "massSolar": 0.257,
+      "temperatureK": 3562.0,
+      "planets": [
+        {
+          "name": "LTT 1445 A b",
+          "semiMajorAxisAu": 0.0381,
+          "periodDays": 5.3587635,
+          "radiusEarth": 1.34,
+          "massEarth": 2.73,
+          "orbitReference": "<a refstr=PASS_ET_AL__2023 href=https://ui.adsabs.harvard.edu/abs/2023AJ....166..171P/abstract target=ref>Pass et al. 2023</a>",
+          "radiusReference": "<a refstr=PASS_ET_AL__2023 href=https://ui.adsabs.harvard.edu/abs/2023AJ....166..171P/abstract target=ref>Pass et al. 2023</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "LTT 1445 A c",
+          "semiMajorAxisAu": 0.02661,
+          "periodDays": 3.1239035,
+          "radiusEarth": 1.147,
+          "massEarth": 1.54,
+          "orbitReference": "<a refstr=WINTERS_ET_AL_2022 href=https://ui.adsabs.harvard.edu/abs/2022AJ....163..168W/abstract target=ref>Winters et al. 2022</a>",
+          "radiusReference": "<a refstr=WINTERS_ET_AL_2022 href=https://ui.adsabs.harvard.edu/abs/2022AJ....163..168W/abstract target=ref>Winters et al. 2022</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 393",
+      "distancePc": 7.03149,
+      "raDegrees": 157.2288672,
+      "decDegrees": 0.8378485,
+      "radiusSolar": 0.426,
+      "massSolar": 0.426,
+      "temperatureK": 3579.0,
+      "planets": [
+        {
+          "name": "GJ 393 b",
+          "semiMajorAxisAu": 0.05402,
+          "periodDays": 7.02679,
+          "radiusEarth": 1.17,
+          "massEarth": 1.71,
+          "orbitReference": "<a refstr=AMADO_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021A&A...650A.188A/abstract target=ref>Amado et al. 2021</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 4274",
+      "distancePc": 7.23556,
+      "raDegrees": 335.7805478,
+      "decDegrees": -17.6104078,
+      "radiusSolar": 0.19,
+      "massSolar": 0.18,
+      "temperatureK": 3228.0,
+      "planets": [
+        {
+          "name": "GJ 4274 b",
+          "semiMajorAxisAu": 0.0153,
+          "periodDays": 1.6339,
+          "radiusEarth": 1.53,
+          "massEarth": 2.97,
+          "orbitReference": "<a refstr=CHARPENTIER_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026A&A...705A.243C/abstract target=ref>Charpentier et al. 2026</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 4274 c",
+          "semiMajorAxisAu": 0.186,
+          "periodDays": 69.57,
+          "radiusEarth": 2.83,
+          "massEarth": 8.39,
+          "orbitReference": "<a refstr=CHARPENTIER_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026A&A...705A.243C/abstract target=ref>Charpentier et al. 2026</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 667 C",
+      "distancePc": 7.24396,
+      "raDegrees": 259.7510609,
+      "decDegrees": -34.9977651,
+      "radiusSolar": null,
+      "massSolar": 0.33,
+      "temperatureK": 3350.0,
+      "planets": [
+        {
+          "name": "GJ 667 C b",
+          "semiMajorAxisAu": 0.050431,
+          "periodDays": 7.203,
+          "radiusEarth": 2.25,
+          "massEarth": 5.68,
+          "orbitReference": "<a refstr=ROBERTSON__AMP__MAHADEVAN_2014 href=https://ui.adsabs.harvard.edu/abs/2014ApJ...793L..24R/abstract target=ref>Robertson &amp; Mahadevan 2014</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 667 C c",
+          "semiMajorAxisAu": 0.125,
+          "periodDays": 28.14,
+          "radiusEarth": 1.77,
+          "massEarth": 3.8,
+          "orbitReference": "<a refstr=ANGLADA_ESCUDE_ET_AL__2013 href=https://ui.adsabs.harvard.edu/abs/2013A%26A...556A.126A/abstract target=ref> Anglada-Escude et al. 2013 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 514",
+      "distancePc": 7.61778,
+      "raDegrees": 202.5040424,
+      "decDegrees": 10.3725387,
+      "radiusSolar": 0.5,
+      "massSolar": 0.51,
+      "temperatureK": 3728.0,
+      "planets": [
+        {
+          "name": "GJ 514 b",
+          "semiMajorAxisAu": 0.422,
+          "periodDays": 140.43,
+          "radiusEarth": 2.13,
+          "massEarth": 5.2,
+          "orbitReference": "<a refstr=DAMASSO_ET_AL_2022 href=https://ui.adsabs.harvard.edu/abs/2022A&A...666A.187D/abstract target=ref>Damasso et al. 2022</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 3378",
+      "distancePc": 7.72274,
+      "raDegrees": 90.2951302,
+      "decDegrees": 59.5931917,
+      "radiusSolar": 0.275,
+      "massSolar": 0.262,
+      "temperatureK": 3340.0,
+      "planets": [
+        {
+          "name": "GJ 3378 b",
+          "semiMajorAxisAu": 0.09673,
+          "periodDays": 21.45,
+          "radiusEarth": 1.32,
+          "massEarth": 2.3,
+          "orbitReference": "<a refstr=ROBERTSON_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026ApJ..1005...32R/abstract target=ref>Robertson et al. 2026</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 1151",
+      "distancePc": 8.03625,
+      "raDegrees": 177.7304866,
+      "decDegrees": 48.3732334,
+      "radiusSolar": 0.1781,
+      "massSolar": 0.1639,
+      "temperatureK": 3280.0,
+      "planets": [
+        {
+          "name": "GJ 1151 c",
+          "semiMajorAxisAu": 0.5714,
+          "periodDays": 389.7,
+          "radiusEarth": 3.25,
+          "massEarth": 10.62,
+          "orbitReference": "<a refstr=BLANCO_POZO_ET_AL_2023 href=https://ui.adsabs.harvard.edu/abs/2023A&A...671A..50B/abstract target=ref>Blanco-Pozo et al. 2023</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 486",
+      "distancePc": 8.07426,
+      "raDegrees": 191.981531,
+      "decDegrees": 9.7494181,
+      "radiusSolar": 0.3243,
+      "massSolar": 0.312,
+      "temperatureK": 3317.0,
+      "planets": [
+        {
+          "name": "GJ 486 b",
+          "semiMajorAxisAu": 0.01714,
+          "periodDays": 1.46712127,
+          "radiusEarth": 1.289,
+          "massEarth": 2.77,
+          "orbitReference": "<a refstr=WEINER_MANSFIELD_ET_AL__2024 href=https://ui.adsabs.harvard.edu/abs/2024ApJ...975L..22W/abstract target=ref>Weiner Mansfield et al. 2024</a>",
+          "radiusReference": "<a refstr=WEINER_MANSFIELD_ET_AL__2024 href=https://ui.adsabs.harvard.edu/abs/2024ApJ...975L..22W/abstract target=ref>Weiner Mansfield et al. 2024</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "Gl 686",
+      "distancePc": 8.15728,
+      "raDegrees": 264.4764878,
+      "decDegrees": 18.5959509,
+      "radiusSolar": 0.427,
+      "massSolar": 0.426,
+      "temperatureK": 3656.0,
+      "planets": [
+        {
+          "name": "Gl 686 b",
+          "semiMajorAxisAu": 0.091,
+          "periodDays": 15.53,
+          "radiusEarth": 2.46,
+          "massEarth": 6.624,
+          "orbitReference": "<a refstr=BURT_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021AJ....161...10B/abstract target=ref>Burt et al. 2021</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "Gliese 48",
+      "distancePc": 8.23366,
+      "raDegrees": 15.6582402,
+      "decDegrees": 71.6781735,
+      "radiusSolar": 0.463,
+      "massSolar": 0.47,
+      "temperatureK": 3450.0,
+      "planets": [
+        {
+          "name": "Gliese 48 b",
+          "semiMajorAxisAu": 0.1752,
+          "periodDays": 39.6299,
+          "radiusEarth": 2.77,
+          "massEarth": 8.11,
+          "orbitReference": "<a refstr=CONZO_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026OEJV..273....1C/abstract target=ref>Conzo et al. 2026</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 1289",
+      "distancePc": 8.35147,
+      "raDegrees": 355.7813464,
+      "decDegrees": 36.5363314,
+      "radiusSolar": 0.245012,
+      "massSolar": 0.21,
+      "temperatureK": 3296.0,
+      "planets": [
+        {
+          "name": "GJ 1289 b",
+          "semiMajorAxisAu": 0.27,
+          "periodDays": 111.74,
+          "radiusEarth": 2.38,
+          "massEarth": 6.27,
+          "orbitReference": "<a refstr=MOUTOU_ET_AL__2024 href=https://ui.adsabs.harvard.edu/abs/2024A&A...688A.196M/abstract target=ref>Moutou et al. 2024</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "61 Vir",
+      "distancePc": 8.50332,
+      "raDegrees": 199.596455,
+      "decDegrees": -18.3157745,
+      "radiusSolar": 0.963,
+      "massSolar": 0.942,
+      "temperatureK": 5577.0,
+      "planets": [
+        {
+          "name": "61 Vir b",
+          "semiMajorAxisAu": 0.050201,
+          "periodDays": 4.215,
+          "radiusEarth": 2.11,
+          "massEarth": 5.1,
+          "orbitReference": "<a refstr=VOGT_ET_AL__2010 href=https://ui.adsabs.harvard.edu/abs/2010ApJ...708.1366V/abstract target=ref> Vogt et al. 2010 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "61 Vir c",
+          "semiMajorAxisAu": 0.2175,
+          "periodDays": 38.021,
+          "radiusEarth": 4.46,
+          "massEarth": 18.2,
+          "orbitReference": "<a refstr=VOGT_ET_AL__2010 href=https://ui.adsabs.harvard.edu/abs/2010ApJ...708.1366V/abstract target=ref> Vogt et al. 2010 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "61 Vir d",
+          "semiMajorAxisAu": 0.476,
+          "periodDays": 123.01,
+          "radiusEarth": 5.11,
+          "massEarth": 22.9,
+          "orbitReference": "<a refstr=VOGT_ET_AL__2010 href=https://ui.adsabs.harvard.edu/abs/2010ApJ...708.1366V/abstract target=ref> Vogt et al. 2010 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "CD Cet",
+      "distancePc": 8.60715,
+      "raDegrees": 48.3530155,
+      "decDegrees": 4.7751881,
+      "radiusSolar": 0.175,
+      "massSolar": 0.161,
+      "temperatureK": 3130.0,
+      "planets": [
+        {
+          "name": "CD Cet b",
+          "semiMajorAxisAu": 0.0185,
+          "periodDays": 2.2907,
+          "radiusEarth": 1.82,
+          "massEarth": 3.95,
+          "orbitReference": "<a refstr=BAUER_ET_AL__2020 href=https://ui.adsabs.harvard.edu/abs/2020A&A...640A..50B/abstract target=ref>Bauer et al. 2020</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HD 192310",
+      "distancePc": 8.79687,
+      "raDegrees": 303.8284712,
+      "decDegrees": -27.0337556,
+      "radiusSolar": 0.857922,
+      "massSolar": 0.8,
+      "temperatureK": 5166.0,
+      "planets": [
+        {
+          "name": "HD 192310 b",
+          "semiMajorAxisAu": 0.32,
+          "periodDays": 74.72,
+          "radiusEarth": 4.27,
+          "massEarth": 16.9,
+          "orbitReference": "<a refstr=PEPE_ET_AL__2011 href=https://ui.adsabs.harvard.edu/abs/2011A%26A...534A..58P/abstract target=ref> Pepe et al. 2011 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "HD 192310 c",
+          "semiMajorAxisAu": 1.18,
+          "periodDays": 525.8,
+          "radiusEarth": 5.25,
+          "massEarth": 24.0,
+          "orbitReference": "<a refstr=PEPE_ET_AL__2011 href=https://ui.adsabs.harvard.edu/abs/2011A%26A...534A..58P/abstract target=ref> Pepe et al. 2011 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 849",
+      "distancePc": 8.80058,
+      "raDegrees": 332.4229938,
+      "decDegrees": -4.6408317,
+      "radiusSolar": 0.45,
+      "massSolar": 0.45,
+      "temperatureK": 3467.0,
+      "planets": [
+        {
+          "name": "GJ 849 b",
+          "semiMajorAxisAu": 2.32,
+          "periodDays": 1925.31,
+          "radiusEarth": 13.9,
+          "massEarth": 283.82076745,
+          "orbitReference": "<a refstr=PINAMONTI_ET_AL__2023 href=https://ui.adsabs.harvard.edu/abs/2023A&A...677A.122P/abstract target=ref>Pinamonti et al. 2023</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 849 c",
+          "semiMajorAxisAu": 4.95,
+          "periodDays": 5990.0,
+          "radiusEarth": 13.8,
+          "massEarth": 314.65012293,
+          "orbitReference": "<a refstr=PINAMONTI_ET_AL__2023 href=https://ui.adsabs.harvard.edu/abs/2023A&A...677A.122P/abstract target=ref>Pinamonti et al. 2023</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 433",
+      "distancePc": 9.06456,
+      "raDegrees": 173.8619194,
+      "decDegrees": -32.5436302,
+      "radiusSolar": 0.5,
+      "massSolar": 0.48,
+      "temperatureK": 3461.0,
+      "planets": [
+        {
+          "name": "GJ 433 b",
+          "semiMajorAxisAu": 0.062,
+          "periodDays": 7.3705,
+          "radiusEarth": 2.33,
+          "massEarth": 6.043,
+          "orbitReference": "<a refstr=FENG_ET_AL__2020 href=https://ui.adsabs.harvard.edu/abs/2020ApJS..246...11F/abstract target=ref>Feng et al. 2020</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 433 c",
+          "semiMajorAxisAu": 4.819,
+          "periodDays": 5094.105,
+          "radiusEarth": 6.27,
+          "massEarth": 32.422,
+          "orbitReference": "<a refstr=FENG_ET_AL__2020 href=https://ui.adsabs.harvard.edu/abs/2020ApJS..246...11F/abstract target=ref>Feng et al. 2020</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 433 d",
+          "semiMajorAxisAu": 0.178,
+          "periodDays": 36.059,
+          "radiusEarth": 2.14,
+          "massEarth": 5.223,
+          "orbitReference": "<a refstr=FENG_ET_AL__2020 href=https://ui.adsabs.harvard.edu/abs/2020ApJS..246...11F/abstract target=ref>Feng et al. 2020</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 367",
+      "distancePc": 9.41263,
+      "raDegrees": 146.121464,
+      "decDegrees": -45.7790165,
+      "radiusSolar": 0.457,
+      "massSolar": 0.451,
+      "temperatureK": 3535.0,
+      "planets": [
+        {
+          "name": "GJ 367 b",
+          "semiMajorAxisAu": 0.0071,
+          "periodDays": 0.3219226,
+          "radiusEarth": 0.736,
+          "massEarth": 0.503,
+          "orbitReference": "<a refstr=LAM_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021Sci...374.1271L/abstract target=ref>Lam et al. 2021</a>",
+          "radiusReference": "<a refstr=LEE_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026arXiv260618355L/abstract target=ref>Lee et al. 2026</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 367 c",
+          "semiMajorAxisAu": null,
+          "periodDays": 11.5301,
+          "radiusEarth": 1.86,
+          "massEarth": 4.13,
+          "orbitReference": null,
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": true,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 367 d",
+          "semiMajorAxisAu": null,
+          "periodDays": 34.369,
+          "radiusEarth": 2.33,
+          "massEarth": 6.03,
+          "orbitReference": null,
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": true,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 357",
+      "distancePc": 9.44181,
+      "raDegrees": 144.0074644,
+      "decDegrees": -21.6650634,
+      "radiusSolar": 0.337,
+      "massSolar": 0.342,
+      "temperatureK": 3505.0,
+      "planets": [
+        {
+          "name": "GJ 357 b",
+          "semiMajorAxisAu": 0.036,
+          "periodDays": 3.9306,
+          "radiusEarth": 1.2,
+          "massEarth": 1.83,
+          "orbitReference": "<a refstr=ODDO_ET_AL__2023 href=https://ui.adsabs.harvard.edu/abs/2023AJ....165..134O/abstract target=ref>Oddo et al. 2023</a>",
+          "radiusReference": "<a refstr=ODDO_ET_AL__2023 href=https://ui.adsabs.harvard.edu/abs/2023AJ....165..134O/abstract target=ref>Oddo et al. 2023</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 357 c",
+          "semiMajorAxisAu": 0.061,
+          "periodDays": 9.1247,
+          "radiusEarth": 1.66,
+          "massEarth": 3.4,
+          "orbitReference": "<a refstr=LUQUE_ET_AL__2019 href=https://ui.adsabs.harvard.edu/abs/2019A&A...628A..39L/abstract target=ref>Luque et al. 2019</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 357 d",
+          "semiMajorAxisAu": 0.204,
+          "periodDays": 55.661,
+          "radiusEarth": 2.34,
+          "massEarth": 6.1,
+          "orbitReference": "<a refstr=LUQUE_ET_AL__2019 href=https://ui.adsabs.harvard.edu/abs/2019A&A...628A..39L/abstract target=ref>Luque et al. 2019</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HD 285968",
+      "distancePc": 9.47045,
+      "raDegrees": 70.7353853,
+      "decDegrees": 18.953358,
+      "radiusSolar": 0.478214,
+      "massSolar": 0.5,
+      "temperatureK": 3703.49,
+      "planets": [
+        {
+          "name": "HD 285968 b",
+          "semiMajorAxisAu": 0.066,
+          "periodDays": 8.7836,
+          "radiusEarth": 2.83,
+          "massEarth": 8.4,
+          "orbitReference": "<a refstr=FORVEILLE_ET_AL__2009 href=https://ui.adsabs.harvard.edu/abs/2009A&A...493..645F/abstract target=ref> Forveille et al. 2009 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 3512",
+      "distancePc": 9.48637,
+      "raDegrees": 130.3316616,
+      "decDegrees": 59.4918364,
+      "radiusSolar": 0.139,
+      "massSolar": 0.123,
+      "temperatureK": 3141.0,
+      "planets": [
+        {
+          "name": "GJ 3512 b",
+          "semiMajorAxisAu": 0.3376,
+          "periodDays": 203.109,
+          "radiusEarth": 14.3,
+          "massEarth": 146.51889563,
+          "orbitReference": "<a refstr=MORALES_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025A&A...700A.242M/abstract target=ref>Morales et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 3512 c",
+          "semiMajorAxisAu": 1.731,
+          "periodDays": 2354.0,
+          "radiusEarth": 14.3,
+          "massEarth": 143.97626837,
+          "orbitReference": "<a refstr=MORALES_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025A&A...700A.242M/abstract target=ref>Morales et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "G 192-15",
+      "distancePc": 9.53114,
+      "raDegrees": 90.6220931,
+      "decDegrees": 49.861939,
+      "radiusSolar": 0.170718,
+      "massSolar": 0.132,
+      "temperatureK": 2999.0,
+      "planets": [
+        {
+          "name": "G 192-15 b",
+          "semiMajorAxisAu": 0.01723,
+          "periodDays": 2.27476,
+          "radiusEarth": 1.02,
+          "massEarth": 1.03,
+          "orbitReference": "<a refstr=KAMINSKI_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025A&A...696A.101K/abstract target=ref>Kaminski et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "G 192-15 c",
+          "semiMajorAxisAu": 1.137,
+          "periodDays": 1219.0,
+          "radiusEarth": 3.87,
+          "massEarth": 14.3,
+          "orbitReference": "<a refstr=KAMINSKI_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025A&A...696A.101K/abstract target=ref>Kaminski et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "Wolf 1069",
+      "distancePc": 9.58341,
+      "raDegrees": 306.5242477,
+      "decDegrees": 58.5753044,
+      "radiusSolar": 0.1813,
+      "massSolar": 0.167,
+      "temperatureK": 3158.0,
+      "planets": [
+        {
+          "name": "Wolf 1069 b",
+          "semiMajorAxisAu": 0.0672,
+          "periodDays": 15.564,
+          "radiusEarth": 1.08,
+          "massEarth": 1.26,
+          "orbitReference": "<a refstr=KOSSAKOWSKI_ET_AL__2023 href=https://ui.adsabs.harvard.edu/abs/2023A&A...670A..84K/abstract target=ref>Kossakowski et al. 2023</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 680",
+      "distancePc": 9.67315,
+      "raDegrees": 263.8072214,
+      "decDegrees": -48.6788427,
+      "radiusSolar": 0.45933,
+      "massSolar": 0.456,
+      "temperatureK": 3563.0,
+      "planets": [
+        {
+          "name": "GJ 680 b",
+          "semiMajorAxisAu": 10.138,
+          "periodDays": 17281.66514,
+          "radiusEarth": 12.0,
+          "massEarth": 7977.4930157,
+          "orbitReference": "<a refstr=FENG_ET_AL__2022 href=https://ui.adsabs.harvard.edu/abs/2022ApJS..262...21F/abstract target=ref>Feng et al. 2022</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "AU Mic",
+      "distancePc": 9.7221,
+      "raDegrees": 311.2911369,
+      "decDegrees": -31.34245,
+      "radiusSolar": 0.862,
+      "massSolar": 0.635,
+      "temperatureK": 3540.0,
+      "planets": [
+        {
+          "name": "AU Mic b",
+          "semiMajorAxisAu": 0.07,
+          "periodDays": 8.463446,
+          "radiusEarth": 4.79,
+          "massEarth": 8.99,
+          "orbitReference": "<a refstr=MALLORQUIN_ET_AL_2024 href=https://ui.adsabs.harvard.edu/abs/2024A&A...689A.132M/abstract target=ref>Mallorqu&iacute;n et al. 2024</a>",
+          "radiusReference": "<a refstr=MALLORQUIN_ET_AL_2024 href=https://ui.adsabs.harvard.edu/abs/2024A&A...689A.132M/abstract target=ref>Mallorqu&iacute;n et al. 2024</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "AU Mic c",
+          "semiMajorAxisAu": 0.119,
+          "periodDays": 18.859023,
+          "radiusEarth": 2.79,
+          "massEarth": 14.46,
+          "orbitReference": "<a refstr=MALLORQUIN_ET_AL_2024 href=https://ui.adsabs.harvard.edu/abs/2024A&A...689A.132M/abstract target=ref>Mallorqu&iacute;n et al. 2024</a>",
+          "radiusReference": "<a refstr=MALLORQUIN_ET_AL_2024 href=https://ui.adsabs.harvard.edu/abs/2024A&A...689A.132M/abstract target=ref>Mallorqu&iacute;n et al. 2024</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "AU Mic d",
+          "semiMajorAxisAu": null,
+          "periodDays": 12.73596,
+          "radiusEarth": 1.02,
+          "massEarth": 1.053,
+          "orbitReference": null,
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": true,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 436",
+      "distancePc": 9.75321,
+      "raDegrees": 175.5505363,
+      "decDegrees": 26.7030669,
+      "radiusSolar": 0.455,
+      "massSolar": 0.47,
+      "temperatureK": 3586.11,
+      "planets": [
+        {
+          "name": "GJ 436 b",
+          "semiMajorAxisAu": 0.0291,
+          "periodDays": 2.64388312,
+          "radiusEarth": 4.17,
+          "massEarth": 22.1,
+          "orbitReference": "<a refstr=MACIEJEWSKI_ET_AL__2014 href=https://ui.adsabs.harvard.edu/abs/2014AcA....64..323M/abstract target=ref>Maciejewski et al. 2014</a>",
+          "radiusReference": "<a refstr=MACIEJEWSKI_ET_AL__2014 href=https://ui.adsabs.harvard.edu/abs/2014AcA....64..323M/abstract target=ref>Maciejewski et al. 2014</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "Gl 49",
+      "distancePc": 9.8528,
+      "raDegrees": 15.6687321,
+      "decDegrees": 62.3454386,
+      "radiusSolar": 0.511,
+      "massSolar": 0.515,
+      "temperatureK": 3805.0,
+      "planets": [
+        {
+          "name": "Gl 49 b",
+          "semiMajorAxisAu": 0.0905,
+          "periodDays": 13.8508,
+          "radiusEarth": 2.24,
+          "massEarth": 5.63,
+          "orbitReference": "<a refstr=PERGER_ET_AL__2019 href=https://ui.adsabs.harvard.edu/abs/2019A&A...624A.123P/abstract target=ref>Perger et al. 2019</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 3988",
+      "distancePc": 9.9105,
+      "raDegrees": 255.8503747,
+      "decDegrees": 51.4089795,
+      "radiusSolar": 0.19734,
+      "massSolar": 0.1842,
+      "temperatureK": 3273.0,
+      "planets": [
+        {
+          "name": "GJ 3988 b",
+          "semiMajorAxisAu": 0.0405,
+          "periodDays": 6.9442,
+          "radiusEarth": 1.74,
+          "massEarth": 3.69,
+          "orbitReference": "<a refstr=GORRINI_ET_AL_2023 href=https://ui.adsabs.harvard.edu/abs/2023A&A...680A..28G/abstract target=ref>Gorrini et al. 2023</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HD 260655",
+      "distancePc": 10.0055,
+      "raDegrees": 99.2915429,
+      "decDegrees": 17.5662696,
+      "radiusSolar": 0.439,
+      "massSolar": 0.439,
+      "temperatureK": 3803.0,
+      "planets": [
+        {
+          "name": "HD 260655 b",
+          "semiMajorAxisAu": 0.02933,
+          "periodDays": 2.76953,
+          "radiusEarth": 1.24,
+          "massEarth": 2.14,
+          "orbitReference": "<a refstr=LUQUE_ET_AL_2022 href=https://ui.adsabs.harvard.edu/abs/2022A&A...664A.199L/abstract target=ref>Luque et al. 2022</a>",
+          "radiusReference": "<a refstr=LUQUE_ET_AL_2022 href=https://ui.adsabs.harvard.edu/abs/2022A&A...664A.199L/abstract target=ref>Luque et al. 2022</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "HD 260655 c",
+          "semiMajorAxisAu": 0.04749,
+          "periodDays": 5.70588,
+          "radiusEarth": 1.533,
+          "massEarth": 3.09,
+          "orbitReference": "<a refstr=LUQUE_ET_AL_2022 href=https://ui.adsabs.harvard.edu/abs/2022A&A...664A.199L/abstract target=ref>Luque et al. 2022</a>",
+          "radiusReference": "<a refstr=LUQUE_ET_AL_2022 href=https://ui.adsabs.harvard.edu/abs/2022A&A...664A.199L/abstract target=ref>Luque et al. 2022</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "WISEP J121756.91+162640.2 A",
+      "distancePc": 10.1,
+      "raDegrees": 184.487125,
+      "decDegrees": 16.4445,
+      "radiusSolar": 0.091,
+      "massSolar": 0.029,
+      "temperatureK": 575.0,
+      "planets": [
+        {
+          "name": "WISEP J121756.91+162640.2 A b",
+          "semiMajorAxisAu": 8.0,
+          "periodDays": null,
+          "radiusEarth": 10.468,
+          "massEarth": 6992.0,
+          "orbitReference": "<a refstr=LEGGETT_ET_AL__2014 href=https://ui.adsabs.harvard.edu/abs/2014ApJ...780...62L/abstract target=ref> Leggett et al. 2014 </a>",
+          "radiusReference": "<a refstr=LEGGETT_ET_AL__2014 href=https://ui.adsabs.harvard.edu/abs/2014ApJ...780...62L/abstract target=ref> Leggett et al. 2014 </a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "L 363-38",
+      "distancePc": 10.2295,
+      "raDegrees": 10.8555443,
+      "decDegrees": -41.2952926,
+      "radiusSolar": 0.274,
+      "massSolar": 0.21,
+      "temperatureK": 3129.0,
+      "planets": [
+        {
+          "name": "L 363-38 b",
+          "semiMajorAxisAu": 0.048,
+          "periodDays": 8.781,
+          "radiusEarth": 2.0,
+          "massEarth": 4.67,
+          "orbitReference": "<a refstr=SARTORI_ET_AL__2023 href=https://ui.adsabs.harvard.edu/abs/2023A&A...670A..42S/abstract target=ref>Sartori et al. 2023</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 1265",
+      "distancePc": 10.2525,
+      "raDegrees": 333.4324675,
+      "decDegrees": -17.6870623,
+      "radiusSolar": 0.192,
+      "massSolar": 0.178,
+      "temperatureK": 3236.0,
+      "planets": [
+        {
+          "name": "GJ 1265 b",
+          "semiMajorAxisAu": 0.026,
+          "periodDays": 3.6511,
+          "radiusEarth": 2.63,
+          "massEarth": 7.4,
+          "orbitReference": "<a refstr=LUQUE_ET_AL__2018 href=https://ui.adsabs.harvard.edu/abs/2018A&A...620A.171L/abstract target=ref>Luque et al. 2018</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HD 62509",
+      "distancePc": 10.34,
+      "raDegrees": 116.328824,
+      "decDegrees": 28.026127,
+      "radiusSolar": 8.9,
+      "massSolar": 2.0,
+      "temperatureK": 4892.63,
+      "planets": [
+        {
+          "name": "HD 62509 b",
+          "semiMajorAxisAu": 1.64,
+          "periodDays": 589.64,
+          "radiusEarth": 13.3,
+          "massEarth": 731.0,
+          "orbitReference": "<a refstr=HATZES_ET_AL__2006 href=https://ui.adsabs.harvard.edu/abs/2006A&A...457..335H/abstract target=ref> Hatzes et al. 2006 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 649",
+      "distancePc": 10.3796,
+      "raDegrees": 254.5363221,
+      "decDegrees": 25.7419719,
+      "radiusSolar": 0.5,
+      "massSolar": 0.51,
+      "temperatureK": 3734.0,
+      "planets": [
+        {
+          "name": "GJ 649 b",
+          "semiMajorAxisAu": 1.112,
+          "periodDays": 600.1,
+          "radiusEarth": 10.8,
+          "massEarth": 81.99972901,
+          "orbitReference": "<a refstr=PINAMONTI_ET_AL__2023 href=https://ui.adsabs.harvard.edu/abs/2023A&A...677A.122P/abstract target=ref>Pinamonti et al. 2023</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 536",
+      "distancePc": 10.4092,
+      "raDegrees": 210.2597264,
+      "decDegrees": -2.6522901,
+      "radiusSolar": 0.529,
+      "massSolar": 0.528,
+      "temperatureK": 3641.0,
+      "planets": [
+        {
+          "name": "GJ 536 b",
+          "semiMajorAxisAu": 0.0668,
+          "periodDays": 8.70874,
+          "radiusEarth": 2.41,
+          "massEarth": 6.37,
+          "orbitReference": "<a refstr=SUAREZ_MASCARENO_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025A&A...702A.121S/abstract target=ref>Su&aacute;rez Mascare&ntilde;o et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 536 c",
+          "semiMajorAxisAu": 0.1617,
+          "periodDays": 32.761,
+          "radiusEarth": 2.3,
+          "massEarth": 5.89,
+          "orbitReference": "<a refstr=SUAREZ_MASCARENO_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025A&A...702A.121S/abstract target=ref>Su&aacute;rez Mascare&ntilde;o et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 341",
+      "distancePc": 10.454,
+      "raDegrees": 140.3993759,
+      "decDegrees": -60.2811692,
+      "radiusSolar": 0.5066,
+      "massSolar": 0.48,
+      "temperatureK": 3770.0,
+      "planets": [
+        {
+          "name": "GJ 341 b",
+          "semiMajorAxisAu": null,
+          "periodDays": 7.57686,
+          "radiusEarth": 0.88,
+          "massEarth": 4.0,
+          "orbitReference": null,
+          "radiusReference": "<a refstr=DITOMASSO_ET_AL__2025 href=https://ui.adsabs.harvard.edu/abs/2025ApJ...979..214D/abstract target=ref>DiTomasso et al. 2025</a>",
+          "orbitIsLimit": true,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HIP 48714",
+      "distancePc": 10.5298,
+      "raDegrees": 149.0332672,
+      "decDegrees": 62.7859505,
+      "radiusSolar": 0.595456,
+      "massSolar": 0.58,
+      "temperatureK": 4015.5,
+      "planets": [
+        {
+          "name": "HIP 48714 b",
+          "semiMajorAxisAu": 0.112,
+          "periodDays": 17.818,
+          "radiusEarth": 5.11,
+          "massEarth": 22.9,
+          "orbitReference": "<a refstr=FENG_ET_AL__2020 href=https://ui.adsabs.harvard.edu/abs/2020ApJS..250...29F/abstract target=ref>Feng et al. 2020</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "L 98-59",
+      "distancePc": 10.6194,
+      "raDegrees": 124.5328604,
+      "decDegrees": -68.3144658,
+      "radiusSolar": 0.3155,
+      "massSolar": 0.2923,
+      "temperatureK": 3415.0,
+      "planets": [
+        {
+          "name": "L 98-59 b",
+          "semiMajorAxisAu": 0.0223,
+          "periodDays": 2.253114,
+          "radiusEarth": 0.837,
+          "massEarth": 0.46,
+          "orbitReference": "<a refstr=CADIEUX_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025AJ....170..154C/abstract target=ref>Cadieux et al. 2025</a>",
+          "radiusReference": "<a refstr=CADIEUX_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025AJ....170..154C/abstract target=ref>Cadieux et al. 2025</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "L 98-59 c",
+          "semiMajorAxisAu": 0.0309,
+          "periodDays": 3.6906764,
+          "radiusEarth": 1.329,
+          "massEarth": 2.0,
+          "orbitReference": "<a refstr=CADIEUX_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025AJ....170..154C/abstract target=ref>Cadieux et al. 2025</a>",
+          "radiusReference": "<a refstr=CADIEUX_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025AJ....170..154C/abstract target=ref>Cadieux et al. 2025</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "L 98-59 d",
+          "semiMajorAxisAu": 0.0494,
+          "periodDays": 7.450729,
+          "radiusEarth": 1.627,
+          "massEarth": 1.64,
+          "orbitReference": "<a refstr=CADIEUX_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025AJ....170..154C/abstract target=ref>Cadieux et al. 2025</a>",
+          "radiusReference": "<a refstr=CADIEUX_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025AJ....170..154C/abstract target=ref>Cadieux et al. 2025</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "L 98-59 e",
+          "semiMajorAxisAu": 0.0712,
+          "periodDays": 12.8278,
+          "radiusEarth": 1.49,
+          "massEarth": 2.82,
+          "orbitReference": "<a refstr=CADIEUX_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025AJ....170..154C/abstract target=ref>Cadieux et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "L 98-59 f",
+          "semiMajorAxisAu": 0.1052,
+          "periodDays": 23.064,
+          "radiusEarth": 1.48,
+          "massEarth": 2.8,
+          "orbitReference": "<a refstr=CADIEUX_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025AJ....170..154C/abstract target=ref>Cadieux et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "G 261-6",
+      "distancePc": 10.6267,
+      "raDegrees": 291.07432,
+      "decDegrees": 75.5558405,
+      "radiusSolar": 0.153162,
+      "massSolar": 0.118,
+      "temperatureK": 2907.0,
+      "planets": [
+        {
+          "name": "G 261-6 b",
+          "semiMajorAxisAu": 0.02971,
+          "periodDays": 5.4536,
+          "radiusEarth": 1.1,
+          "massEarth": 1.37,
+          "orbitReference": "<a refstr=KAMINSKI_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025A&A...696A.101K/abstract target=ref>Kaminski et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HD 147379",
+      "distancePc": 10.7643,
+      "raDegrees": 244.1725686,
+      "decDegrees": 67.2392041,
+      "radiusSolar": 0.628304,
+      "massSolar": 0.58,
+      "temperatureK": 4090.0,
+      "planets": [
+        {
+          "name": "HD 147379 b",
+          "semiMajorAxisAu": 0.3193,
+          "periodDays": 86.58,
+          "radiusEarth": 4.94,
+          "massEarth": 21.6,
+          "orbitReference": "<a refstr=REINERS_ET_AL__2018 href=https://ui.adsabs.harvard.edu/abs/2018A&A...609L...5R/abstract target=ref>Reiners et al. 2018</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 86",
+      "distancePc": 10.7836,
+      "raDegrees": 32.6224785,
+      "decDegrees": -50.8209945,
+      "radiusSolar": 0.77,
+      "massSolar": 0.93,
+      "temperatureK": 5182.0,
+      "planets": [
+        {
+          "name": "GJ 86 b",
+          "semiMajorAxisAu": 0.11,
+          "periodDays": 15.76491,
+          "radiusEarth": 12.9,
+          "massEarth": 1404.8086,
+          "orbitReference": "<a refstr=STASSUN_ET_AL__2017 href=https://ui.adsabs.harvard.edu/abs/2017AJ....153..136S/abstract target=ref>Stassun et al. 2017</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "COCONUTS-2 A",
+      "distancePc": 10.8864,
+      "raDegrees": 117.300914,
+      "decDegrees": -76.702696,
+      "radiusSolar": 0.366,
+      "massSolar": 0.4,
+      "temperatureK": 3552.0,
+      "planets": [
+        {
+          "name": "COCONUTS-2 b",
+          "semiMajorAxisAu": 7506.0,
+          "periodDays": 402000000.0,
+          "radiusEarth": 12.57647635,
+          "massEarth": 2383.7130525,
+          "orbitReference": "<a refstr=ZHANG_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021ApJ...916L..11Z/abstract target=ref>Zhang et al. 2021</a>",
+          "radiusReference": "<a refstr=KIMAN_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026AJ....171...60K/abstract target=ref>Kiman et al. 2026</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HD 115404 A",
+      "distancePc": 10.9816,
+      "raDegrees": 199.2155793,
+      "decDegrees": 17.0160384,
+      "radiusSolar": 0.727007,
+      "massSolar": 0.83,
+      "temperatureK": 5019.17,
+      "planets": [
+        {
+          "name": "HD 115404 A b",
+          "semiMajorAxisAu": 0.088,
+          "periodDays": 10.49488,
+          "radiusEarth": 6.09,
+          "massEarth": 30.82935548,
+          "orbitReference": "<a refstr=FENG_ET_AL__2022 href=https://ui.adsabs.harvard.edu/abs/2022ApJS..262...21F/abstract target=ref>Feng et al. 2022</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "HD 115404 A c",
+          "semiMajorAxisAu": 11.364,
+          "periodDays": 15319.22517,
+          "radiusEarth": 12.5,
+          "massEarth": 3279.67133183,
+          "orbitReference": "<a refstr=FENG_ET_AL__2022 href=https://ui.adsabs.harvard.edu/abs/2022ApJS..262...21F/abstract target=ref>Feng et al. 2022</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 1148",
+      "distancePc": 11.0143,
+      "raDegrees": 175.4326081,
+      "decDegrees": 42.7515862,
+      "radiusSolar": 0.358519,
+      "massSolar": 0.344045,
+      "temperatureK": 3287.0,
+      "planets": [
+        {
+          "name": "GJ 1148 b",
+          "semiMajorAxisAu": 0.166,
+          "periodDays": 41.38,
+          "radiusEarth": 11.9,
+          "massEarth": 96.7,
+          "orbitReference": "<a refstr=TRIFONOV_ET_AL__2018 href=https://ui.adsabs.harvard.edu/abs/2018A&A...609A.117T/abstract target=ref>Trifonov et al. 2018</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 1148 c",
+          "semiMajorAxisAu": 0.912,
+          "periodDays": 532.58,
+          "radiusEarth": 9.71,
+          "massEarth": 68.06,
+          "orbitReference": "<a refstr=TRIFONOV_ET_AL__2018 href=https://ui.adsabs.harvard.edu/abs/2018A&A...609A.117T/abstract target=ref>Trifonov et al. 2018</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 740",
+      "distancePc": 11.1017,
+      "raDegrees": 284.4997178,
+      "decDegrees": 5.902867,
+      "radiusSolar": 0.56,
+      "massSolar": 0.58,
+      "temperatureK": 3913.0,
+      "planets": [
+        {
+          "name": "GJ 740 b",
+          "semiMajorAxisAu": 0.029,
+          "periodDays": 2.37756,
+          "radiusEarth": 1.53,
+          "massEarth": 2.96,
+          "orbitReference": "<a refstr=TOLEDO_PADR_OACUTE_N_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021A&A...648A..20T/abstract target=ref>Toledo-Padr&oacute;n et al. 2021</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HD 3651",
+      "distancePc": 11.1336,
+      "raDegrees": 9.8387218,
+      "decDegrees": 21.2488844,
+      "radiusSolar": 0.871954,
+      "massSolar": 0.799,
+      "temperatureK": 5221.0,
+      "planets": [
+        {
+          "name": "HD 3651 b",
+          "semiMajorAxisAu": 0.295,
+          "periodDays": 62.25,
+          "radiusEarth": 10.1,
+          "massEarth": 72.46524,
+          "orbitReference": "<a refstr=WITTENMYER_ET_AL__2019 href=https://ui.adsabs.harvard.edu/abs/2019MNRAS.484.5859W/abstract target=ref>Wittenmyer et al. 2019</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "Ross 508",
+      "distancePc": 11.2103,
+      "raDegrees": 230.9613022,
+      "decDegrees": 17.4605347,
+      "radiusSolar": 0.2113,
+      "massSolar": 0.1774,
+      "temperatureK": 3071.0,
+      "planets": [
+        {
+          "name": "Ross 508 b",
+          "semiMajorAxisAu": 0.05366,
+          "periodDays": 10.77,
+          "radiusEarth": 1.83,
+          "massEarth": 4.0,
+          "orbitReference": "<a refstr=HARAKAWA_ET_AL_2022 href=https://ui.adsabs.harvard.edu/abs/2022PASJ...74..904H/abstract target=ref>Harakawa et al. 2022</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HD 222237",
+      "distancePc": 11.4469,
+      "raDegrees": 354.9078642,
+      "decDegrees": -72.7253271,
+      "radiusSolar": 0.71,
+      "massSolar": 0.76,
+      "temperatureK": 4751.0,
+      "planets": [
+        {
+          "name": "HD 222237 b",
+          "semiMajorAxisAu": 10.8,
+          "periodDays": 14892.0,
+          "radiusEarth": 12.8,
+          "massEarth": 1649.52943233,
+          "orbitReference": "<a refstr=XIAO_ET_AL_2024 href=https://ui.adsabs.harvard.edu/abs/2024MNRAS.534.2858X/abstract target=ref>Xiao et al. 2024</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "Ross 458",
+      "distancePc": 11.5094,
+      "raDegrees": 195.1912147,
+      "decDegrees": 12.3755996,
+      "radiusSolar": 0.562566,
+      "massSolar": 0.556419,
+      "temperatureK": 3965.42,
+      "planets": [
+        {
+          "name": "Ross 458 c",
+          "semiMajorAxisAu": 1100.0,
+          "periodDays": null,
+          "radiusEarth": 14.01125,
+          "massEarth": 1906.98,
+          "orbitReference": "<a refstr=BURGASSER_ET_AL__2010 href=https://ui.adsabs.harvard.edu/abs/2010ApJ...725.1405B/abstract target=ref> Burgasser et al. 2010 </a>",
+          "radiusReference": "<a refstr=BURGASSER_ET_AL__2010 href=https://ui.adsabs.harvard.edu/abs/2010ApJ...725.1405B/abstract target=ref> Burgasser et al. 2010 </a>",
+          "orbitIsLimit": true,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HD 141004",
+      "distancePc": 11.8148,
+      "raDegrees": 236.6099205,
+      "decDegrees": 7.3527684,
+      "radiusSolar": 1.389372,
+      "massSolar": 1.051904,
+      "temperatureK": 5885.38,
+      "planets": [
+        {
+          "name": "HD 141004 b",
+          "semiMajorAxisAu": 0.1238,
+          "periodDays": 15.5083,
+          "radiusEarth": 3.77,
+          "massEarth": 13.63483866,
+          "orbitReference": "<a refstr=ROSENTHAL_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021ApJS..255....8R/abstract target=ref>Rosenthal et al. 2021</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 414 A",
+      "distancePc": 11.8893,
+      "raDegrees": 167.7745044,
+      "decDegrees": 30.4451688,
+      "radiusSolar": 0.68,
+      "massSolar": 0.65,
+      "temperatureK": 4120.0,
+      "planets": [
+        {
+          "name": "GJ 414 A b",
+          "semiMajorAxisAu": 0.2324,
+          "periodDays": 50.8,
+          "radiusEarth": 2.63,
+          "massEarth": 7.6,
+          "orbitReference": "<a refstr=DEDRICK_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021AJ....161...86D/abstract target=ref>Dedrick et al. 2021</a>",
+          "radiusReference": "<a refstr=DEDRICK_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021AJ....161...86D/abstract target=ref>Dedrick et al. 2021</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 414 A c",
+          "semiMajorAxisAu": 1.4,
+          "periodDays": 749.83,
+          "radiusEarth": 8.4,
+          "massEarth": 53.83,
+          "orbitReference": "<a refstr=DEDRICK_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021AJ....161...86D/abstract target=ref>Dedrick et al. 2021</a>",
+          "radiusReference": "<a refstr=DEDRICK_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021AJ....161...86D/abstract target=ref>Dedrick et al. 2021</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 96",
+      "distancePc": 11.9315,
+      "raDegrees": 35.5624031,
+      "decDegrees": 47.8802075,
+      "radiusSolar": 0.580612,
+      "massSolar": 0.6,
+      "temperatureK": 3785.0,
+      "planets": [
+        {
+          "name": "GJ 96 b",
+          "semiMajorAxisAu": 0.291,
+          "periodDays": 73.94,
+          "radiusEarth": 4.67,
+          "massEarth": 19.66,
+          "orbitReference": "<a refstr=HOBSON_ET_AL__2018 href=https://ui.adsabs.harvard.edu/abs/2018A&A...618A.103H/abstract target=ref>Hobson et al. 2018</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "Gl 410",
+      "distancePc": 11.9324,
+      "raDegrees": 165.6604212,
+      "decDegrees": 21.9669164,
+      "radiusSolar": 0.543,
+      "massSolar": 0.55,
+      "temperatureK": 3842.0,
+      "planets": [
+        {
+          "name": "Gl 410 b",
+          "semiMajorAxisAu": 0.0531,
+          "periodDays": 6.02,
+          "radiusEarth": 2.83,
+          "massEarth": 8.4,
+          "orbitReference": "<a refstr=CARMONA_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025A&A...700A.222C/abstract target=ref>Carmona et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 180",
+      "distancePc": 11.9407,
+      "raDegrees": 73.460097,
+      "decDegrees": -17.776194,
+      "radiusSolar": 0.413049,
+      "massSolar": 0.43,
+      "temperatureK": 3371.0,
+      "planets": [
+        {
+          "name": "GJ 180 b",
+          "semiMajorAxisAu": 0.092,
+          "periodDays": 17.133,
+          "radiusEarth": 2.43,
+          "massEarth": 6.49,
+          "orbitReference": "<a refstr=FENG_ET_AL__2020 href=https://ui.adsabs.harvard.edu/abs/2020ApJS..246...11F/abstract target=ref>Feng et al. 2020</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 180 c",
+          "semiMajorAxisAu": 0.129,
+          "periodDays": 24.329,
+          "radiusEarth": 2.41,
+          "massEarth": 6.4,
+          "orbitReference": "<a refstr=TUOMI_ET_AL__2014 href=https://ui.adsabs.harvard.edu/abs/2014MNRAS.441.1545T/abstract target=ref>Tuomi et al. 2014</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 180 d",
+          "semiMajorAxisAu": 0.309,
+          "periodDays": 106.3,
+          "radiusEarth": 2.66,
+          "massEarth": 7.56,
+          "orbitReference": "<a refstr=FENG_ET_AL__2020 href=https://ui.adsabs.harvard.edu/abs/2020ApJS..246...11F/abstract target=ref>Feng et al. 2020</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 806",
+      "distancePc": 12.0445,
+      "raDegrees": 311.2697002,
+      "decDegrees": 44.5002351,
+      "radiusSolar": 0.4144,
+      "massSolar": 0.413,
+      "temperatureK": 3600.0,
+      "planets": [
+        {
+          "name": "GJ 806 b",
+          "semiMajorAxisAu": 0.01406,
+          "periodDays": 0.9263237,
+          "radiusEarth": 1.331,
+          "massEarth": 1.9,
+          "orbitReference": "<a refstr=PALLE_ET_AL__2023 href=https://ui.adsabs.harvard.edu/abs/2023A&A...678A..80P/abstract target=ref>Palle et al. 2023</a>",
+          "radiusReference": "<a refstr=PALLE_ET_AL__2023 href=https://ui.adsabs.harvard.edu/abs/2023A&A...678A..80P/abstract target=ref>Palle et al. 2023</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 806 c",
+          "semiMajorAxisAu": 0.0523,
+          "periodDays": 6.64064,
+          "radiusEarth": 2.28,
+          "massEarth": 5.8,
+          "orbitReference": "<a refstr=PALLE_ET_AL__2023 href=https://ui.adsabs.harvard.edu/abs/2023A&A...678A..80P/abstract target=ref>Palle et al. 2023</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "Gliese 12",
+      "distancePc": 12.21,
+      "raDegrees": 3.9579137,
+      "decDegrees": 13.5576175,
+      "radiusSolar": 0.265,
+      "massSolar": 0.255,
+      "temperatureK": 3328.0,
+      "planets": [
+        {
+          "name": "Gliese 12 b",
+          "semiMajorAxisAu": 0.067,
+          "periodDays": 12.761418,
+          "radiusEarth": 0.93,
+          "massEarth": 0.95,
+          "orbitReference": "<a refstr=DHOLAKIA_ET_AL__2024 href=https://ui.adsabs.harvard.edu/abs/2024MNRAS.531.1276D/abstract target=ref>Dholakia et al. 2024</a>",
+          "radiusReference": "<a refstr=TURNER_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026MNRAS.545f1703T/abstract target=ref>Turner et al. 2026</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 179",
+      "distancePc": 12.356,
+      "raDegrees": 73.0245495,
+      "decDegrees": 6.4752347,
+      "radiusSolar": 0.38,
+      "massSolar": 0.357,
+      "temperatureK": 3370.0,
+      "planets": [
+        {
+          "name": "GJ 179 b",
+          "semiMajorAxisAu": 2.41,
+          "periodDays": 2288.0,
+          "radiusEarth": 13.8,
+          "massEarth": 301.93698665,
+          "orbitReference": "<a refstr=HOWARD_ET_AL__2010 href=https://ui.adsabs.harvard.edu/abs/2010ApJ...721.1467H/abstract target=ref> Howard et al. 2010 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "TRAPPIST-1",
+      "distancePc": 12.42988881,
+      "raDegrees": 346.6263919,
+      "decDegrees": -5.0434618,
+      "radiusSolar": 0.1192,
+      "massSolar": 0.0898,
+      "temperatureK": 2566.0,
+      "planets": [
+        {
+          "name": "TRAPPIST-1 b",
+          "semiMajorAxisAu": 0.01154,
+          "periodDays": 1.510826,
+          "radiusEarth": 1.116,
+          "massEarth": 1.374,
+          "orbitReference": "<a refstr=AGOL_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021PSJ.....2....1A/abstract target=ref>Agol et al. 2021</a>",
+          "radiusReference": "<a refstr=AGOL_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021PSJ.....2....1A/abstract target=ref>Agol et al. 2021</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "TRAPPIST-1 c",
+          "semiMajorAxisAu": 0.0158,
+          "periodDays": 2.421937,
+          "radiusEarth": 1.097,
+          "massEarth": 1.308,
+          "orbitReference": "<a refstr=AGOL_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021PSJ.....2....1A/abstract target=ref>Agol et al. 2021</a>",
+          "radiusReference": "<a refstr=AGOL_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021PSJ.....2....1A/abstract target=ref>Agol et al. 2021</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "TRAPPIST-1 d",
+          "semiMajorAxisAu": 0.02227,
+          "periodDays": 4.049219,
+          "radiusEarth": 0.788,
+          "massEarth": 0.388,
+          "orbitReference": "<a refstr=AGOL_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021PSJ.....2....1A/abstract target=ref>Agol et al. 2021</a>",
+          "radiusReference": "<a refstr=AGOL_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021PSJ.....2....1A/abstract target=ref>Agol et al. 2021</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "TRAPPIST-1 e",
+          "semiMajorAxisAu": 0.02925,
+          "periodDays": 6.101013,
+          "radiusEarth": 0.92,
+          "massEarth": 0.692,
+          "orbitReference": "<a refstr=AGOL_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021PSJ.....2....1A/abstract target=ref>Agol et al. 2021</a>",
+          "radiusReference": "<a refstr=AGOL_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021PSJ.....2....1A/abstract target=ref>Agol et al. 2021</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "TRAPPIST-1 f",
+          "semiMajorAxisAu": 0.03849,
+          "periodDays": 9.20754,
+          "radiusEarth": 1.045,
+          "massEarth": 1.039,
+          "orbitReference": "<a refstr=AGOL_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021PSJ.....2....1A/abstract target=ref>Agol et al. 2021</a>",
+          "radiusReference": "<a refstr=AGOL_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021PSJ.....2....1A/abstract target=ref>Agol et al. 2021</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "TRAPPIST-1 g",
+          "semiMajorAxisAu": 0.04683,
+          "periodDays": 12.352446,
+          "radiusEarth": 1.129,
+          "massEarth": 1.321,
+          "orbitReference": "<a refstr=AGOL_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021PSJ.....2....1A/abstract target=ref>Agol et al. 2021</a>",
+          "radiusReference": "<a refstr=AGOL_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021PSJ.....2....1A/abstract target=ref>Agol et al. 2021</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "TRAPPIST-1 h",
+          "semiMajorAxisAu": 0.06189,
+          "periodDays": 18.772866,
+          "radiusEarth": 0.755,
+          "massEarth": 0.326,
+          "orbitReference": "<a refstr=AGOL_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021PSJ.....2....1A/abstract target=ref>Agol et al. 2021</a>",
+          "radiusReference": "<a refstr=AGOL_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021PSJ.....2....1A/abstract target=ref>Agol et al. 2021</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "55 Cnc B",
+      "distancePc": 12.4773,
+      "raDegrees": 133.167908,
+      "decDegrees": 28.3152863,
+      "radiusSolar": 0.274,
+      "massSolar": 0.26,
+      "temperatureK": 3286.0,
+      "planets": [
+        {
+          "name": "55 Cnc B b",
+          "semiMajorAxisAu": 0.044,
+          "periodDays": 6.7994,
+          "radiusEarth": 1.69,
+          "massEarth": 3.5,
+          "orbitReference": "<a refstr=MOUTOU_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026A&A...705A.190M/abstract target=ref>Moutou et al. 2026</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "55 Cnc B c",
+          "semiMajorAxisAu": 0.13,
+          "periodDays": 33.747,
+          "radiusEarth": 2.16,
+          "massEarth": 5.3,
+          "orbitReference": "<a refstr=MOUTOU_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026A&A...705A.190M/abstract target=ref>Moutou et al. 2026</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "LHS 475",
+      "distancePc": 12.4814,
+      "raDegrees": 290.2379403,
+      "decDegrees": -82.5597883,
+      "radiusSolar": 0.2789,
+      "massSolar": 0.262,
+      "temperatureK": 3300.0,
+      "planets": [
+        {
+          "name": "LHS 475 b",
+          "semiMajorAxisAu": 0.02037,
+          "periodDays": 2.029088,
+          "radiusEarth": 0.991,
+          "massEarth": 0.941,
+          "orbitReference": "<a refstr=MENT_ET_AL__2024 href=https://ui.adsabs.harvard.edu/abs/2024AJ....167..197M/abstract target=ref>Ment et al. 2024</a>",
+          "radiusReference": "<a refstr=LUSTIG_YAEGER_ET_AL_2023 href=https://ui.adsabs.harvard.edu/abs/2023NatAs...7.1317L/abstract target=ref>Lustig-Yaeger et al. 2023</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HD 69830",
+      "distancePc": 12.5591,
+      "raDegrees": 124.6010091,
+      "decDegrees": -12.6364246,
+      "radiusSolar": 0.886947,
+      "massSolar": 0.86,
+      "temperatureK": 5385.0,
+      "planets": [
+        {
+          "name": "HD 69830 b",
+          "semiMajorAxisAu": 0.0785,
+          "periodDays": 8.667,
+          "radiusEarth": 3.17,
+          "massEarth": 10.2,
+          "orbitReference": "<a refstr=LOVIS_ET_AL__2006 href=https://ui.adsabs.harvard.edu/abs/2006Natur.441..305L/abstract target=ref> Lovis et al. 2006 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "HD 69830 c",
+          "semiMajorAxisAu": 0.186,
+          "periodDays": 31.56,
+          "radiusEarth": 3.46,
+          "massEarth": 11.8,
+          "orbitReference": "<a refstr=LOVIS_ET_AL__2006 href=https://ui.adsabs.harvard.edu/abs/2006Natur.441..305L/abstract target=ref> Lovis et al. 2006 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "HD 69830 d",
+          "semiMajorAxisAu": 0.63,
+          "periodDays": 197.0,
+          "radiusEarth": 4.45,
+          "massEarth": 18.1,
+          "orbitReference": "<a refstr=LOVIS_ET_AL__2006 href=https://ui.adsabs.harvard.edu/abs/2006Natur.441..305L/abstract target=ref> Lovis et al. 2006 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "55 Cnc",
+      "distancePc": 12.5855,
+      "raDegrees": 133.1468373,
+      "decDegrees": 28.3298154,
+      "radiusSolar": 0.98,
+      "massSolar": 1.015,
+      "temperatureK": 5198.0,
+      "planets": [
+        {
+          "name": "55 Cnc b",
+          "semiMajorAxisAu": 0.118,
+          "periodDays": 14.651552,
+          "radiusEarth": 13.9,
+          "massEarth": 263.9785,
+          "orbitReference": "<a refstr=MOUTOU_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026A&A...705A.190M/abstract target=ref>Moutou et al. 2026</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "55 Cnc c",
+          "semiMajorAxisAu": 0.247,
+          "periodDays": 44.3936,
+          "radiusEarth": 8.51,
+          "massEarth": 54.4738,
+          "orbitReference": "<a refstr=MOUTOU_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026A&A...705A.190M/abstract target=ref>Moutou et al. 2026</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "55 Cnc d",
+          "semiMajorAxisAu": 5.6,
+          "periodDays": 4799.0,
+          "radiusEarth": 13.0,
+          "massEarth": 1232.493,
+          "orbitReference": "<a refstr=MOUTOU_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026A&A...705A.190M/abstract target=ref>Moutou et al. 2026</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "55 Cnc e",
+          "semiMajorAxisAu": 0.01544,
+          "periodDays": 0.7365474,
+          "radiusEarth": 1.875,
+          "massEarth": 7.99,
+          "orbitReference": "<a refstr=BOURRIER_ET_AL__2018 href=https://ui.adsabs.harvard.edu/abs/2018A&A...619A...1B/abstract target=ref>Bourrier et al. 2018</a>",
+          "radiusReference": "<a refstr=BOURRIER_ET_AL__2018 href=https://ui.adsabs.harvard.edu/abs/2018A&A...619A...1B/abstract target=ref>Bourrier et al. 2018</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "55 Cnc f",
+          "semiMajorAxisAu": 0.802,
+          "periodDays": 260.58,
+          "radiusEarth": 7.59,
+          "massEarth": 44.812,
+          "orbitReference": "<a refstr=MOUTOU_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026A&A...705A.190M/abstract target=ref>Moutou et al. 2026</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 1132",
+      "distancePc": 12.613,
+      "raDegrees": 153.7090696,
+      "decDegrees": -47.1549358,
+      "radiusSolar": 0.2211,
+      "massSolar": 0.1945,
+      "temperatureK": 3229.0,
+      "planets": [
+        {
+          "name": "GJ 1132 b",
+          "semiMajorAxisAu": 0.0157,
+          "periodDays": 1.62892911,
+          "radiusEarth": 1.19151465,
+          "massEarth": 1.83704819,
+          "orbitReference": "<a refstr=XUE_ET_AL_2024 href=https://ui.adsabs.harvard.edu/abs/2024ApJ...973L...8X/abstract target=ref>Xue et al. 2024</a>",
+          "radiusReference": "<a refstr=XUE_ET_AL_2024 href=https://ui.adsabs.harvard.edu/abs/2024ApJ...973L...8X/abstract target=ref>Xue et al. 2024</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "GJ 1132 c",
+          "semiMajorAxisAu": 0.0476,
+          "periodDays": 8.929,
+          "radiusEarth": 1.52,
+          "massEarth": 2.91,
+          "orbitReference": "<a refstr=BONFILS_ET_AL__2018 href=https://ui.adsabs.harvard.edu/abs/2018A&A...618A.142B/abstract target=ref>Bonfils et al. 2018</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 422",
+      "distancePc": 12.6631,
+      "raDegrees": 168.9810458,
+      "decDegrees": -57.5425629,
+      "radiusSolar": 0.370328,
+      "massSolar": 0.35,
+      "temperatureK": 3323.0,
+      "planets": [
+        {
+          "name": "GJ 422 b",
+          "semiMajorAxisAu": 0.111,
+          "periodDays": 20.129,
+          "radiusEarth": 3.33,
+          "massEarth": 11.07,
+          "orbitReference": "<a refstr=FENG_ET_AL__2020 href=https://ui.adsabs.harvard.edu/abs/2020ApJS..246...11F/abstract target=ref>Feng et al. 2020</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "VHS J125601.92-125723.9",
+      "distancePc": 12.7,
+      "raDegrees": 194.008964,
+      "decDegrees": -12.956031,
+      "radiusSolar": null,
+      "massSolar": 0.07,
+      "temperatureK": 2620.0,
+      "planets": [
+        {
+          "name": "VHS J125601.92-125723.9 b",
+          "semiMajorAxisAu": 350.0,
+          "periodDays": 5800000.0,
+          "radiusEarth": 13.67495645,
+          "massEarth": 5085.254512,
+          "orbitReference": "<a refstr=DUPUY_ET_AL__2023 href=https://ui.adsabs.harvard.edu/abs/2023MNRAS.519.1688D/abstract target=ref>Dupuy et al. 2023</a>",
+          "radiusReference": "<a refstr=DUPUY_ET_AL__2023 href=https://ui.adsabs.harvard.edu/abs/2023MNRAS.519.1688D/abstract target=ref>Dupuy et al. 2023</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HD 190007",
+      "distancePc": 12.7141,
+      "raDegrees": 300.6956339,
+      "decDegrees": 3.3266992,
+      "radiusSolar": 0.79,
+      "massSolar": 0.77,
+      "temperatureK": 4610.0,
+      "planets": [
+        {
+          "name": "HD 190007 b",
+          "semiMajorAxisAu": 0.092,
+          "periodDays": 11.724128,
+          "radiusEarth": 4.06,
+          "massEarth": 15.5,
+          "orbitReference": "<a refstr=BURT_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021AJ....161...10B/abstract target=ref>Burt et al. 2021</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HIP 56998",
+      "distancePc": 12.7781,
+      "raDegrees": 175.2563039,
+      "decDegrees": -44.4041485,
+      "radiusSolar": 0.63,
+      "massSolar": 0.653,
+      "temperatureK": 4675.0,
+      "planets": [
+        {
+          "name": "HD 101581 b",
+          "semiMajorAxisAu": 0.046,
+          "periodDays": 4.46569,
+          "radiusEarth": 0.956,
+          "massEarth": 0.827,
+          "orbitReference": "<a refstr=KUNIMOTO_ET_AL__2025 href=https://ui.adsabs.harvard.edu/abs/2025AJ....169...47K/abstract target=ref>Kunimoto et al. 2025</a>",
+          "radiusReference": "<a refstr=KUNIMOTO_ET_AL__2025 href=https://ui.adsabs.harvard.edu/abs/2025AJ....169...47K/abstract target=ref>Kunimoto et al. 2025</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "HD 101581 c",
+          "semiMajorAxisAu": 0.0573,
+          "periodDays": 6.20401,
+          "radiusEarth": 0.99,
+          "massEarth": 0.937,
+          "orbitReference": "<a refstr=KUNIMOTO_ET_AL__2025 href=https://ui.adsabs.harvard.edu/abs/2025AJ....169...47K/abstract target=ref>Kunimoto et al. 2025</a>",
+          "radiusReference": "<a refstr=KUNIMOTO_ET_AL__2025 href=https://ui.adsabs.harvard.edu/abs/2025AJ....169...47K/abstract target=ref>Kunimoto et al. 2025</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HD 40307",
+      "distancePc": 12.9363,
+      "raDegrees": 88.5172191,
+      "decDegrees": -60.0237289,
+      "radiusSolar": 0.716684,
+      "massSolar": 0.77,
+      "temperatureK": 4956.0,
+      "planets": [
+        {
+          "name": "HD 40307 b",
+          "semiMajorAxisAu": 0.0468,
+          "periodDays": 4.3123,
+          "radiusEarth": null,
+          "massEarth": 1188.99607059,
+          "orbitReference": "<a refstr=TUOMI_ET_AL__2013 href=https://ui.adsabs.harvard.edu/abs/2013A%26A...549A..48T/abstract target=ref> Tuomi et al. 2013 </a>",
+          "radiusReference": null,
+          "orbitIsLimit": false,
+          "radiusIsLimit": true
+        },
+        {
+          "name": "HD 40307 c",
+          "semiMajorAxisAu": 0.0799,
+          "periodDays": 9.6184,
+          "radiusEarth": null,
+          "massEarth": 1868.51320475,
+          "orbitReference": "<a refstr=TUOMI_ET_AL__2013 href=https://ui.adsabs.harvard.edu/abs/2013A%26A...549A..48T/abstract target=ref> Tuomi et al. 2013 </a>",
+          "radiusReference": null,
+          "orbitIsLimit": false,
+          "radiusIsLimit": true
+        },
+        {
+          "name": "HD 40307 d",
+          "semiMajorAxisAu": 0.1321,
+          "periodDays": 20.432,
+          "radiusEarth": null,
+          "massEarth": 1775.3894815,
+          "orbitReference": "<a refstr=TUOMI_ET_AL__2013 href=https://ui.adsabs.harvard.edu/abs/2013A%26A...549A..48T/abstract target=ref> Tuomi et al. 2013 </a>",
+          "radiusReference": null,
+          "orbitIsLimit": false,
+          "radiusIsLimit": true
+        },
+        {
+          "name": "HD 40307 f",
+          "semiMajorAxisAu": 0.247,
+          "periodDays": 51.76,
+          "radiusEarth": 2.13,
+          "massEarth": 5.2,
+          "orbitReference": "<a refstr=TUOMI_ET_AL__2013 href=https://ui.adsabs.harvard.edu/abs/2013A%26A...549A..48T/abstract target=ref> Tuomi et al. 2013 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HD 211970",
+      "distancePc": 13.1277,
+      "raDegrees": 335.5661579,
+      "decDegrees": -54.5596006,
+      "radiusSolar": 0.574175,
+      "massSolar": 0.61,
+      "temperatureK": 4127.0,
+      "planets": [
+        {
+          "name": "HD 211970 b",
+          "semiMajorAxisAu": 0.143,
+          "periodDays": 25.201,
+          "radiusEarth": 3.66,
+          "massEarth": 13.0,
+          "orbitReference": "<a refstr=FENG_ET_AL__2019 href=https://ui.adsabs.harvard.edu/abs/2019ApJS..242...25F/abstract target=ref>Feng et al. 2019</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "ups And",
+      "distancePc": 13.4054,
+      "raDegrees": 24.1983534,
+      "decDegrees": 41.4038147,
+      "radiusSolar": 1.56,
+      "massSolar": 1.3,
+      "temperatureK": 6156.77,
+      "planets": [
+        {
+          "name": "ups And b",
+          "semiMajorAxisAu": 0.05922166,
+          "periodDays": 4.617033,
+          "radiusEarth": 14.0,
+          "massEarth": 218.531,
+          "orbitReference": "<a refstr=CURIEL_ET_AL__2011 href=https://ui.adsabs.harvard.edu/abs/2011A&A...525A..78C/abstract target=ref> Curiel et al. 2011 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "ups And c",
+          "semiMajorAxisAu": 0.827774,
+          "periodDays": 241.258,
+          "radiusEarth": 12.3,
+          "massEarth": 4443.24112986,
+          "orbitReference": "<a refstr=CURIEL_ET_AL__2011 href=https://ui.adsabs.harvard.edu/abs/2011A&A...525A..78C/abstract target=ref> Curiel et al. 2011 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "ups And d",
+          "semiMajorAxisAu": 2.51329,
+          "periodDays": 1276.46,
+          "radiusEarth": 12.5,
+          "massEarth": 3257.74117175,
+          "orbitReference": "<a refstr=CURIEL_ET_AL__2011 href=https://ui.adsabs.harvard.edu/abs/2011A&A...525A..78C/abstract target=ref> Curiel et al. 2011 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HD 22496",
+      "distancePc": 13.5956,
+      "raDegrees": 53.7565398,
+      "decDegrees": -48.4178173,
+      "radiusSolar": 0.674,
+      "massSolar": 0.684,
+      "temperatureK": 4385.0,
+      "planets": [
+        {
+          "name": "HD 22496 b",
+          "semiMajorAxisAu": 0.051,
+          "periodDays": 5.09071,
+          "radiusEarth": 2.22,
+          "massEarth": 5.57,
+          "orbitReference": "<a refstr=LILLO_BOX_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021A&A...654A..60L/abstract target=ref>Lillo-Box et al. 2021</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 3779",
+      "distancePc": 13.743,
+      "raDegrees": 200.7335358,
+      "decDegrees": 24.4639425,
+      "radiusSolar": 0.281,
+      "massSolar": 0.27,
+      "temperatureK": 3324.0,
+      "planets": [
+        {
+          "name": "GJ 3779 b",
+          "semiMajorAxisAu": 0.026,
+          "periodDays": 3.0232,
+          "radiusEarth": 2.75,
+          "massEarth": 8.0,
+          "orbitReference": "<a refstr=LUQUE_ET_AL__2018 href=https://ui.adsabs.harvard.edu/abs/2018A&A...620A.171L/abstract target=ref>Luque et al. 2018</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "47 UMa",
+      "distancePc": 13.7967,
+      "raDegrees": 164.8647611,
+      "decDegrees": 40.4304931,
+      "radiusSolar": 1.21334,
+      "massSolar": 1.06,
+      "temperatureK": 5872.0,
+      "planets": [
+        {
+          "name": "47 UMa b",
+          "semiMajorAxisAu": 2.1,
+          "periodDays": 1078.0,
+          "radiusEarth": 13.2,
+          "massEarth": 804.08,
+          "orbitReference": "<a refstr=GREGORY___FISCHER_2010 href=https://ui.adsabs.harvard.edu/abs/2010MNRAS.403..731G/abstract target=ref> Gregory &amp; Fischer 2010 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "47 UMa c",
+          "semiMajorAxisAu": 3.6,
+          "periodDays": 2391.0,
+          "radiusEarth": 14.2,
+          "massEarth": 171.621,
+          "orbitReference": "<a refstr=GREGORY___FISCHER_2010 href=https://ui.adsabs.harvard.edu/abs/2010MNRAS.403..731G/abstract target=ref> Gregory &amp; Fischer 2010 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "47 UMa d",
+          "semiMajorAxisAu": 11.6,
+          "periodDays": 14002.0,
+          "radiusEarth": 13.5,
+          "massEarth": 521.22,
+          "orbitReference": "<a refstr=GREGORY___FISCHER_2010 href=https://ui.adsabs.harvard.edu/abs/2010MNRAS.403..731G/abstract target=ref> Gregory &amp; Fischer 2010 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "TOI-540",
+      "distancePc": 14.0022,
+      "raDegrees": 76.3096949,
+      "decDegrees": -47.9375391,
+      "radiusSolar": 0.1895,
+      "massSolar": 0.159,
+      "temperatureK": 3216.0,
+      "planets": [
+        {
+          "name": "TOI-540 b",
+          "semiMajorAxisAu": 0.01223,
+          "periodDays": 1.2391491,
+          "radiusEarth": 0.903,
+          "massEarth": 0.674,
+          "orbitReference": "<a refstr=MENT_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021AJ....161...23M/abstract target=ref>Ment et al. 2021</a>",
+          "radiusReference": "<a refstr=MENT_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021AJ....161...23M/abstract target=ref>Ment et al. 2021</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "gam Cep",
+      "distancePc": 14.1024,
+      "raDegrees": 354.8358233,
+      "decDegrees": 77.6331009,
+      "radiusSolar": 4.74,
+      "massSolar": 1.26,
+      "temperatureK": 4775.0,
+      "planets": [
+        {
+          "name": "gam Cep b",
+          "semiMajorAxisAu": 1.978,
+          "periodDays": 904.0,
+          "radiusEarth": 12.5,
+          "massEarth": 2987.5870258,
+          "orbitReference": "<a refstr=VAN_ZANDT_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026arXiv260830030V/abstract target=ref>Van Zandt et al. 2026</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 480",
+      "distancePc": 14.2358,
+      "raDegrees": 189.7134226,
+      "decDegrees": 11.6950708,
+      "radiusSolar": 0.449,
+      "massSolar": 0.45,
+      "temperatureK": 3509.0,
+      "planets": [
+        {
+          "name": "GJ 480 b",
+          "semiMajorAxisAu": 0.068,
+          "periodDays": 9.5536,
+          "radiusEarth": 2.91,
+          "massEarth": 8.8,
+          "orbitReference": "<a refstr=OULD_ELHKIM_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025A&A...696A.152O/abstract target=ref>Ould-Elhkim et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 685",
+      "distancePc": 14.3155,
+      "raDegrees": 263.8960378,
+      "decDegrees": 61.6793482,
+      "radiusSolar": 0.54,
+      "massSolar": 0.55,
+      "temperatureK": 3816.0,
+      "planets": [
+        {
+          "name": "GJ 685 b",
+          "semiMajorAxisAu": 0.1344,
+          "periodDays": 24.16,
+          "radiusEarth": 2.95,
+          "massEarth": 9.0,
+          "orbitReference": "<a refstr=PINAMONTI_ET_AL__2019 href=https://ui.adsabs.harvard.edu/abs/2019A&A...625A.126P/abstract target=ref>Pinamonti et al. 2019</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "CWISEP J193518.59-154620.3",
+      "distancePc": 14.43,
+      "raDegrees": 293.8262172,
+      "decDegrees": -15.7725727,
+      "radiusSolar": null,
+      "massSolar": 0.024,
+      "temperatureK": null,
+      "planets": [
+        {
+          "name": "CWISEP J193518.59-154620.3 b",
+          "semiMajorAxisAu": 2.48,
+          "periodDays": null,
+          "radiusEarth": 12.2,
+          "massEarth": 4926.3403085,
+          "orbitReference": "<a refstr=DE_FURIO_ET_AL_2025 href=https://ui.adsabs.harvard.edu/abs/2025ApJ...990L..63D/abstract target=ref>De Furio et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HIP 79431",
+      "distancePc": 14.5324,
+      "raDegrees": 243.1742467,
+      "decDegrees": -18.8764247,
+      "radiusSolar": 0.478625,
+      "massSolar": 0.49,
+      "temperatureK": 3191.0,
+      "planets": [
+        {
+          "name": "HIP 79431 b",
+          "semiMajorAxisAu": 0.36,
+          "periodDays": 111.7,
+          "radiusEarth": 13.4,
+          "massEarth": 667.415,
+          "orbitReference": "<a refstr=APPS_ET_AL__2010 href=https://ui.adsabs.harvard.edu/abs/2010PASP..122..156A/abstract target=ref> Apps et al. 2010 </a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "GJ 1214",
+      "distancePc": 14.6427,
+      "raDegrees": 258.8313991,
+      "decDegrees": 4.9606795,
+      "radiusSolar": 0.2162,
+      "massSolar": 0.182,
+      "temperatureK": 3101.0,
+      "planets": [
+        {
+          "name": "GJ 1214 b",
+          "semiMajorAxisAu": 0.01505,
+          "periodDays": 1.580404531,
+          "radiusEarth": 2.733,
+          "massEarth": 8.41,
+          "orbitReference": "<a refstr=MAHAJAN_ET_AL__2024 href=https://ui.adsabs.harvard.edu/abs/2024ApJ...963L..37M/abstract target=ref>Mahajan et al. 2024</a>",
+          "radiusReference": "<a refstr=MAHAJAN_ET_AL__2024 href=https://ui.adsabs.harvard.edu/abs/2024ApJ...963L..37M/abstract target=ref>Mahajan et al. 2024</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HD 136352",
+      "distancePc": 14.682,
+      "raDegrees": 230.4401147,
+      "decDegrees": -48.3188174,
+      "radiusSolar": 1.058,
+      "massSolar": 0.87,
+      "temperatureK": 5664.0,
+      "planets": [
+        {
+          "name": "HD 136352 b",
+          "semiMajorAxisAu": 0.0964,
+          "periodDays": 11.57797,
+          "radiusEarth": 1.664,
+          "massEarth": 4.72,
+          "orbitReference": "<a refstr=DELREZ_ET_AL_2021 href=https://ui.adsabs.harvard.edu/abs/2021NatAs...5..775D/abstract target=ref>Delrez et al. 2021</a>",
+          "radiusReference": "<a refstr=DELREZ_ET_AL_2021 href=https://ui.adsabs.harvard.edu/abs/2021NatAs...5..775D/abstract target=ref>Delrez et al. 2021</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "HD 136352 c",
+          "semiMajorAxisAu": 0.1721,
+          "periodDays": 27.59221,
+          "radiusEarth": 2.916,
+          "massEarth": 11.24,
+          "orbitReference": "<a refstr=DELREZ_ET_AL_2021 href=https://ui.adsabs.harvard.edu/abs/2021NatAs...5..775D/abstract target=ref>Delrez et al. 2021</a>",
+          "radiusReference": "<a refstr=DELREZ_ET_AL_2021 href=https://ui.adsabs.harvard.edu/abs/2021NatAs...5..775D/abstract target=ref>Delrez et al. 2021</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "HD 136352 d",
+          "semiMajorAxisAu": 0.425,
+          "periodDays": 107.245,
+          "radiusEarth": 2.562,
+          "massEarth": 8.82,
+          "orbitReference": "<a refstr=DELREZ_ET_AL_2021 href=https://ui.adsabs.harvard.edu/abs/2021NatAs...5..775D/abstract target=ref>Delrez et al. 2021</a>",
+          "radiusReference": "<a refstr=DELREZ_ET_AL_2021 href=https://ui.adsabs.harvard.edu/abs/2021NatAs...5..775D/abstract target=ref>Delrez et al. 2021</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "LHS 3844",
+      "distancePc": 14.8846,
+      "raDegrees": 340.4962038,
+      "decDegrees": -69.1721081,
+      "radiusSolar": 0.189,
+      "massSolar": 0.151,
+      "temperatureK": 3080.0,
+      "planets": [
+        {
+          "name": "LHS 3844 b",
+          "semiMajorAxisAu": 0.00624,
+          "periodDays": 0.462929709,
+          "radiusEarth": 1.286,
+          "massEarth": 2.37,
+          "orbitReference": "<a refstr=NAGEL_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026A&A...710A.311N/abstract target=ref>Nagel et al. 2026</a>",
+          "radiusReference": "<a refstr=NAGEL_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026A&A...710A.311N/abstract target=ref>Nagel et al. 2026</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "HD 86728",
+      "distancePc": 14.9202,
+      "raDegrees": 150.250054,
+      "decDegrees": 31.9218216,
+      "radiusSolar": 1.237,
+      "massSolar": 0.967,
+      "temperatureK": 5610.0,
+      "planets": [
+        {
+          "name": "HD 86728 b",
+          "semiMajorAxisAu": 0.1916,
+          "periodDays": 31.1515,
+          "radiusEarth": 3.03,
+          "massEarth": 9.43,
+          "orbitReference": "<a refstr=GUPTA_ET_AL__2025 href=https://ui.adsabs.harvard.edu/abs/2025AJ....169....1G/abstract target=ref>Gupta et al. 2025</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "Gl 378",
+      "distancePc": 14.9545,
+      "raDegrees": 150.5865513,
+      "decDegrees": 48.0824515,
+      "radiusSolar": 0.56,
+      "massSolar": 0.56,
+      "temperatureK": 3879.0,
+      "planets": [
+        {
+          "name": "Gl 378 b",
+          "semiMajorAxisAu": 0.039435,
+          "periodDays": 3.822,
+          "radiusEarth": 3.66,
+          "massEarth": 13.02,
+          "orbitReference": "<a refstr=HOBSON_ET_AL__2019 href=https://ui.adsabs.harvard.edu/abs/2019A&A...625A..18H/abstract target=ref>Hobson et al. 2019</a>",
+          "radiusReference": "<a refstr=CALCULATED_VALUE href=/docs/pscp_calc.html target=_blank>Calculated Value</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    },
+    {
+      "name": "LHS 1140",
+      "distancePc": 14.9861,
+      "raDegrees": 11.248632,
+      "decDegrees": -15.2741085,
+      "radiusSolar": 0.2159,
+      "massSolar": 0.1844,
+      "temperatureK": 3096.0,
+      "planets": [
+        {
+          "name": "LHS 1140 b",
+          "semiMajorAxisAu": 0.0946,
+          "periodDays": 24.73723,
+          "radiusEarth": 1.73,
+          "massEarth": 5.6,
+          "orbitReference": "<a refstr=CADIEUX_ET_AL__2024 href=https://ui.adsabs.harvard.edu/abs/2024ApJ...960L...3C/abstract target=ref>Cadieux et al. 2024</a>",
+          "radiusReference": "<a refstr=CADIEUX_ET_AL__2024 href=https://ui.adsabs.harvard.edu/abs/2024ApJ...960L...3C/abstract target=ref>Cadieux et al. 2024</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        },
+        {
+          "name": "LHS 1140 c",
+          "semiMajorAxisAu": 0.027,
+          "periodDays": 3.77794,
+          "radiusEarth": 1.272,
+          "massEarth": 1.91,
+          "orbitReference": "<a refstr=CADIEUX_ET_AL__2024 href=https://ui.adsabs.harvard.edu/abs/2024ApJ...960L...3C/abstract target=ref>Cadieux et al. 2024</a>",
+          "radiusReference": "<a refstr=CADIEUX_ET_AL__2024 href=https://ui.adsabs.harvard.edu/abs/2024ApJ...960L...3C/abstract target=ref>Cadieux et al. 2024</a>",
+          "orbitIsLimit": false,
+          "radiusIsLimit": false
+        }
+      ]
+    }
+  ]
+}

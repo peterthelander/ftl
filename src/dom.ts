@@ -1,5 +1,6 @@
 export type DomElements = {
   canvas: HTMLCanvasElement;
+  systemStatus: HTMLDivElement;
   joystick: HTMLDivElement;
   joystickThumb: HTMLDivElement;
   brakeButton: HTMLButtonElement;
@@ -13,7 +14,7 @@ export type DomElements = {
   labelsOverlay: HTMLDivElement;
 };
 
-function getRequiredElement<T extends HTMLElement>(id: string) {
+export function getRequiredElement<T extends HTMLElement>(id: string) {
   const element = document.getElementById(id);
 
   if (!element) {
@@ -26,6 +27,7 @@ function getRequiredElement<T extends HTMLElement>(id: string) {
 export function getDomElements(): DomElements {
   return {
     canvas: getRequiredElement<HTMLCanvasElement>('simCanvas'),
+    systemStatus: getRequiredElement<HTMLDivElement>('systemStatus'),
     joystick: getRequiredElement<HTMLDivElement>('joystick'),
     joystickThumb: getRequiredElement<HTMLDivElement>('joystickThumb'),
     brakeButton: getRequiredElement<HTMLButtonElement>('brakeButton'),

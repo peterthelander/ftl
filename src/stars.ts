@@ -45,6 +45,7 @@ export function createStellarSphere(radiusKm: number, color: number) {
   });
   const star = new THREE.Mesh(new THREE.SphereGeometry(radiusKm, 48, 32), surface);
   star.userData.radiusKm = radiusKm;
+  star.userData.kind = 'star';
 
   const corona = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.ShaderMaterial({
     uniforms: { glowColor: { value: new THREE.Color(color) } },

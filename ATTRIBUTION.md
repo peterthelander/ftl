@@ -25,3 +25,16 @@ Three.js is released under the MIT License.
 Source: https://www.solarsystemscope.com/textures/
 
 Check the upstream source for current license and usage notes before redistributing beyond this project.
+
+## NASA Exoplanet Archive
+
+The bundled `src/data/exoplanets.json` snapshot comes from the NASA Exoplanet
+Archive's Planetary Systems Composite Parameters table (`pscomppars`). The snapshot
+retains the query, retrieval timestamp, and per-planet orbit/radius references.
+
+- [Archive](https://exoplanetarchive.ipac.caltech.edu/)
+- [Column definitions](https://exoplanetarchive.ipac.caltech.edu/docs/API_PS_columns.html)
+- [Composite parameter calculations](https://exoplanetarchive.ipac.caltech.edu/docs/pscp_calc.html)
+
+Planet surface textures outside the Solar System are generated locally and are
+illustrative, not observations of those worlds.

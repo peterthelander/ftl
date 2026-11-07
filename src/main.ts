@@ -1,14 +1,16 @@
 import * as THREE from 'three';
 
 import { updateAtmosphere } from './atmosphere';
-import { createCelestialBodies, createSkybox } from './celestial';
+import { createCelestialBodies } from './celestial';
+import { createSkybox } from './skybox';
 import { createControls } from './controls';
-import { getDomElements } from './dom';
+import { getDomElements, getRequiredElement } from './dom';
 import { createFlightState, getFlightSpeed, getProximitySpeed, updateFlight } from './flight';
 import { updateHud } from './hud';
 import { createLabelManager } from './labels';
 import { recenterWorld } from './world';
 import { updateStarGlows } from './stars';
+import { createNavigation } from './navigation';
 
 const dom = getDomElements();
 const scene = new THREE.Scene();
@@ -25,13 +27,16 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-const labels = createLabelManager(dom.labelsOverlay, camera);
+const labels = createLabelManager(dom.labelsOverlay, camera, [
+  getRequiredElement('hud'), getRequiredElement('exploreSystems'), dom.joystick, dom.brakeButton
+]);
 const bodies = createCelestialBodies(scene, labels);
 const skybox = createSkybox(scene);
 
 const flightState = createFlightState();
 const controls = createControls(dom.canvas, dom.controlsHelp, camera, dom.joystick, dom.joystickThumb, dom.brakeButton);
-const clock = new THREE.Clock();
+const navigation = createNavigation(bodies.systems, scene, camera, controls, flightState);
+let lastFrameTime = performance.now();
 
 window.addEventListener('resize', () => {
   camera.aspect = window.innerWidth / window.innerHeight;
@@ -42,12 +47,15 @@ window.addEventListener('resize', () => {
 function animate() {
   requestAnimationFrame(animate);
 
-  const dt = Math.min(clock.getDelta(), 0.1);
+  const now = performance.now();
+  const dt = Math.min((now - lastFrameTime) / 1000, 0.1);
+  lastFrameTime = now;
 
-  controls.updateCameraRotation(camera, dt);
+  if (!navigation.isOpen) controls.updateCameraRotation(camera, dt);
 
+  const currentSystem = bodies.systems.update(camera.position);
   const speedLimit = getProximitySpeed(camera.position, bodies.navigationTargets);
-  if (controls.braking) {
+  if (controls.braking || navigation.isOpen) {
     flightState.velocityKmPerSecond.set(0, 0, 0);
   } else {
     updateFlight(flightState, camera, controls.keys, speedLimit, dt);
@@ -59,7 +67,7 @@ function animate() {
     body.rotation.y += 0.0001;
   }
 
-  updateHud(dom, currentSpeed, camera.position, bodies.navigationTargets);
+  updateHud(dom, currentSpeed, camera.position, bodies.navigationTargets, currentSystem);
   updateAtmosphere({
     camera,
     earth: bodies.earth,

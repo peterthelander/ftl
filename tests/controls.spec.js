@@ -92,3 +92,23 @@ test('desktop mouse lock and keyboard flight still work', async ({ page }) => {
   expect(await page.evaluate(() => window.desktop.controls.keys.w)).toBe(false);
   await page.evaluate(() => document.exitPointerLock());
 });
+
+
+test('typing in a form does not thrust, and reset clears held inputs', async ({ page }) => {
+  await page.goto('/tests/desktop.html');
+  await page.waitForFunction(() => window.desktop);
+  await page.evaluate(() => {
+    const input = document.createElement('input');
+    input.id = 'search';
+    document.body.append(input);
+    input.focus();
+  });
+  await page.keyboard.type('wasdqe');
+  expect(await page.evaluate(() => ['w', 'a', 's', 'd', 'q', 'e'].some(key => window.desktop.controls.keys[key]))).toBe(false);
+  await page.locator('canvas').click();
+  await page.keyboard.down('w');
+  expect(await page.evaluate(() => window.desktop.controls.keys.w)).toBe(true);
+  await page.evaluate(() => window.desktop.controls.reset());
+  expect(await page.evaluate(() => window.desktop.controls.keys.w)).toBe(false);
+  await page.keyboard.up('w');
+});

@@ -9,6 +9,32 @@ On a phone, use the **bottom-left thumbstick** to move and **swipe the scene** t
 look around. You can do both at once with two thumbs. Hold **BRAKE** to stop.
 On desktop, click the scene to capture the mouse, use W/S for thrust, and press Esc to release it.
 
+## Explore planetary systems
+
+Tap **Explore systems**, search for a star, and choose a system overview or a planet
+to approach. Try **TRAPPIST-1**, **Proxima Cen**, **Lalande 21185**, or **55 Cnc**.
+On desktop, press Esc first to release mouse look and use the picker.
+
+- **NASA catalog / mint orbits:** bundled confirmed exoplanets within 15 parsecs
+  (about 49 light-years), excluding records the archive flags as controversial.
+- **Generated system / amber orbits:** repeatable fictional worlds for a landmark
+  with no planets in this snapshot. They are always labeled as generated.
+- Planets, their labels, lights, and orbit guides load only near their host star.
+  At most two systems are detailed at once. Leaving releases their resources.
+- Star labels show up to the **12 nearest visible stars**; nearby planets have a
+  separate cap of 10 labels. Distant systems appear as stars, not clouds of labels.
+
+The snapshot currently contains **202 catalog planets around 116 hosts**. Together
+with the existing landmarks and Sun, the demo has **124 stars**. This is a selection
+of planet hosts plus landmarks, not a complete census of nearby stars.
+The [NASA Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/) supplies the
+catalog; its [composite table](https://exoplanetarchive.ipac.caltech.edu/docs/pscp_calc.html)
+includes calculated values as well as measurements. Estimated sizes/orbits are
+marked. Surfaces, colors, circular orbit planes, and orbital phases are illustrative;
+they are not current ephemerides or evidence of habitability.
+
+See [data provenance and architecture](docs/architecture.md) for the model and limits.
+
 ## Engineering focus
 
 The simulation explores a practical graphics problem: presenting astronomical
@@ -79,16 +105,29 @@ Preview the production build:
 npm run preview
 ```
 
-Run the browser control checks (Chromium):
+Run the strict type check and browser checks (Chromium):
 
 ```bash
+npm run typecheck
 npx playwright install chromium
 npm test
 ```
 
 The checks cover two-thumb movement and look, touch cancellation, braking,
 landscape layout, focus loss, and desktop mouse/keyboard input. Visual checks also
-verify stellar radii, distant-star visibility, and glowing orbit guides.
+verify stellar radii, distant-star visibility, and glowing orbit guides. System
+checks cover catalog identities, deterministic generation, detail budgets, resource
+cleanup, floating-origin coordinates, and the phone system picker.
+
+To refresh the bundled NASA snapshot (requires Python 3 and internet access):
+
+```bash
+npm run data:update
+npm run build
+npm test
+```
+
+Normal play and builds use the committed snapshot and make no calls to the NASA API.
 
 ## Live Site
 
@@ -100,17 +139,24 @@ If you are developing on Windows with WSL, it is best to run `npm ci`, `npm run 
 
 ```text
 src/
-  atmosphere.ts  Earth atmosphere overlay and sun-angle color shift
-  celestial.ts   Celestial body creation, textures, stars, orbit lines
-  constants.ts   Shared physical and flight constants
-  stars.ts       Stellar surfaces, coronas, and distance-aware glow sizing
-  orbits.ts      Wide orbit lines with bright cores and soft outer glows
-  controls.ts    Pointer lock, mouse, keyboard, and multi-touch flight input
-  dom.ts         Required DOM element lookup
-  flight.ts      Speed model and proximity limiting
-  hud.ts         Speed/mode display
-  labels.ts      Screen-space object labels with distances
-  main.ts        App wiring and animation loop
+  main.ts                Initialization and frame orchestration
+  celestial.ts           Star field and system assembly
+  solar-system.ts        Existing Solar System bodies and textures
+  landmarks.ts           Legacy landmark star data
+  data/exoplanets.json    NASA snapshot with source metadata
+  systems-data.ts        Catalog adapter and explicit parameter estimates
+  system-generation.ts   Pure, seeded fictional system model
+  systems.ts             Detail loading, local rendering, resource disposal
+  planet-surfaces.ts     Illustrative procedural surfaces
+  navigation.ts          System picker and deliberate travel
+  labels.ts              World-space labels and visibility budgets
+  controls.ts            Mouse, keyboard, and multi-touch input
+  flight.ts / world.ts   Inertial movement and floating origin
+  stars.ts / orbits.ts   Stellar surfaces, coronas, and glowing orbit guides
+  atmosphere.ts          Earth atmosphere
+  hud.ts / dom.ts        HUD formatting and required elements
+  styles.css             Responsive presentation
+  constants.ts/types.ts  Shared units and domain types
 ```
 
 ## Asset Credits

@@ -1,0 +1,249 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #000;
+  font-family: monospace;
+}
+canvas {
+  display: block;
+  touch-action: none;
+}
+#hud {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #0f0;
+  pointer-events: none;
+  user-select: none;
+  text-shadow: 1px 1px 2px #000;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  border: 1px solid #0f0;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+#controlsHelp {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  color: #0f0;
+  pointer-events: none;
+  user-select: none;
+  text-shadow: 1px 1px 2px #000;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 12px 14px;
+  border: 1px solid rgba(0, 255, 0, 0.75);
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 1.45;
+  transition: opacity 180ms ease;
+}
+#controlsHelp.locked {
+  opacity: 0.28;
+}
+#labelsOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  user-select: none;
+}
+#atmosphereOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: #62b7ff;
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 120ms linear, background 180ms linear;
+}
+.spaceLabel {
+  position: absolute;
+  color: #b8ffb8;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(0, 255, 0, 0.55);
+  border-radius: 4px;
+  padding: 3px 6px;
+  font-size: 13px;
+  line-height: 1;
+  text-shadow: 1px 1px 2px #000;
+  transform: translate(-50%, -140%);
+  white-space: nowrap;
+  text-align: center;
+}
+.spaceLabelName {
+  color: #d8ffd8;
+}
+.spaceLabelDistance {
+  margin-top: 3px;
+  color: #7dff7d;
+  font-size: 11px;
+}
+#crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+#crosshair::before, #crosshair::after {
+  content: '';
+  position: absolute;
+  background-color: rgba(0, 255, 0, 0.5);
+}
+#crosshair::before {
+  top: 9px; left: 0; width: 20px; height: 2px;
+}
+#crosshair::after {
+  top: 0; left: 9px; width: 2px; height: 20px;
+}
+body { overscroll-behavior: none; }
+#touchControls { display: none; }
+.mobile-help { display: none; }
+#touchControls {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+#joystick {
+  position: absolute;
+  left: max(24px, env(safe-area-inset-left));
+  bottom: max(24px, env(safe-area-inset-bottom));
+  width: 124px;
+  height: 124px;
+  border: 1px solid rgba(125, 255, 180, 0.6);
+  border-radius: 50%;
+  background: rgba(0, 20, 12, 0.5);
+  pointer-events: auto;
+  touch-action: none;
+  display: grid;
+  place-items: center;
+}
+#joystick::before {
+  content: 'FORWARD';
+  position: absolute;
+  top: 12px;
+  color: #b8ffb8;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+#joystick::after {
+  content: 'REVERSE';
+  position: absolute;
+  bottom: 12px;
+  color: #b8ffb8;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+#joystickThumb {
+  width: 46px;
+  height: 46px;
+  border: 1px solid #b8ffb8;
+  border-radius: 50%;
+  background: rgba(90, 240, 145, 0.4);
+  pointer-events: none;
+}
+#joystick.active, #brakeButton.active {
+  background-color: rgba(40, 120, 75, 0.7);
+  border-color: #d8ffd8;
+}
+#brakeButton {
+  position: absolute;
+  right: max(24px, env(safe-area-inset-right));
+  bottom: max(30px, env(safe-area-inset-bottom));
+  width: 84px;
+  min-height: 56px;
+  border: 1px solid rgba(125, 255, 180, 0.7);
+  border-radius: 28px;
+  background: rgba(0, 20, 12, 0.65);
+  color: #b8ffb8;
+  font: bold 13px monospace;
+  pointer-events: auto;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.touch-look-hint {
+  position: absolute;
+  right: max(24px, env(safe-area-inset-right));
+  bottom: max(108px, calc(env(safe-area-inset-bottom) + 78px));
+  color: #b8ffb8;
+  font-size: 11px;
+  text-shadow: 0 1px 3px #000;
+}
+body.touch-controls #touchControls { display: block; }
+body.touch-controls .desktop-help { display: none; }
+body.touch-controls .mobile-help { display: block; }
+body.touch-controls #controlsHelp {
+  right: max(12px, env(safe-area-inset-right));
+  bottom: 176px;
+  font-size: 11px;
+  padding: 8px;
+}
+@media (any-pointer: coarse) {
+  #touchControls { display: block; }
+  .desktop-help { display: none; }
+  .mobile-help { display: block; }
+  #controlsHelp {
+    right: max(12px, env(safe-area-inset-right));
+    bottom: 176px;
+    font-size: 11px;
+    padding: 8px;
+  }
+}
+@media (max-width: 600px), (max-height: 500px) {
+  #hud {
+    top: max(12px, env(safe-area-inset-top));
+    left: max(12px, env(safe-area-inset-left));
+    right: max(12px, env(safe-area-inset-right));
+    width: fit-content;
+    max-width: calc(100% - 48px);
+    padding: 8px;
+    font-size: 11px;
+  }
+  .spaceLabel { font-size: 11px; }
+  .spaceLabelDistance { font-size: 10px; }
+  #controlsHelp { display: none; }
+}
+#systemStatus { margin-top: 5px; font-size: 11px; color: #acdacf; }
+.spaceLabelDetail { margin-top: 4px; color: #c5ded5; font-size: 9px; }
+.spaceLabel[data-source="generated"] { border-color: #b88842; }
+.spaceLabel[data-source="generated"] .spaceLabelDetail { color: #ffcc83; }
+#exploreSystems {
+  position: absolute; z-index: 3; top: max(20px, env(safe-area-inset-top));
+  right: max(12px, env(safe-area-inset-right)); padding: 12px 10px;
+  border: 1px solid #75e3ac; border-radius: 8px; color: #c4ffdf;
+  background: #052318df; font: 12px monospace; min-height: 44px;
+}
+#systemDialog {
+  width: min(440px, calc(100vw - 48px)); max-height: calc(100dvh - 64px);
+  box-sizing: border-box; overflow-y: auto; padding: 20px;
+  background: #071b19; color: #c4ffdf; border: 1px solid #75e3ac; border-radius: 12px;
+  font: 13px/1.5 monospace;
+}
+#systemDialog::backdrop { background: #000b; }
+.dialog-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.dialog-heading h2 { margin: 0 0 12px; font-size: 19px; }
+#systemDialog label { display: block; margin: 8px 0 4px; }
+#systemDialog input, #systemDialog select, #systemDialog button {
+  color: #d9ffeb; background: #0c3029; border: 1px solid #568d76;
+  border-radius: 5px; padding: 10px; font: inherit; box-sizing: border-box;
+}
+#systemDialog input, #systemDialog select, #visitSystem { width: 100%; }
+#systemDialog input { font-size: 16px; }
+#systemSelect { max-height: 150px; }
+#systemDescription, .catalog-note { font-size: 11px; color: #a9cdbb; }
+#visitSystem { margin-top: 16px; min-height: 44px; }
+#systemDialog a { color: #92ddfa; }
+#systemDialog button:disabled { opacity: 0.4; }
+@media (max-width: 600px) {
+  #hud { max-width: calc(100% - 150px); box-sizing: border-box; overflow-wrap: anywhere; }
+  #exploreSystems { top: max(12px, env(safe-area-inset-top)); font-size: 11px; }
+}

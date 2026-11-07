@@ -8,7 +8,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "playwright test"
+    "test": "playwright test",
+    "typecheck": "tsc --noEmit",
+    "data:update": "python3 scripts/update-exoplanets.py"
   },
   "devDependencies": {
     "@playwright/test": "^1.65.0",
